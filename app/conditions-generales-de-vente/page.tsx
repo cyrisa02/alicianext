@@ -1,5 +1,44 @@
 // src/pages/ConditionsGeneralesVentePage.tsx
 "use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Conditions Générales de Vente | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Conditions générales de vente des services AlicIA-GPT. Cadre juridique, tarifs, modalités de paiement et engagements pour nos prestations de consulting IA.",
+  keywords: [
+    "conditions générales de vente",
+    "CGV AlicIA-GPT",
+    "CGV consulting IA",
+    "modalités de paiement",
+    "devis et facturation",
+    "droit de rétractation",
+    "garantie satisfait ou remboursé",
+    "propriété intellectuelle",
+    "responsabilité contractuelle",
+    "consultant IA Soissons",
+    "agence IA Aisne",
+    "AlicIA-GPT",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Conditions Générales de Vente | AlicIA-GPT",
+    description:
+      "CGV des services AlicIA-GPT. Cadre juridique, tarifs et engagements pour nos prestations de consulting IA à Soissons et région Hauts-de-France.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Conditions Générales de Vente | AlicIA-GPT",
+    description:
+      "CGV des services AlicIA-GPT. Cadre juridique, tarifs et engagements pour nos prestations de consulting IA.",
+  },
+};
 
 const ConditionsGeneralesVentePage = () => {
   return (

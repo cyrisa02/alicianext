@@ -2,6 +2,58 @@
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Support Commercial & CRM Intelligent | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Qualification de leads, relances clients et CRM intelligent pour booster vos ventes. Automatisez votre prospection à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "support commercial IA",
+    "CRM intelligent",
+    "qualification de leads",
+    "relances clients automatisées",
+    "automatisation prospection",
+    "gestion pipeline de vente",
+    "IA pour commerciaux",
+    "scoring de leads",
+    "artisans",
+    "TPE",
+    "PME",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "consultant CRM IA",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Support Commercial & CRM Intelligent | AlicIA-GPT",
+    description:
+      "Qualification de leads, relances clients et CRM intelligent pour booster vos ventes. Automatisez votre prospection à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Support Commercial & CRM Intelligent | AlicIA-GPT",
+    description:
+      "Qualification de leads, relances clients et CRM intelligent pour booster vos ventes. Automatisez votre prospection à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 const SupportCommercialPage = () => {
   // 1. Remplacement des hooks React Router par les hooks Next.js

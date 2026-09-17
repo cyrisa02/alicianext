@@ -1,5 +1,48 @@
 // src/pages/PolitiqueConfidentialitePage.tsx
 "use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Politique de Confidentialité | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Politique de confidentialité et protection des données personnelles (RGPD) d'AlicIA-GPT. Découvrez comment nous collectons, utilisons et sécurisons vos données à Soissons et en région.",
+  keywords: [
+    "politique de confidentialité",
+    "protection des données personnelles",
+    "RGPD",
+    "règlement général sur la protection des données",
+    "droit d'accès aux données",
+    "droit à l'effacement",
+    "gestion des cookies",
+    "CNIL",
+    "sécurité des données",
+    "collecte de données formulaire",
+    "AlicIA-GPT",
+    "consultant IA Soissons",
+    "agence IA Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Politique de Confidentialité | AlicIA-GPT",
+    description:
+      "Protection de vos données personnelles (RGPD). Découvrez comment AlicIA-GPT sécurise et utilise vos données en toute transparence.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Politique de Confidentialité | AlicIA-GPT",
+    description:
+      "Protection de vos données personnelles (RGPD). Découvrez comment AlicIA-GPT sécurise et utilise vos données en toute transparence.",
+  },
+};
 
 const PolitiqueConfidentialitePage = () => {
   return (

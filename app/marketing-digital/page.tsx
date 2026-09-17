@@ -2,6 +2,57 @@
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Marketing Digital & IA | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Stratégie, veille concurrentielle et création de contenu automatisée pour votre marketing. Boostez votre visibilité à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "marketing digital IA",
+    "veille concurrentielle",
+    "création de contenu automatisée",
+    "web scraping marketing",
+    "SEO local",
+    "campagnes publicitaires IA",
+    "gestion réseaux sociaux",
+    "artisans",
+    "TPE",
+    "PME",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "agence marketing IA",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Marketing Digital & IA | AlicIA-GPT",
+    description:
+      "Stratégie, veille concurrentielle et création de contenu automatisée. Boostez votre visibilité à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marketing Digital & IA | AlicIA-GPT",
+    description:
+      "Stratégie, veille concurrentielle et création de contenu automatisée. Boostez votre visibilité à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 const MarketingDigitalPage = () => {
   // 1. Remplacement des hooks React Router par les hooks Next.js

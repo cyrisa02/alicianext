@@ -1,5 +1,55 @@
 // src/pages/SoutienEtudiantsPage.tsx
 "use client"; // Indispensable pour les hooks et useRouter
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Outils IA pour Étudiants | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Outils et applications IA pour l'apprentissage et la recherche des étudiants. Boostez votre productivité académique à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "outils IA étudiants",
+    "applications IA apprentissage",
+    "IA recherche universitaire",
+    "aide aux devoirs IA",
+    "résumé de cours IA",
+    "chatbot étudiant",
+    "productivité académique",
+    "formation IA étudiants",
+    "artificielle intelligence université",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "consultant IA étudiants",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Outils IA pour Étudiants | AlicIA-GPT",
+    description:
+      "Outils et applications IA pour l'apprentissage et la recherche. Boostez votre productivité académique à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Outils IA pour Étudiants | AlicIA-GPT",
+    description:
+      "Outils et applications IA pour l'apprentissage et la recherche. Boostez votre productivité académique à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";

@@ -2,6 +2,65 @@
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Formations IA Génératives | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Rendez vos équipes opérationnelles sur les IA génératives (ChatGPT, Gemini, Claude) avec nos formations sur-mesure. Accompagnement à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "formation IA générative",
+    "formation ChatGPT",
+    "formation Gemini",
+    "formation Claude IA",
+    "formation IA entreprise",
+    "formation IA équipes",
+    "formation prompt engineering",
+    "formation IA sur-mesure",
+    "formation IA Soissons",
+    "formation IA Aisne",
+    "formation IA Oise",
+    "formation IA Marne",
+    "formation IA Seine-et-Marne",
+    "formation IA présentiel",
+    "formation IA visio",
+    "artisans",
+    "TPE",
+    "PME",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "consultant formation IA",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Formations IA Génératives | AlicIA-GPT",
+    description:
+      "Rendez vos équipes opérationnelles sur les IA génératives avec nos formations sur-mesure. Accompagnement à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formations IA Génératives | AlicIA-GPT",
+    description:
+      "Rendez vos équipes opérationnelles sur les IA génératives avec nos formations sur-mesure. Accompagnement à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 const FormationsPage = () => {
   // 1. Remplacement des hooks React Router par les hooks Next.js

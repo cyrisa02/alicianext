@@ -1,5 +1,54 @@
 // src/pages/SoutienSeniorsPage.tsx
 "use client"; // Indispensable pour les hooks et useRouter
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Soutien Numérique Seniors & Débutants | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Assistance informatique, antivirus et dépannage patient et pédagogique pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "assistance informatique senior",
+    "dépannage informatique à domicile",
+    "formation informatique débutant",
+    "aide ordinateur personnes âgées",
+    "cours informatique particuliers",
+    "installation antivirus",
+    "sécurité informatique senior",
+    "support numérique bienveillant",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "aide informatique locale",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Soutien Numérique Seniors & Débutants | AlicIA-GPT",
+    description:
+      "Assistance informatique et dépannage patient pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Soutien Numérique Seniors & Débutants | AlicIA-GPT",
+    description:
+      "Assistance informatique et dépannage patient pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";

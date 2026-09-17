@@ -2,6 +2,57 @@
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Audit & Conseil IA | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Analyse de vos processus et feuille de route IA personnalisée pour votre entreprise. Identifiez les leviers d'automatisation à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "audit IA",
+    "conseil en intelligence artificielle",
+    "analyse de processus",
+    "feuille de route IA",
+    "automatisation des processus",
+    "transformation digitale",
+    "consultant IA",
+    "artisans",
+    "TPE",
+    "PME",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "diagnostic IA entreprise",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Audit & Conseil IA | AlicIA-GPT",
+    description:
+      "Analyse de vos processus et feuille de route IA personnalisée. Identifiez les leviers d'automatisation à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audit & Conseil IA | AlicIA-GPT",
+    description:
+      "Analyse de vos processus et feuille de route IA personnalisée. Identifiez les leviers d'automatisation à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 const AuditConseilPage = () => {
   // 1. Remplacement des hooks React Router par les hooks Next.js

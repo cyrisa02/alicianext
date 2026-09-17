@@ -1,5 +1,44 @@
 // src/pages/ConditionsGeneralesUtilisationPage.tsx
 "use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Conditions Générales d'Utilisation | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Conditions générales d'utilisation du site AlicIA-GPT. Règles d'usage, propriété intellectuelle et responsabilités pour les utilisateurs de nos services de consulting IA à Soissons et région.",
+  keywords: [
+    "conditions générales d'utilisation",
+    "CGU site web",
+    "CGU AlicIA-GPT",
+    "propriété intellectuelle",
+    "droits d'auteur",
+    "règles d'usage site web",
+    "responsabilité utilisateur",
+    "limitation de responsabilité",
+    "droit applicable",
+    "consultant IA Soissons",
+    "agence IA Aisne",
+    "AlicIA-GPT",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Conditions Générales d'Utilisation | AlicIA-GPT",
+    description:
+      "CGU du site AlicIA-GPT. Règles d'usage, propriété intellectuelle et responsabilités pour les utilisateurs de nos services de consulting IA.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Conditions Générales d'Utilisation | AlicIA-GPT",
+    description:
+      "CGU du site AlicIA-GPT. Règles d'usage, propriété intellectuelle et responsabilités pour les utilisateurs de nos services de consulting IA.",
+  },
+};
 
 const ConditionsGeneralesUtilisationPage = () => {
   return (

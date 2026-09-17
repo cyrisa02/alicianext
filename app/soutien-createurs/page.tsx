@@ -1,4 +1,57 @@
 "use client"; // Indispensable pour les hooks et useRouter
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Accompagnement Créateurs d'Entreprise | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Conseil, organisation et bac à sable IA pour donner vie à vos idées d'entreprise. Accompagnement sur-mesure à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "accompagnement créateur d'entreprise",
+    "lancement de startup",
+    "bac à sable IA",
+    "organisation entrepreneur",
+    "conseil création d'entreprise",
+    "outils IA pour entrepreneurs",
+    "setup numérique pro",
+    "messagerie professionnelle",
+    "site vitrine entrepreneur",
+    "artisans",
+    "TPE",
+    "PME",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "consultant IA startup",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Accompagnement Créateurs d'Entreprise | AlicIA-GPT",
+    description:
+      "Conseil, organisation et bac à sable IA pour donner vie à vos idées. Accompagnement à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accompagnement Créateurs d'Entreprise | AlicIA-GPT",
+    description:
+      "Conseil, organisation et bac à sable IA pour donner vie à vos idées. Accompagnement à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";

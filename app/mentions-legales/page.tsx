@@ -1,4 +1,46 @@
-'use client';
+"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Mentions Légales | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Mentions légales du site AlicIA-GPT, agence de conseil en intelligence artificielle. Informations sur l'éditeur, l'hébergeur, la propriété intellectuelle et le traitement des données à Soissons.",
+  keywords: [
+    "mentions légales",
+    "éditeur du site",
+    "hébergeur OVHcloud",
+    "propriété intellectuelle",
+    "droit d'auteur",
+    "RGPD",
+    "protection des données",
+    "CNIL",
+    "droit applicable",
+    "tribunal compétent Soissons",
+    "SIRET",
+    "TVA intracommunautaire",
+    "AlicIA-GPT",
+    "consultant IA Soissons",
+    "agence IA Aisne",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Mentions Légales | AlicIA-GPT",
+    description:
+      "Mentions légales du site AlicIA-GPT. Informations sur l'éditeur, l'hébergeur, la propriété intellectuelle et le traitement des données.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mentions Légales | AlicIA-GPT",
+    description:
+      "Mentions légales du site AlicIA-GPT. Informations sur l'éditeur, l'hébergeur, la propriété intellectuelle et le traitement des données.",
+  },
+};
 
 const MentionsLegalesPage = () => {
   return (
@@ -11,94 +53,153 @@ const MentionsLegalesPage = () => {
         <div className="space-y-10 text-gray-300">
           {/* Éditeur */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">1. Éditeur du site</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              1. Éditeur du site
+            </h2>
             <p>
-              <strong>Nom de l'entreprise :</strong> AlicIA-GPT — Agence IA & Consulting<br />
-              <strong>Forme juridique :</strong> Auto-entrepreneur (EI)<br />
-              <strong>SIRET :</strong> 123 456 789 00010<br />
-              <strong>TVA intracommunautaire :</strong> FR12 123456789<br />
-              <strong>Siège social :</strong> 12 rue de la Paix, 02200 Soissons, France<br />
-              <strong>Téléphone :</strong> +33 6 12 34 56 78<br />
-              <strong>Email :</strong> contact@alicia-gpt.fr<br />
+              <strong>Nom de l'entreprise :</strong> AlicIA-GPT — Agence IA &
+              Consulting
+              <br />
+              <strong>Forme juridique :</strong> Auto-entrepreneur (EI)
+              <br />
+              <strong>SIRET :</strong> 123 456 789 00010
+              <br />
+              <strong>TVA intracommunautaire :</strong> FR12 123456789
+              <br />
+              <strong>Siège social :</strong> 12 rue de la Paix, 02200 Soissons,
+              France
+              <br />
+              <strong>Téléphone :</strong> +33 6 12 34 56 78
+              <br />
+              <strong>Email :</strong> contact@alicia-gpt.fr
+              <br />
               <strong>Directeur de la publication :</strong> [Votre Prénom Nom]
             </p>
           </section>
           {/* Hébergement */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">2. Hébergement</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              2. Hébergement
+            </h2>
             <p>
               Ce site est hébergé par :<br />
-              <strong>OVHcloud</strong><br />
+              <strong>OVHcloud</strong>
+              <br />
               SAS au capital de 10 059 500 €<br />
-              RCS Lille Métropole 424 761 419 00045<br />
-              Siège social : 2 rue Kellermann, 59100 Roubaix, France<br />
-              Site web : <a href="https://www.ovhcloud.com" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.ovhcloud.com</a>
+              RCS Lille Métropole 424 761 419 00045
+              <br />
+              Siège social : 2 rue Kellermann, 59100 Roubaix, France
+              <br />
+              Site web :{" "}
+              <a
+                href="https://www.ovhcloud.com"
+                className="text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.ovhcloud.com
+              </a>
             </p>
           </section>
           {/* Propriété intellectuelle */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">3. Propriété intellectuelle</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              3. Propriété intellectuelle
+            </h2>
             <p>
-              Tous les contenus présents sur ce site (textes, images, logos, graphismes, vidéos, outils IA, code source, etc.) sont la propriété exclusive de AlicIA-GPT ou font l'objet d'une licence d'utilisation.
+              Tous les contenus présents sur ce site (textes, images, logos,
+              graphismes, vidéos, outils IA, code source, etc.) sont la
+              propriété exclusive de AlicIA-GPT ou font l'objet d'une licence
+              d'utilisation.
             </p>
             <br />
             <p>
-              Toute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de l'éditeur.
+              Toute reproduction, représentation, modification, publication,
+              adaptation totale ou partielle des éléments du site, quel que soit
+              le moyen ou le procédé utilisé, est interdite sans l'autorisation
+              écrite préalable de l'éditeur.
             </p>
           </section>
           {/* Données personnelles & RGPD */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">4. Données personnelles (RGPD)</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              4. Données personnelles (RGPD)
+            </h2>
             <p>
-              Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition concernant vos données personnelles.
+              Conformément au Règlement Général sur la Protection des Données
+              (RGPD) et à la loi Informatique et Libertés, vous disposez d'un
+              droit d'accès, de rectification, d'effacement, de portabilité et
+              d'opposition concernant vos données personnelles.
             </p>
             <br />
             <p>Ces données sont collectées uniquement pour :</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Répondre à vos demandes via le formulaire de contact</li>
               <li>Vous envoyer des informations si vous y avez consenti</li>
-              <li>Améliorer l'expérience utilisateur via des outils anonymisés (ex: Matomo)</li>
+              <li>
+                Améliorer l'expérience utilisateur via des outils anonymisés
+                (ex: Matomo)
+              </li>
             </ul>
             <br />
             <p>
-              Aucune donnée n'est revendue à des tiers. Vos données sont stockées sur des serveurs situés en France ou dans l'Union Européenne.
+              Aucune donnée n'est revendue à des tiers. Vos données sont
+              stockées sur des serveurs situés en France ou dans l'Union
+              Européenne.
             </p>
             <br />
             <p>
-              Pour exercer vos droits, contactez-nous à : <span className="text-white">contact@alicia-gpt.fr</span>
+              Pour exercer vos droits, contactez-nous à :{" "}
+              <span className="text-white">contact@alicia-gpt.fr</span>
             </p>
           </section>
           {/* Cookies */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">5. Cookies</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              5. Cookies
+            </h2>
             <p>
-              Ce site utilise des cookies à des fins statistiques anonymisées (via Matomo) et fonctionnelles (préférences utilisateur).
+              Ce site utilise des cookies à des fins statistiques anonymisées
+              (via Matomo) et fonctionnelles (préférences utilisateur).
             </p>
             <br />
             <p>
-              Vous pouvez refuser ces cookies à tout moment via le bandeau de consentement ou en configurant votre navigateur. Cela n'empêchera pas le bon fonctionnement du site.
+              Vous pouvez refuser ces cookies à tout moment via le bandeau de
+              consentement ou en configurant votre navigateur. Cela n'empêchera
+              pas le bon fonctionnement du site.
             </p>
           </section>
           {/* Responsabilité */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">6. Limitation de responsabilité</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              6. Limitation de responsabilité
+            </h2>
             <p>
-              AlicIA-GPT s'efforce de fournir des informations fiables, mais ne peut garantir l'exactitude, la complétude ou l'actualité des contenus.
+              AlicIA-GPT s'efforce de fournir des informations fiables, mais ne
+              peut garantir l'exactitude, la complétude ou l'actualité des
+              contenus.
             </p>
             <br />
             <p>
-              L'utilisation des outils, conseils ou documents mis à disposition sur ce site se fait sous la seule responsabilité de l'utilisateur.
+              L'utilisation des outils, conseils ou documents mis à disposition
+              sur ce site se fait sous la seule responsabilité de l'utilisateur.
             </p>
             <br />
             <p>
-              AlicIA-GPT décline toute responsabilité en cas de préjudice direct ou indirect lié à l'utilisation du site ou des services proposés.
+              AlicIA-GPT décline toute responsabilité en cas de préjudice direct
+              ou indirect lié à l'utilisation du site ou des services proposés.
             </p>
           </section>
           {/* Loi applicable */}
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-4">7. Loi applicable</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              7. Loi applicable
+            </h2>
             <p>
-              Les présentes mentions légales sont régies par la loi française. En cas de litige, les parties s'engagent à rechercher une solution amiable avant toute action judiciaire. À défaut, les tribunaux de Soissons (Aisne) seront seuls compétents.
+              Les présentes mentions légales sont régies par la loi française.
+              En cas de litige, les parties s'engagent à rechercher une solution
+              amiable avant toute action judiciaire. À défaut, les tribunaux de
+              Soissons (Aisne) seront seuls compétents.
             </p>
           </section>
         </div>

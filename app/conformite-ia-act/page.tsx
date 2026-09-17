@@ -1,5 +1,58 @@
 // src/pages/ConformiteIAActPage.tsx
 "use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Conformité IA Act | AlicIA-GPT",
+    template: "%s | AlicIA-GPT",
+  },
+  description:
+    "Notre engagement de conformité au règlement européen sur l'intelligence artificielle (IA Act). Sécurisez vos usages de l'IA à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+  keywords: [
+    "conformité IA Act",
+    "règlement européen IA",
+    "AI Act européen",
+    "éthique IA",
+    "transparence IA",
+    "audit IA Act",
+    "évaluation des risques IA",
+    "systèmes d'IA à haut risque",
+    "gouvernance IA",
+    "artisans",
+    "TPE",
+    "PME",
+    "Soissons",
+    "Laon",
+    "Villers-Cotterêts",
+    "Château-Thierry",
+    "Chauny",
+    "Meaux",
+    "Compiègne",
+    "Fismes",
+    "Reims",
+    "Aisne",
+    "Oise",
+    "Marne",
+    "Seine-et-Marne",
+    "consultant conformité IA",
+  ],
+  authors: [{ name: "Cyril Gourdon" }],
+  openGraph: {
+    title: "Conformité IA Act | AlicIA-GPT",
+    description:
+      "Notre engagement de conformité au règlement européen sur l'IA (IA Act). Sécurisez vos usages de l'IA à Soissons, Aisne, Oise, Marne et nord 77.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "AlicIA-GPT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Conformité IA Act | AlicIA-GPT",
+    description:
+      "Notre engagement de conformité au règlement européen sur l'IA (IA Act). Sécurisez vos usages de l'IA à Soissons, Aisne, Oise, Marne et nord 77.",
+  },
+};
 
 const ConformiteIAActPage = () => {
   return (
