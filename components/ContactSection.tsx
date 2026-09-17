@@ -24,6 +24,7 @@ const ContactSection: React.FC = () => {
     }
   };
 
+  // ✅ Correction de la syntaxe "=>"
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.rgpd) {
@@ -31,7 +32,8 @@ const ContactSection: React.FC = () => {
       return;
     }
     setStatus("Envoi en cours...");
-    // Simulate form submission
+
+    // Simulation d'envoi (à remplacer par ton appel API réel plus tard)
     setTimeout(() => {
       setStatus("Merci ! Votre message a été envoyé avec succès.");
       setFormData({
@@ -64,11 +66,11 @@ const ContactSection: React.FC = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Nom complet*"
+                placeholder="Nom complet *"
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none"
+                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none w-full"
               />
               <input
                 type="email"
@@ -77,18 +79,19 @@ const ContactSection: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none"
+                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none w-full"
               />
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <input
                 type="text"
                 name="company"
-                placeholder="Entreprise - Statut*"
+                placeholder="Entreprise / Statut *"
                 required
                 value={formData.company}
                 onChange={handleChange}
-                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none"
+                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none w-full"
               />
               <input
                 type="tel"
@@ -96,13 +99,14 @@ const ContactSection: React.FC = () => {
                 placeholder="Téléphone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none"
+                className="bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none w-full"
               />
             </div>
+
             <div>
               <textarea
                 name="message"
-                placeholder="Votre message / Vos besoins*"
+                placeholder="Votre message / Vos besoins *"
                 required
                 rows={5}
                 value={formData.message}
@@ -110,6 +114,7 @@ const ContactSection: React.FC = () => {
                 className="w-full bg-gray-900 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-[#6366F1] focus:border-[#6366F1] outline-none"
               ></textarea>
             </div>
+
             <div className="flex items-start">
               <input
                 id="rgpd"
@@ -118,19 +123,23 @@ const ContactSection: React.FC = () => {
                 required
                 checked={formData.rgpd}
                 onChange={handleChange}
-                className="h-4 w-4 text-[#6366F1] bg-gray-800 border-gray-600 rounded focus:ring-[#6366F1]"
+                className="h-4 w-4 text-[#6366F1] bg-gray-800 border-gray-600 rounded focus:ring-[#6366F1] mt-1"
               />
               <label
                 htmlFor="rgpd"
                 className="ml-3 block text-sm text-gray-400"
               >
                 J'accepte que mes données soient utilisées pour me recontacter.{" "}
-                <a href="#" className="text-[#6366F1] hover:underline">
+                <a
+                  href="/politique-de-confidentialite"
+                  className="text-[#6366F1] hover:underline"
+                >
                   Politique de confidentialité
-                </a>
+                </a>{" "}
                 *
               </label>
             </div>
+
             <div className="text-center">
               <button
                 type="submit"
@@ -140,8 +149,15 @@ const ContactSection: React.FC = () => {
               </button>
             </div>
           </form>
+
           {status && (
-            <p className="mt-4 text-center text-sm text-gray-400">{status}</p>
+            <p
+              className={`mt-4 text-center text-sm ${
+                status.includes("Merci") ? "text-green-400" : "text-gray-400"
+              }`}
+            >
+              {status}
+            </p>
           )}
         </div>
       </div>

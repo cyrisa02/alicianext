@@ -40,6 +40,7 @@ const HeroSection: React.FC = () => {
           </a>
         </div>
       </div>
+
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <svg
           className="w-6 h-6 text-gray-500"
@@ -53,6 +54,7 @@ const HeroSection: React.FC = () => {
           <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
+
       <style jsx>{`
         @keyframes blob {
           0% {

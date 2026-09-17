@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import React, { useState, useCallback, useEffect } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "./icons/UiIcons";
 
@@ -43,7 +44,6 @@ const projects = [
 
 const PortfolioSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // État : visibilité du texte pour chaque slide (true = visible, false = caché)
   const [textVisibility, setTextVisibility] = useState<boolean[]>(
     Array(projects.length).fill(true)
   );
@@ -60,26 +60,21 @@ const PortfolioSection: React.FC = () => {
     setCurrentIndex(newIndex);
   }, [currentIndex]);
 
-  // Effet : gère l’animation de visibilité du texte sur la slide active
   useEffect(() => {
-    // Réinitialise la visibilité à `true` dès qu’on arrive sur une nouvelle slide
     setTextVisibility((prev) => {
       const updated = [...prev];
       updated[currentIndex] = true;
       return updated;
     });
 
-    // Démarrer un intervalle pour basculer visibilité toutes les 5s
     const intervalId = setInterval(() => {
       setTextVisibility((prev) => {
         const updated = [...prev];
-        // Basculer uniquement la slide active
         updated[currentIndex] = !updated[currentIndex];
         return updated;
       });
-    }, 5000); // 5 secondes
+    }, 5000);
 
-    // Nettoyage de l’intervalle quand on quitte la slide ou démonte le composant
     return () => clearInterval(intervalId);
   }, [currentIndex]);
 
@@ -96,7 +91,7 @@ const PortfolioSection: React.FC = () => {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden relative h-110 rounded-lg">
+          <div className="overflow-hidden relative h-[28rem] rounded-lg">
             <div
               className="flex transition-transform ease-out duration-500 h-full"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
