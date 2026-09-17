@@ -109,7 +109,6 @@ const ServiceCard: React.FC<{
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent to-[#6366F1]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="relative z-10">
         <div className="mb-4 text-[#6366F1] group-hover:text-[#00FFB3] transition-colors duration-300">
-          {/* ✅ Correction : typage explicite pour que className soit accepté */}
           {React.cloneElement(icon as React.ReactElement<any>, {
             className: "h-10 w-10",
           })}

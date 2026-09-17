@@ -59,7 +59,6 @@ const WhyUsSection: React.FC = () => {
               className="text-center p-6 bg-[#0A0A0A] rounded-lg border border-gray-800"
             >
               <div className="flex justify-center mb-4 text-[#00FFB3]">
-                {/* ✅ Correction : typage explicite pour que className soit accepté */}
                 {React.cloneElement(reason.icon as React.ReactElement<any>, {
                   className: "h-10 w-10",
                 })}
