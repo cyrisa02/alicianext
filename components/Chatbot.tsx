@@ -1,11 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { ChatbotIcon, CloseIcon, SendIcon } from "./icons/UiIcons";
-import {
-  sendMessageToChat,
-  createChatSession,
-} from "../services/geminiService";
-import type { ChatSession } from "@google/generative-ai";
+import { sendMessageToChat } from "../services/geminiService";
 
 interface Message {
   role: "user" | "model";
@@ -17,12 +13,12 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const chatRef = useRef<ChatSession | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (isOpen && !chatRef.current) {
-      chatRef.current = createChatSession();
+    if (isOpen && !initialized.current) {
+      initialized.current = true;
       setMessages([
         {
           role: "model",
@@ -41,16 +37,19 @@ const Chatbot: React.FC = () => {
     if (!input.trim() || isLoading) return;
 
     const userMessage: Message = { role: "user", text: input };
+    const history =
+      messages.length > 0 && messages[0].role === "model"
+        ? messages.slice(1)
+        : messages;
+
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
     try {
-      if (chatRef.current) {
-        const responseText = await sendMessageToChat(chatRef.current, input);
-        const modelMessage: Message = { role: "model", text: responseText };
-        setMessages((prev) => [...prev, modelMessage]);
-      }
+      const responseText = await sendMessageToChat(history, input);
+      const modelMessage: Message = { role: "model", text: responseText };
+      setMessages((prev) => [...prev, modelMessage]);
     } catch (error) {
       console.error("Error sending message to Gemini:", error);
       const errorMessage: Message = {
@@ -148,7 +147,7 @@ const Chatbot: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Posez votre question..."
-              className="w-full bg-gray-800 border-gray-700 text-white rounded-full py-3 pl-5 pr-12 focus:ring-2 focus:ring-[#6366F1] outline-none"
+              className="w-full bg-gray-800 border border-gray-700 text-white rounded-full py-3 pl-5 pr-12 focus:ring-2 focus:ring-[#6366F1] outline-none"
               disabled={isLoading}
             />
             <button
@@ -161,6 +160,7 @@ const Chatbot: React.FC = () => {
           </div>
         </form>
       </div>
+
       <style jsx>{`
         .animation-delay-200 {
           animation-delay: 0.2s;
