@@ -1,5 +1,3 @@
-"use client"; // Indispensable pour les hooks et useRouter
-
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { Metadata } from "next";

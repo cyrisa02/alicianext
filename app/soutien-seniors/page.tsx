@@ -1,5 +1,4 @@
 // src/pages/SoutienSeniorsPage.tsx
-"use client"; // Indispensable pour les hooks et useRouter
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
