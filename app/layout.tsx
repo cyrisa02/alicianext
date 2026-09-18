@@ -5,7 +5,8 @@ import "./globals.css";
 // ⬇️ Ajoute ces imports (adapte le chemin si tu n'utilises pas l'alias @)
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
+import CookieConsentManager from "../components/CookieConsentManager";
+// ... retire "import Chatbot from '../components/Chatbot';"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,7 +68,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <Chatbot />
+        <CookieConsentManager />
       </body>
     </html>
   );
