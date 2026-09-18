@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import type { Metadata } from "next";
+import ContactCTAButton from "../../components/ContactCTAButton";
 
 export const metadata: Metadata = {
   title: {
@@ -53,39 +52,6 @@ export const metadata: Metadata = {
 };
 
 const MarketingDigitalPage = () => {
-  // 1. Remplacement des hooks React Router par les hooks Next.js
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80, // Compense le header fixe
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleNavClick = (id: string) => {
-    if (pathname === "/") {
-      scrollToSection(id);
-    } else {
-      router.push(`/#${id}`);
-      setTimeout(() => {
-        scrollToSection(id);
-      }, 100);
-    }
-  };
-
-  // Gère le cas où on arrive directement avec une ancre (ex: /marketing#web-scraping)
-  useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.replace("#", "");
-      setTimeout(() => scrollToSection(id), 150);
-    }
-  }, [pathname]);
-
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
       {/* 
@@ -290,12 +256,7 @@ const MarketingDigitalPage = () => {
             Vous voulez savoir combien de prospects vous perdez — faute de
             visibilité, de données ou de contenu régulier ?
           </p>
-          <button
-            onClick={() => handleNavClick("contact")}
-            className="mt-4 bg-[#6366F1] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#4f52c4] transition-colors duration-300 text-lg"
-          >
-            Demandez un audit gratuit
-          </button>
+          <ContactCTAButton label="Demandez un audit gratuit" />
         </div>
       </main>
     </div>
