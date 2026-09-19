@@ -21,9 +21,9 @@ const Footer: React.FC = () => {
               digitale.
             </p>
             <div className="space-y-2 text-sm text-gray-400">
-              <p>📍 12 rue de la Paix, 02200 Soissons</p>
+              <p>📍 02200 Soissons</p>
               <p>📞 +33 6 15 60 33 44</p>
-              <p>✉️ cyril.gourdon.02@gmail.com</p>
+              <p>✉️ alicia.gpt.02@gmail.com</p>
               {/* 💡 Astuce : Pense à remplacer par contact@alicia-gpt.fr quand tu auras ton nom de domaine pour plus de crédibilité B2B */}
             </div>
           </div>
