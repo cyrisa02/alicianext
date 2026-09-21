@@ -25,7 +25,7 @@ const ContactSection: React.FC = () => {
   };
 
   // ✅ Correction de la syntaxe "=>"
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.rgpd) {
       setStatus("Veuillez accepter la politique de confidentialité.");
@@ -33,8 +33,15 @@ const ContactSection: React.FC = () => {
     }
     setStatus("Envoi en cours...");
 
-    // Simulation d'envoi (à remplacer par ton appel API réel plus tard)
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error("Erreur serveur");
+
       setStatus("Merci ! Votre message a été envoyé avec succès.");
       setFormData({
         name: "",
@@ -44,7 +51,10 @@ const ContactSection: React.FC = () => {
         message: "",
         rgpd: false,
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Erreur:", error);
+      setStatus("Une erreur est survenue. Veuillez réessayer.");
+    }
   };
 
   return (
