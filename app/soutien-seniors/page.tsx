@@ -68,7 +68,7 @@ const SoutienSeniorsPage = () => {
           />
           <div className="bg-black/70 p-4 text-center">
             <p className="text-white text-sm italic">
-              “Support Informatique — Votre aide de confiance”
+              "Support Informatique — Votre aide de confiance"
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ const SoutienSeniorsPage = () => {
           </h2>
           <div className="space-y-4 text-gray-400">
             <p>
-              ✅ <strong>Initiation à l’ordinateur</strong> : allumer, utiliser
+              ✅ <strong>Initiation à l'ordinateur</strong> : allumer, utiliser
               la souris, taper au clavier, gérer vos fichiers.
             </p>
             <p>
@@ -135,12 +135,8 @@ const SoutienSeniorsPage = () => {
             </li>
             <li>
               <strong>Formule « Tranquillité »</strong> : 3 heures par mois à
-              120 € (soit 40 €/h), avec priorité d’intervention.
+              120 € (soit 40 €/h), avec priorité d'intervention.
             </li>
-            {/* 
-              <li><strong>Ateliers collectifs</strong> : initiation gratuite en partenariat avec les associations locales 
-              (Soissons, Fère-en-Tardenois, etc.).
-            */}
           </ul>
           <p className="mt-3 text-sm text-gray-400 italic">
             Première heure satisfait ou remboursé
@@ -182,12 +178,102 @@ const SoutienSeniorsPage = () => {
           </p>
         </section>
 
+        {/* NOUVELLE SECTION : Coordonnées de contact pour seniors */}
+        <section className="mt-12 p-8 bg-gradient-to-br from-[#6366F1]/10 to-[#00FFB3]/10 border-2 border-[#6366F1]/30 rounded-xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
+            📞 Comment nous contacter ?
+          </h2>
+          <p className="text-gray-300 text-lg mb-6 text-center max-w-2xl mx-auto">
+            N'hésitez pas à nous appeler ou à nous envoyer un email. Nous vous
+            répondrons avec patience et bienveillance.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Téléphone */}
+            <div className="bg-gray-900/80 p-6 rounded-xl border border-gray-700 hover:border-[#6366F1] transition-colors">
+              <div className="flex items-center justify-center mb-4">
+                <svg
+                  className="w-10 h-10 text-[#6366F1]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2 text-center">
+                Par téléphone
+              </h3>
+              <p className="text-gray-400 text-sm mb-3 text-center">
+                Du lundi au vendredi, 8h - 18h
+              </p>
+              <a
+                href="tel:+33615603344"
+                className="block text-center text-2xl font-bold text-[#00FFB3] hover:text-[#6366F1] transition-colors"
+              >
+                06 15 60 33 44
+              </a>
+              <p className="text-gray-500 text-xs mt-2 text-center">
+                (Appel non surtaxé)
+              </p>
+            </div>
+
+            {/* Email */}
+            <div className="bg-gray-900/80 p-6 rounded-xl border border-gray-700 hover:border-[#00FFB3] transition-colors">
+              <div className="flex items-center justify-center mb-4">
+                <svg
+                  className="w-10 h-10 text-[#00FFB3]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2 text-center">
+                Par email
+              </h3>
+              <p className="text-gray-400 text-sm mb-3 text-center">
+                Réponse sous 24h
+              </p>
+              <a
+                href="mailto:alicia.gpt.02@gmail.com"
+                className="block text-center text-lg font-semibold text-[#00FFB3] hover:text-[#6366F1] transition-colors break-all"
+              >
+                alicia.gpt.02@gmail.com
+              </a>
+              <p className="text-gray-500 text-xs mt-2 text-center">
+                (Nous vous répondons rapidement)
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 text-center">
+            <p className="text-gray-300 text-sm">
+              💡 <strong>Conseil :</strong> Si vous n'êtes pas à l'aise avec
+              l'email,
+              <br className="hidden sm:block" />
+              l'appel téléphonique est le moyen le plus simple pour nous joindre
+              !
+            </p>
+          </div>
+        </section>
+
         {/* CTA avec bouton fonctionnel */}
         <div className="mt-10 text-center">
           <p className="text-gray-400">
-            Une question ? Besoin d’un diagnostic rapide ?
+            Une question ? Besoin d'un diagnostic rapide ?
           </p>
-          {/* <p className="text-gray-300 mt-2">Notre chatbot est là pour vous guider en quelques clics.</p>*/}
           <ContactCTAButton label="Demandez un audit gratuit" />
         </div>
       </main>
