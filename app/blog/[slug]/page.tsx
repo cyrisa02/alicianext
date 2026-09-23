@@ -2,6 +2,7 @@
 import { getAllSlugs, getArticleBySlug } from '@/lib/blog';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
+//  Supprime cette ligne : import GiscusComments from '@/components/GiscusComments';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -42,10 +43,12 @@ export default async function ArticlePage({ params }: { params: { slug: string }
             </time>
           </header>
 
-          {/* Rendu du contenu MDX adapté au thème sombre */}
           <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-strong:text-white">
             <MDXRemote source={article.content} />
           </div>
+
+          {/* ❌ Supprime cette ligne : <GiscusComments /> */}
+          {/* ✅ On ajoutera Cusdis ici à la prochaine étape */}
         </article>
       </main>
     </div>
