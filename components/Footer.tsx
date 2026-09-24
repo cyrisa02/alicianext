@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { GithubIcon, LinkedinIcon } from "./icons/SocialIcons";
 
 const Footer: React.FC = () => {
@@ -9,12 +10,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Colonne 1 : Marque & Contact */}
           <div className="text-center md:text-left">
-            <a
+            <Link
               href="/"
-              className="text-2xl font-bold text-white inline-block mb-4"
+              className="text-2xl font-bold text-white inline-block mb-4 hover:opacity-80 transition-opacity"
             >
               Alic<span className="text-[#6366F1]">IA</span>-GPT
-            </a>
+            </Link>
             <p className="text-gray-400 text-sm mb-4">
               Agence de consulting en Intelligence Artificielle à Soissons. Nous
               accompagnons les entreprises locales dans leur transformation
@@ -24,47 +25,55 @@ const Footer: React.FC = () => {
               <p>📍 02200 Soissons</p>
               <p>📞 +33 6 15 60 33 44</p>
               <p>✉️ alicia.gpt.02@gmail.com</p>
-              {/* 💡 Astuce : Pense à remplacer par contact@alicia-gpt.fr quand tu auras ton nom de domaine pour plus de crédibilité B2B */}
             </div>
           </div>
 
-          {/* Colonne 2 : Support & Navigation (FAQ mise en avant) */}
+          {/* Colonne 2 : Support & Navigation */}
           <div className="text-center">
             <h3 className="text-white font-semibold mb-4">
               Support & Navigation
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a
+                <Link
                   href="/faq"
                   className="font-medium text-[#6366F1] hover:text-[#00FFB3] transition-colors"
                 >
                   Questions Fréquentes (FAQ)
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#contact"
                   className="hover:text-white transition-colors"
                 >
                   Nous Contacter
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#services"
                   className="hover:text-white transition-colors"
                 >
                   Nos Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#portfolio"
                   className="hover:text-white transition-colors"
                 >
                   Portfolio
-                </a>
+                </Link>
+              </li>
+              {/* ✅ Ajout du lien vers le Blog */}
+              <li>
+                <Link
+                  href="/blog"
+                  className="hover:text-white transition-colors"
+                >
+                  Blog
+                </Link>
               </li>
             </ul>
           </div>
@@ -76,44 +85,44 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a
+                <Link
                   href="/mentions-legales"
                   className="hover:text-white transition-colors"
                 >
                   Mentions Légales
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/politique-confidentialite"
                   className="hover:text-white transition-colors"
                 >
                   Politique de Confidentialité
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/conditions-generales-de-vente"
                   className="hover:text-white transition-colors"
                 >
                   CGV
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/conditions-generales-d-utilisation"
                   className="hover:text-white transition-colors"
                 >
                   CGU
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/conformite-ia-act"
                   className="hover:text-white transition-colors"
                 >
                   Conformité IA Act
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

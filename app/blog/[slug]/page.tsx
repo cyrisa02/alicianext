@@ -1,15 +1,20 @@
 // app/blog/[slug]/page.tsx
-import { getAllSlugs, getArticleBySlug } from '@/lib/blog';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { notFound } from 'next/navigation';
-//  Supprime cette ligne : import GiscusComments from '@/components/GiscusComments';
+import { getAllSlugs, getArticleBySlug } from "@/lib/blog";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { notFound } from "next/navigation";
+import CommentList from "@/components/CommentList";
+import CommentForm from "@/components/CommentForm";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const article = getArticleBySlug(params.slug);
   if (!article) return {};
 
@@ -19,9 +24,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
+export default async function ArticlePage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const article = getArticleBySlug(params.slug);
-  
+
   if (!article) {
     notFound();
   }
@@ -35,10 +44,10 @@ export default async function ArticlePage({ params }: { params: { slug: string }
               {article.frontmatter.title}
             </h1>
             <time className="text-gray-400 text-sm">
-              {new Date(article.frontmatter.date).toLocaleDateString('fr-FR', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
+              {new Date(article.frontmatter.date).toLocaleDateString("fr-FR", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
               })}
             </time>
           </header>
@@ -47,8 +56,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
             <MDXRemote source={article.content} />
           </div>
 
-          {/* ❌ Supprime cette ligne : <GiscusComments /> */}
-          {/* ✅ On ajoutera Cusdis ici à la prochaine étape */}
+          {/* Section commentaires */}
+          <CommentList postId={article.slug} />
+          <CommentForm postId={article.slug} />
         </article>
       </main>
     </div>
