@@ -34,11 +34,15 @@ export default function CommentManager({ comments }: { comments: Comment[] }) {
         <h1 className="text-2xl font-bold text-white">
           Modération des commentaires
         </h1>
-        <form action={logout}>
-          <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm">
-            Déconnexion
-          </button>
-        </form>
+        <button
+          onClick={async () => {
+            await logout();
+            window.location.href = "/admin/comments";
+          }}
+          className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm"
+        >
+          Déconnexion
+        </button>
       </div>
 
       {comments.length === 0 ? (
