@@ -1,0 +1,162 @@
+---
+title: "J'ai transformé mon tableau de running en coach IA pour 0€"
+description: "Retour d'expérience : comment j'ai branché Google Sheets, Telegram et Mistral AI pour analyser automatiquement mes sorties de course à pied. Une après-midi de travail, zéro abonnement."
+date: "2026-09-29"
+author: "Cyril Gourdon"
+readingTime: "5 min"
+tags:
+  - automatisation
+  - IA
+  - Google Sheets
+  - Telegram
+  - Mistral AI
+  - running
+  - productivité
+  - TPE
+  - PME
+category: "Retour d'expérience"
+---
+
+Chaque semaine, je notais mes sorties à la main dans un tableau. Distance, temps, fréquence cardiaque. **212 sorties empilées. Zéro analyse.**
+
+J'ai branché ce tableau sur un bot Telegram. Aujourd'hui, chaque nouvelle sortie déclenche un message automatique, et une commande suffit pour obtenir un bilan annuel commenté par une intelligence artificielle.
+
+**Temps de dev :** 4h  
+**Coût mensuel :** 0€  
+**Coût par analyse IA :** 2 centimes  
+**Sorties analysées :** 212
+
+---
+
+## Ce que fait l'outil
+
+L'outil fait trois choses simples.
+
+**D'abord**, il m'envoie un récap dès que j'ajoute une ligne dans mon tableau. Date, distance, temps, fréquence cardiaque, vitesse. Plus besoin d'ouvrir le tableur pour voir ma dernière sortie.
+
+**Ensuite**, il calcule automatiquement un bilan mensuel et annuel. Nombre de sorties, kilométrage total, temps cumulé, fréquence cardiaque moyenne, vitesse moyenne. Le tout comparé mois par mois.
+
+**Enfin**, une commande "coach" envoie toutes ces données à une intelligence artificielle. L'IA me renvoie une analyse : ma progression année par année, mes points forts, mes axes d'amélioration, un objectif réaliste pour la saison prochaine.
+
+> 212 sorties, 1 450 km, 145 heures de course. Analysés en quatre secondes.
+
+---
+
+## Comment ça marche
+
+Quatre outils, chacun avec un rôle clair.
+
+### Google Sheets — La base de données
+
+C'est là que je saisis mes sorties, comme dans n'importe quel tableur. Rien de nouveau, rien de compliqué.
+
+### Google Apps Script — Le moteur invisible
+
+Un petit programme qui vit à l'intérieur du tableur et qui surveille les modifications. Il se déclenche tout seul, sans que j'aie à cliquer.
+
+### Telegram — Le canal de diffusion
+
+Le bot m'envoie les messages directement sur mon téléphone. Je reçois l'info au bon moment, au bon endroit.
+
+### Mistral AI — Le rédacteur
+
+Une intelligence artificielle française qui analyse les données et rédige le bilan en langage naturel. Elle parle comme un coach, pas comme un tableur.
+
+---
+
+## Les 3 problèmes rencontrés
+
+### Le format des nombres qui ne parlait pas la même langue
+
+**Le problème** : les vitesses arrivaient avec un point décimal (format anglais), mais mon tableur en français attendait une virgule. Résultat : des erreurs partout.
+
+**La solution** : au lieu de me battre avec la conversion, j'ai calculé la vitesse directement à partir de la distance et du temps. Une formule simple : distance divisée par temps, multipliée par 3 600.
+
+> Quand un format de données pose problème, il est souvent plus simple de le recalculer à la source que de le convertir.
+
+### Le message qui partait trop tôt
+
+**Le problème** : à chaque cellule modifiée, le bot envoyait un message. Je n'avais pas le temps de remplir toute la ligne que le résumé partait déjà, avec des données incomplètes.
+
+**La solution** : j'ai remplacé le déclencheur instantané par une vérification toutes les cinq minutes. Le script attend que la ligne soit complète avant d'envoyer.
+
+> Une automatisation doit respecter le rythme humain. Parfois, attendre cinq minutes évite dix corrections.
+
+### La clé API introuvable
+
+**Le problème** : l'IA ne répondait pas. Le code cherchait la clé sous un nom, mais elle était enregistrée sous un autre. Une erreur bête de nommage.
+
+**La solution** : j'ai listé toutes les propriétés stockées dans le script pour trouver le bon nom. Cinq minutes de diagnostic au lieu d'une heure de tâtonnement.
+
+> Avant de chercher une erreur complexe, vérifier les noms et les orthographes. 80% des bugs viennent de là.
+
+---
+
+## Le coût réel
+
+**Temps de développement :** 4h  
+**Coût des outils :** 0€  
+**Coût IA par analyse :** 0,02€  
+**Maintenance :** 0h
+
+Pour comparaison, c'est **moins cher qu'un mois d'abonnement à une application de coaching sportif**, et bien plus personnalisé.
+
+---
+
+## Les limites
+
+Soyons honnêtes, l'outil n'est pas magique.
+
+- **L'outil ne remplace pas un vrai coach.** L'IA analyse des chiffres, elle ne voit pas ma forme du jour, mon sommeil, mon stress.
+- **La saisie reste manuelle.** Il faudrait brancher l'API Strava pour automatiser complètement, mais c'est un projet en soi.
+- **Le bilan annuel par IA est pertinent, mais limité.** Il ne connaît pas mon historique au-delà des chiffres. Un coach humain apporterait un regard que l'IA n'a pas.
+
+---
+
+## Les enseignements
+
+### 1. Cartographier avant de coder
+
+Avant d'écrire une ligne de code, j'ai listé sur papier : quelles données j'ai, quelles données je veux, quel canal pour les recevoir. Cette étape a pris vingt minutes et m'a évité trois jours d'allers-retours.
+
+En formation, je fais toujours commencer par là. **Un schéma sur une feuille vaut mieux qu'un outil mal choisi.**
+
+### 2. Une IA ne devine pas, elle structure
+
+L'intelligence artificielle ne va pas chercher l'information. Il faut lui apporter des données propres, organisées, complètes. Si le tableau est vide ou incohérent, l'analyse sera vide ou incohérente.
+
+**C'est la règle d'or de l'automatisation** : la qualité du résultat dépend de la qualité de la donnée d'entrée.
+
+### 3. Un prototype imparfait vaut mieux qu'un outil parfait
+
+J'aurais pu passer trois semaines à connecter Strava en automatique, gérer les fuseaux horaires, les unités, les erreurs d'API. J'ai choisi de saisir à la main et d'avoir un outil qui marche ce soir.
+
+**Le perfectionnisme est l'ennemi de l'automatisation.** Mieux vaut un système simple qui tourne qu'un système complexe qui reste dans les tiroirs.
+
+---
+
+## Conclusion
+
+L'automatisation n'est pas réservée aux développeurs. Avec un tableur, un bot Telegram et une IA, on peut transformer des données dormantes en coach personnel pour le prix d'un café par an.
+
+Trois pistes pour aller plus loin :
+
+### Formation AlicIA-GPT — Pour les indépendants et TPE
+
+Accompagnement pas à pas pour construire vos premières automatisations, sans prérequis technique.
+
+### Consulting sur mesure — Pour les PME
+
+Automatisation de processus métier spécifiques : devis, relances, reporting, suivi client.
+
+### Template gratuit — Sur demande
+
+Le template Google Sheets + Apps Script pour démarrer un projet similaire. Écrivez-moi en commentaire.
+
+> **Et vous, c'est quoi la donnée que vous collectez sans jamais vraiment l'analyser ?** Dites-le-moi en commentaire, je prépare peut-être un article sur le sujet.
+
+---
+
+_Article publié le 29 septembre 2026_
+
+_Temps de lecture : 5 minutes_

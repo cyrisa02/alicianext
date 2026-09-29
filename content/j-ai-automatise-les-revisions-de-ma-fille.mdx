@@ -1,0 +1,151 @@
+---
+title: "J'ai automatisé les révisions de ma fille pour 2 centimes par jour"
+description: "Retour d'expérience : comment j'ai utilisé Google Docs, Google Sheets et Mistral AI pour envoyer des QCM quotidiens à ma fille. Une après-midi de configuration, zéro abonnement."
+date: "2026-09-29"
+author: "Cyril Gourdon"
+readingTime: "4 min"
+tags:
+  - automatisation
+  - IA
+  - Google Apps Script
+  - Mistral AI
+  - éducation
+  - productivité
+  - TPE
+category: "Retour d'expérience"
+---
+
+Chaque soir, je perdais 45 minutes à fabriquer des QCM à la main pour les révisions de ma fille. Au bout d'une semaine, j'étais épuisé avant même d'attaquer ma propre journée de travail.
+
+J'ai construit un système qui fait tout ça tout seul, à 7h du matin, dans sa boîte mail. **Coût : 2 centimes par jour. Temps de configuration : une après-midi.** Voici comment.
+
+**Temps de config :** 4h  
+**Coût mensuel :** 0,60€  
+**Outils :** Google Docs, Sheets, Mistral AI
+
+---
+
+## Ce que fait l'outil
+
+Le système envoie chaque matin un email à ma fille avec trois choses :
+
+- Un message d'encouragement personnalisé, différent chaque jour, avec des emojis licorne et cœur.
+- Deux questions à choix multiple sur le chapitre du jour, avec les trois réponses et l'explication détaillée.
+- Un mini-cours d'anglais de 3-4 lignes sur un thème différent selon le jour de la semaine.
+
+L'email arrive à heure fixe. Elle le lit pendant son petit-déjeuner. Elle coche mentalement les bonnes réponses. En 5 minutes, c'est fait.
+
+Le script se souvient où il en est. Aujourd'hui le chapitre 1, demain le chapitre 2. Dans 30 jours, on recommence au début. Elle n'a rien à configurer, rien à lancer.
+
+---
+
+## Comment ça marche
+
+Trois outils gratuits, tous connectés entre eux :
+
+### Google Docs — Le manuel de cours
+
+Un seul fichier avec les 30 chapitres, formatés avec des titres clairs. C'est la source de vérité.
+
+### Google Sheets — Le cerveau
+
+Il contient le script qui orchestre tout et garde la mémoire du chapitre en cours. C'est le chef d'orchestre invisible.
+
+### Mistral AI — Le rédacteur
+
+Une intelligence artificielle française qui génère les questions et le coaching anglais à partir du texte du chapitre.
+
+Le tout tourne sur les serveurs de Google, gratuitement. Pas de serveur à louer, pas d'abonnement à payer.
+
+---
+
+## Les 3 problèmes rencontrés
+
+### L'IA écrivait du code au lieu du texte
+
+**Le problème** : Mistral retournait du format markdown avec des astérisques pour le gras. Gmail ne sait pas lire le markdown. Résultat : ma fille recevait des étoiles partout dans son email.
+
+**La solution** : j'ai ajouté une petite fonction de conversion qui transforme les astérisques en vrai gras HTML.
+
+> **Leçon** : une IA ne sait pas dans quel format tu veux le résultat. Il faut toujours lui préciser le format de sortie attendu.
+
+### Les clés du JSON avaient des espaces invisibles
+
+**Le problème** : j'avais écrit mon prompt avec des espaces après les noms des champs. L'IA a reproduit ces espaces. Mon script cherchait "encouragement" mais trouvait "encouragement " (avec un espace). Rien ne s'affichait.
+
+**La solution** : j'ai nettoyé toutes les clés dans le prompt et ajouté un filet de sécurité qui cherche les deux versions.
+
+> **Leçon** : quand on donne un exemple à une IA, elle le copie à la lettre, espaces inclus. La propreté du prompt est critique.
+
+### Trente chapitres, un seul email
+
+**Le problème** : au début, je voulais tout envoyer d'un coup. L'email faisait 15 kilomètres de long. Illisible.
+
+**La solution** : un chapitre par jour, avec rotation automatique. Le script enregistre le numéro du dernier chapitre traité et passe au suivant le lendemain.
+
+> **Leçon** : automatiser ne veut pas dire tout envoyer. Parfois, automatiser c'est savoir doser.
+
+---
+
+## Le coût réel
+
+- **Temps de développement** : une après-midi (environ 4 heures, en comptant les allers-retours de debug)
+- **Coût de l'IA** : environ 2 centimes par jour, soit 60 centimes par mois
+- **Hébergement** : 0€, tout tourne sur Google
+- **Maintenance** : 5 minutes par mois pour vérifier que tout tourne
+
+Pour comparer : c'est moins cher qu'un abonnement Netflix, et ça remplace 45 minutes de travail manuel chaque soir.
+
+---
+
+## Les limites
+
+Soyons honnêtes, l'outil n'est pas parfait.
+
+- **Pas de suivi de progression.** Le système ne sait pas si ma fille a compris les questions. Il n'y a pas de correction automatique, pas de score.
+- **Formatage rigoureux requis.** Si le Google Doc est mal formaté (titres pas en "Titre 1"), le script ne trouve aucun chapitre. Il faut un minimum de rigueur dans la mise en forme.
+- **Questions parfois bancales.** L'IA peut parfois générer une question maladroite. Sur 30 jours, ça arrive 2 ou 3 fois. On survit.
+
+---
+
+## Les enseignements
+
+### 1. L'automatisation ritualise l'apprentissage
+
+Avant, les révisions dépendaient de ma motivation du soir. Certaines nuits, je sautais. Maintenant, c'est un rituel fixe, comme le brossage de dents. **La régularité bat l'intensité.**
+
+### 2. Un périmètre étroit donne de meilleurs résultats
+
+Deux questions par chapitre, pas trente. L'IA excelle quand on lui demande peu de choses précises plutôt que beaucoup de choses vagues. **C'est vrai pour l'IA, c'est vrai pour les humains aussi.**
+
+### 3. Cartographier avant de coder
+
+J'ai passé plus de temps à réfléchir à la structure du Google Doc et au format de l'email qu'à écrire le code. C'est toujours comme ça : **80% du travail est en amont, 20% dans l'éditeur.**
+
+---
+
+## Conclusion
+
+Ce projet m'a rappelé une chose simple : l'automatisation n'est pas réservée aux entreprises. Un parent qui veut aider son enfant à réviser peut construire un outil sur mesure, pour le prix d'un café par mois.
+
+Si vous voulez creuser le sujet :
+
+### Formation AlicIA-GPT — Pour les TPE et indépendants
+
+J'anime des ateliers pour ceux qui veulent automatiser leurs tâches répétitives, sans prérequis technique.
+
+### Consulting sur mesure
+
+Je peux auditer vos flux et identifier les 3 automatisations les plus rentables pour votre activité.
+
+### Ressources gratuites
+
+Le code complet de ce projet est disponible sur demande pour ceux qui veulent s'inspirer. Écrivez-moi en commentaire.
+
+> **Et vous, c'est quoi la tâche répétitive de votre quotidien que vous rêveriez d'automatiser ?** Dites-le-moi en commentaire.
+
+---
+
+_Article publié le 29 septembre 2026_
+
+_Temps de lecture : 4 minutes_
