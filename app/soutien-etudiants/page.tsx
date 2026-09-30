@@ -150,6 +150,32 @@ const SoutienEtudiantsPage = () => {
         </section>
 
         {/* Témoignage Google (à adapter si possible) */}
+
+        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-700 rounded-xl text-center">
+          <div className="flex justify-center mb-2">
+            {[...Array(5)].map((_, i) => (
+              <svg
+                key={i}
+                className="w-5 h-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.736c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote className="text-gray-200 italic text-lg">
+            « J'avais un livre de psycho de 30 chapitres. Ils m'ont montrée
+            comment utiliser NoteBookLM pour faire mes fiches de révision avec
+            un super prompt. Tous les matins, je reçois un mail avec un quizz
+            sur un des chapitres. J'ai aussi un coach en anglais. Le plus: un
+            petit message personnalisé quotidien pour me booster! »
+          </blockquote>
+          <p className="text-gray-400 mt-2">
+            — Alice, étudiante en Psychologie de Soissons à la faculté de Reims
+          </p>
+        </section>
+
         <section className="mb-12 p-6 bg-gray-900/50 border border-gray-700 rounded-xl text-center">
           <div className="flex justify-center mb-2">
             {[...Array(5)].map((_, i) => (
@@ -169,8 +195,7 @@ const SoutienEtudiantsPage = () => {
             NotebookLM pour mes notes de cours. — gain de temps énorme ! »
           </blockquote>
           <p className="text-gray-400 mt-2">
-            — Camille, étudiante en Psychologie de Soissons à la faculté de
-            Reims
+            — Camille, étudiante en Droit de Laon à la faculté de Reims
           </p>
         </section>
 
