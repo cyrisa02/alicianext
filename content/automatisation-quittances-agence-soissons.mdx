@@ -1,0 +1,102 @@
+---
+title: "Agence immo : 4h gagnées par mois sur les quittances"
+subtitle: "Retour d'expérience : comment une agence de Soissons a supprimé la corvée du 5 du mois."
+description: "J'ai monté un système qui génère et envoie les quittances de loyer automatiquement. Voici comment, sans coder et sans payer d'abonnement."
+date: "2026-10-01"
+author: "Cyril Gourdon"
+category: "Automatisation IA"
+tags: ["Immobilier", "Automatisation", "Gmail", "Google Sheets", "Productivité"]
+readingTime: "5 min"
+---
+
+Le 5 du mois, c'était toujours la même panique dans cette agence immobilière de Soissons.
+Entre les retards de virements, les locataires qui appellent pour demander leur quittance et les PDF à générer un par un, la matinée y passait. Résultat ? 4 heures perdues chaque mois sur des tâches à faible valeur ajoutée. Et une image peu professionnelle quand un locataire relançait l'agence par erreur.
+J'ai décidé de régler ça avec un outil simple.<br />
+<br />
+
+---
+
+---
+<br />
+## **Le résultat ?**
+<br />
+
+ Les quittances partent toutes seules. Le temps de préparation est passé de 4 heures à 15 minutes (juste pour vérifier les cas particuliers). Et le coût de l'opération ? Zéro euro de plus sur la facture mensuelle.
+Voici comment j'ai construit ce "robot" sans écrire une seule ligne de code.
+<br />
+<br />
+## **Ce que fait l'outil**
+<br />
+<br />
+Imaginez un assistant virtuel qui ne dort jamais. Chaque mois, il ouvre le classeur de suivi des loyers.
+Il regarde la colonne "Payé". Si la case est cochée, il agit. Il récupère les infos du locataire, remplit un modèle de quittance propre, transforme le tout en PDF et l'envoie par email dans un brouillon avec un message personnalisé.
+<br />
+Concrètement, cela permet de :<br />
+
+    Envoyer 120 quittances en 2 minutes au lieu de 4 heures.<br />
+    Éviter les oublis : le système ne prend pas de café et ne se trompe pas de destinataire.<br />
+    Rassurer les locataires : ils reçoivent leur document dès le 5 du mois, pile à l'heure.<br />
+
+L'agence a gagné en sérénité. Les collaborateurs peuvent enfin se concentrer sur la gestion courante ou la prospection, plutôt que sur de l'administratif pur.
+<br />
+<br />
+## **Comment ça marche**<br />
+
+Pour faire simple, j'ai utilisé trois briques que vous avez probablement déjà.
+
+    **Google Sheets** : C'est le cerveau et le classeur. C'est là qu'on coche les loyers reçus et où sont stockées les adresses email.
+   <br /> **Gmail** : C'est le facteur. Il sert uniquement à distribuer le courrier.
+    
+<br /><br />
+L'analogie est simple : Google Sheets est l'armoire à dossiers. Make est l'internat qui prend le dossier quand vous lui dites. Gmail est la poste qui l'achemine.
+<br /><br />
+## **Les 3 problèmes rencontrés** <br />
+Tout n'a pas été rose du premier coup. Voici les obstacles et comment je les ai contournés.<br /><br />
+**Le problème du "joli" PDF**<br />
+Google Sheets sait faire des calculs, mais il est mauvais pour la mise en page. Les premières quittances ressemblaient à des tableaux Excel imprimés.<br />
+La solution : J'ai utilisé un modèle GoogleDoc que j'ai enregistré sur le Drive.<br />
+La leçon : Ne cherchez pas à réinventer la roue, utilisez des outils qui existent déjà pour la mise en forme.<br /><br />
+**Le déclencheur "magique"**<br />
+Au début, le robot tournait en boucle et renvoyait les anciennes quittances. C'était la catastrophe.<br />
+La solution : J'ai ajouté une colonne "Date d'envoi". Le robot ne touche que les lignes où cette case est vide. Une fois envoyé, il écrit la date du jour.<br />
+La leçon : Un bon processus a besoin d'une "mémoire" pour savoir ce qu'il a déjà fait.<br /><br />
+**Le ton de l'email**<br />
+Les premiers messages étaient trop froids. On aurait dit un spam bancaire.<br />
+**La solution** : J'ai intégré le prénom du locataire dans l'objet et ajouté une phrase type "Bonne réception de votre quittance pour le logement du [Adresse]".<br />
+**La leçon **: L'automatisation ne doit pas tuer le lien humain, surtout dans l'immobilier.<br /><br />
+## **Le coût réel**<br />
+Soyons transparents sur l'investissement.<br />
+
+    Temps de développement : Une après-midi (environ 4h), café inclus.<br />
+    Coût des outils : 0€ (Nous sommes restés dans les versions gratuites de Sheets et Gmail).<br />
+    Hébergement : 0€ (Tout est dans le cloud existant).<br />
+    Maintenance : 10 minutes par mois pour vérifier que tout est parti.<br /><br />
+
+Pour comparer, cela coûte moins cher qu'un abonnement Netflix et cela rapporte l'équivalent d'une demi-journée de travail d'employé par mois.<br /><br />
+## **Les limites**
+Je ne vais pas vous vendre du rêve, ce système n'est pas parfait.<br />
+
+    Il ne vérifie pas réellement si l'argent est sur le compte bancaire (il se fie juste à la case cochée par l'humain).<br />
+    Si vous modifiez la structure du tableau (enlever une colonne), le robot ne comprend plus rien et s'arrête.<br />
+    Ce n'est pas adapté si vous gérez plusieurs milliers de lots (les limites d'envoi de Gmail bloqueraient).<br /><br />
+
+## **Les enseignements**
+Ce projet m'a appris trois choses essentielles pour toute automatisation en PME.
+1. **La règle du "Minimum Viable"**<br />
+N'essayez pas de connecter le logiciel comptable, le CRM et la banque. Commencez par ce que vous avez sous la main : un fichier Excel et une boîte mail. La perfection est l'ennemie du temps gagné.
+2. **L'humain reste le chef**<br />
+L'outil ne décide pas. C'est le gestionnaire qui valide le paiement (la case cochée). L'IA et l'automatisation sont des exécutants, pas des décideurs. Cela rassure les équipes et évite les erreurs graves.
+3. **La charge mentale avant tout**<br />
+Le vrai ROI n'est pas seulement financier. C'est le soulagement du gestionnaire qui sait que, le 5 du mois, tout est déjà fait. En formation, j'insiste toujours là-dessus : on automatise pour libérer l'esprit, pas juste pour aller plus vite.
+<br /><br /><br />
+## **Conclusion**<br /><br />
+Ce projet pour l'agence de Soissons prouve qu'on n'a pas besoin d'être une multinationale pour utiliser l'IA et l'automatisation. Il suffit de regarder ses tâches répétitives avec un peu de recul.
+<br /><br />
+Vous voulez voir à quoi ressemble le tableau type ou comprendre comment brancher votre propre "robot" ?
+
+    
+    Réserver un audit de 30 min pour identifier VOS tâches à automatiser<br />
+    Rejoindre la formation "Automatisation pour non-tech"
+<br /><br />
+Article publié le 01/10/2026<br />
+Mots-clés : automatisation immobilier, envoi quittance gmail, google sheets immo, gain de temps agence, make.com tutoriel
