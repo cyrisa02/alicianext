@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | AlicIA-GPT",
   },
   description:
-    "Assistance informatique, antivirus et dépannage patient et pédagogique pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+    "Assistance informatique, antivirus et dépannage patient et pédagogique pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, dans l'Aisne.",
   keywords: [
     "assistance informatique senior",
     "dépannage informatique à domicile",

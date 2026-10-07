@@ -131,12 +131,11 @@ const SoutienEtudiantsPage = () => {
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-gray-300">
             <li>
-              <strong>À la séance</strong> : 45 € / heure, sans engagement.
+              <strong>À la séance</strong> : 30 € / heure, sans engagement.
             </li>
             <li>
-              <strong>Formule « Réussite »</strong> : 3 heures par mois à 120 €
-              (soit 40 €/h), avec priorité et accès à un espace ressources
-              exclusif.
+              <strong>Formule « Réussite »</strong> : 3 heures par mois à 80 €
+              (soit 27 €/h).
             </li>
             <li>
               <strong>Ateliers collectifs</strong> : initiation gratuite à l’IA
@@ -144,9 +143,9 @@ const SoutienEtudiantsPage = () => {
               Soissons et environs.
             </li>
           </ul>
-          <p className="mt-3 text-sm text-gray-400 italic">
+          {/* <p className="mt-3 text-sm text-gray-400 italic">
             Première heure satisfait ou remboursé
-          </p>
+          </p> */}
         </section>
 
         {/* Témoignage Google (à adapter si possible) */}
