@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyer AlicIA-GPT - Intégration IA pour Professionnels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @page {
+        size: 297mm 210mm;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f3f4f6;
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .a4-sheet {
+        width: 297mm;
+        height: 210mm;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        box-sizing: border-box;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
+      .a5-flyer {
+        width: 148.5mm;
+        height: 210mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 8mm 7mm;
+        box-sizing: border-box;
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        border: 2px solid #6366f1;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        page-break-inside: avoid;
+      }
+      .a5-flyer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #6366f1 0%, #00ffb3 100%);
+      }
+      .cut-line {
+        position: absolute;
+        left: 50%;
+        top: 10mm;
+        bottom: 10mm;
+        border-left: 1px dashed #6366f1;
+        transform: translateX(-50%);
+        opacity: 0.3;
+      }
+      @media print {
+        body {
+          background: white;
+        }
+        .a4-sheet {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a4-sheet">
+      <!-- FLYER 1 (Gauche) -->
+      <div class="a5-flyer">
+        <div>
+          <div class="flex flex-col items-center text-center mb-3">
+            <div
+              class="bg-gradient-to-br from-[#6366F1] to-[#00FFB3] p-2.5 rounded-full mb-2 shadow-lg"
+            >
+              <!-- Icône IA / Innovation -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                />
+              </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-white leading-tight mb-1">
+              AlicIA-GPT
+            </h1>
+            <p
+              class="text-[#00FFB3] text-sm font-semibold uppercase tracking-wide"
+            >
+              Intégration de l'IA pour PME, TPE, Artisans & Commerçants
+            </p>
+          </div>
+
+          <div
+            class="bg-[#6366F1]/20 border border-[#6366F1]/40 rounded-lg p-2 mb-3"
+          >
+            <p
+              class="text-gray-200 text-sm text-center leading-relaxed font-medium"
+            >
+              <span class="text-[#00FFB3] font-bold">
+                Transformez votre entreprise</span
+              ><br />
+              avec des solutions d'intelligence artificielle sur-mesure.
+            </p>
+          </div>
+
+          <ul class="space-y-1.5">
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Audit & Conseil :</strong> Analyse
+                de vos processus et feuille de route IA.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Automatisation :</strong>
+                Administration, comptabilité, support commercial.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Marketing & SEO :</strong> Création
+                de contenu, veille et référencement local.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Formations :</strong> Rendez vos
+                équipes opérationnelles sur l'IA générative.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Ressources Humaines :</strong>
+                Agents IA pour l'analyse et l'onboarding.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <div
+            class="bg-gradient-to-r from-[#6366F1]/30 to-[#00FFB3]/30 border border-[#6366F1]/50 rounded-lg p-2.5"
+          >
+            <p class="text-white text-center text-sm font-bold mb-1">
+              💡 Audit de vos processus et feuille de route IA
+            </p>
+            <p class="text-gray-300 text-center text-xs italic">
+              Une méthodologie éprouvée en 4 étapes : Audit, Stratégie,
+              Intégration, Autonomie.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <p class="text-[#00FFB3] font-bold text-xl">06 15 60 33 44</p>
+            <p class="text-gray-400 text-xs mt-1">Lun - Ven : 8h00 - 18h00</p>
+            <p class="text-gray-400 text-xs mt-1 break-all">
+              alicia.gpt.02@gmail.com
+            </p>
+            <p class="text-[#6366F1] font-semibold text-sm mt-1">
+              www.alicia-gpt.fr
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne de découpe -->
+      <div class="cut-line"></div>
+
+      <!-- FLYER 2 (Droite - Identique) -->
+      <div class="a5-flyer">
+        <div>
+          <div class="flex flex-col items-center text-center mb-3">
+            <div
+              class="bg-gradient-to-br from-[#6366F1] to-[#00FFB3] p-2.5 rounded-full mb-2 shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                />
+              </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-white leading-tight mb-1">
+              AlicIA-GPT
+            </h1>
+            <p
+              class="text-[#00FFB3] text-sm font-semibold uppercase tracking-wide"
+            >
+              Intégration de l'IA pour PME, TPE, Artisans & Commerçants
+            </p>
+          </div>
+
+          <div
+            class="bg-[#6366F1]/20 border border-[#6366F1]/40 rounded-lg p-2 mb-3"
+          >
+            <p
+              class="text-gray-200 text-sm text-center leading-relaxed font-medium"
+            >
+              <span class="text-[#00FFB3] font-bold"
+                >🚀 Transformez votre entreprise</span
+              ><br />
+              avec des solutions d'intelligence artificielle sur-mesure.
+            </p>
+          </div>
+
+          <ul class="space-y-1.5">
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Audit & Conseil :</strong> Analyse
+                de vos processus et feuille de route IA.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Automatisation :</strong>
+                Administration, comptabilité, support commercial.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Marketing & SEO :</strong> Création
+                de contenu, veille et référencement local.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Formations :</strong> Rendez vos
+                équipes opérationnelles sur l'IA générative.</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-lg mt-0.5">✓</span>
+              <span class="text-gray-300 text-sm"
+                ><strong class="text-white">Ressources Humaines :</strong>
+                Agents IA pour l'analyse et l'onboarding.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <div
+            class="bg-gradient-to-r from-[#6366F1]/30 to-[#00FFB3]/30 border border-[#6366F1]/50 rounded-lg p-2.5"
+          >
+            <p class="text-white text-center text-sm font-bold mb-1">
+              Audit de vos processus et feuille de route IA
+            </p>
+            <p class="text-gray-300 text-center text-xs italic">
+              Une méthodologie éprouvée en 4 étapes : Audit, Stratégie,
+              Intégration, Autonomie.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <p class="text-[#00FFB3] font-bold text-xl">06 15 60 33 44</p>
+            <p class="text-gray-400 text-xs mt-1">Lun - Ven : 8h00 - 18h00</p>
+            <p class="text-gray-400 text-xs mt-1 break-all">
+              alicia.gpt.02@gmail.com
+            </p>
+            <p class="text-[#6366F1] font-semibold text-sm mt-1">
+              www.alicia-gpt.fr
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

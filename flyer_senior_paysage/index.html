@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyer AlicIA-GPT - Accompagnement Numérique Seniors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @page {
+        size: 297mm 210mm;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f3f4f6;
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .a4-sheet {
+        width: 297mm;
+        height: 210mm;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        box-sizing: border-box;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
+      .a5-flyer {
+        width: 148.5mm;
+        height: 210mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 8mm 7mm;
+        box-sizing: border-box;
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        border: 2px solid #6366f1;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        page-break-inside: avoid;
+      }
+      .a5-flyer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #6366f1 0%, #00ffb3 100%);
+      }
+      .cut-line {
+        position: absolute;
+        left: 50%;
+        top: 10mm;
+        bottom: 10mm;
+        border-left: 2px dashed #6366f1;
+        transform: translateX(-50%);
+        opacity: 0.5;
+      }
+      @media print {
+        body {
+          background: white;
+        }
+        .a4-sheet {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a4-sheet">
+      <!-- FLYER 1 (Gauche) -->
+      <div class="a5-flyer">
+        <div>
+          <div class="flex flex-col items-center text-center mb-3">
+            <div
+              class="bg-gradient-to-br from-[#6366F1] to-[#00FFB3] p-3 rounded-full mb-2 shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-white leading-tight mb-1">
+              AlicIA-GPT
+            </h1>
+            <p
+              class="text-[#00FFB3] text-base font-semibold uppercase tracking-wide"
+            >
+              Soutien Numérique Seniors & Débutants
+            </p>
+          </div>
+
+          <div
+            class="bg-[#6366F1]/20 border border-[#6366F1]/40 rounded-lg p-2 mb-3"
+          >
+            <p class="text-gray-200 text-base text-center leading-relaxed">
+              <span class="text-[#00FFB3] font-bold">📍 Soissons</span> et ses
+              environs
+            </p>
+          </div>
+
+          <ul class="space-y-1.5">
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Initiation :</strong> Ordinateur,
+                tablette, smartphone</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Démarches :</strong>
+                Administrations, santé, banque</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Communication :</strong> Visio,
+                emails, photos</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Sécurité :</strong> Antivirus, mots
+                de passe</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Dépannage :</strong> Virus, lenteur,
+                imprimante</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <div
+            class="bg-gradient-to-r from-[#6366F1]/30 to-[#00FFB3]/30 border border-[#6366F1]/50 rounded-lg p-2.5"
+          >
+            <p class="text-white text-center text-base font-bold mb-1.5">
+              💡 1ère heure satisfait ou remboursé
+            </p>
+            <div class="space-y-0.5">
+              <p class="text-gray-300 text-center text-base">
+                <strong class="text-[#00FFB3]">À la séance :</strong> 30€/h
+              </p>
+              <p class="text-gray-300 text-center text-base">
+                <strong class="text-[#00FFB3]">Formule Tranquillité :</strong>
+                3h = 80€
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <p class="text-[#00FFB3] font-bold text-2xl">📞 06 15 60 33 44</p>
+            <p class="text-gray-400 text-sm mt-1">
+              Du lundi au vendredi, 8h-18h
+            </p>
+            <p class="text-gray-400 text-sm mt-1 break-all">
+              alicia.gpt.02@gmail.com
+            </p>
+            <p class="text-[#6366F1] font-semibold text-base mt-1">
+              www.alicia-gpt.fr
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne de découpe -->
+      <div class="cut-line"></div>
+
+      <!-- FLYER 2 (Droite - Identique) -->
+      <div class="a5-flyer">
+        <div>
+          <div class="flex flex-col items-center text-center mb-3">
+            <div
+              class="bg-gradient-to-br from-[#6366F1] to-[#00FFB3] p-3 rounded-full mb-2 shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-white leading-tight mb-1">
+              AlicIA-GPT
+            </h1>
+            <p
+              class="text-[#00FFB3] text-base font-semibold uppercase tracking-wide"
+            >
+              Soutien Numérique Seniors & Débutants
+            </p>
+          </div>
+
+          <div
+            class="bg-[#6366F1]/20 border border-[#6366F1]/40 rounded-lg p-2 mb-3"
+          >
+            <p class="text-gray-200 text-base text-center leading-relaxed">
+              <span class="text-[#00FFB3] font-bold">📍 Soissons</span> et ses
+              environs
+            </p>
+          </div>
+
+          <ul class="space-y-1.5">
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Initiation :</strong> Ordinateur,
+                tablette, smartphone</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Démarches :</strong>
+                Administrations, santé, banque</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Communication :</strong> Visio,
+                emails, photos</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Sécurité :</strong> Antivirus, mots
+                de passe</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#00FFB3] text-xl">✓</span>
+              <span class="text-gray-300 text-base"
+                ><strong class="text-white">Dépannage :</strong> Virus, lenteur,
+                imprimante</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <div
+            class="bg-gradient-to-r from-[#6366F1]/30 to-[#00FFB3]/30 border border-[#6366F1]/50 rounded-lg p-2.5"
+          >
+            <p class="text-white text-center text-base font-bold mb-1.5">
+              💡 1ère heure satisfait ou remboursé
+            </p>
+            <div class="space-y-0.5">
+              <p class="text-gray-300 text-center text-base">
+                <strong class="text-[#00FFB3]">À la séance :</strong> 30€/h
+              </p>
+              <p class="text-gray-300 text-center text-base">
+                <strong class="text-[#00FFB3]">Formule Tranquillité :</strong>
+                3h = 80€
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <p class="text-[#00FFB3] font-bold text-2xl">📞 06 15 60 33 44</p>
+            <p class="text-gray-400 text-sm mt-1">
+              Du lundi au vendredi, 8h-18h
+            </p>
+            <p class="text-gray-400 text-sm mt-1 break-all">
+              alicia.gpt.02@gmail.com
+            </p>
+            <p class="text-[#6366F1] font-semibold text-base mt-1">
+              www.alicia-gpt.fr
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

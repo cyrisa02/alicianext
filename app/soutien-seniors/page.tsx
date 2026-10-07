@@ -19,25 +19,14 @@ export const metadata: Metadata = {
     "sécurité informatique senior",
     "support numérique bienveillant",
     "Soissons",
-    "Laon",
-    "Villers-Cotterêts",
-    "Château-Thierry",
-    "Chauny",
-    "Meaux",
-    "Compiègne",
-    "Fismes",
-    "Reims",
     "Aisne",
-    "Oise",
-    "Marne",
-    "Seine-et-Marne",
     "aide informatique locale",
   ],
   authors: [{ name: "Cyril Gourdon" }],
   openGraph: {
     title: "Soutien Numérique Seniors & Débutants | AlicIA-GPT",
     description:
-      "Assistance informatique et dépannage patient pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, Aisne, Oise, Marne et nord 77.",
+      "Assistance informatique et dépannage patient pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, Aisne.",
     type: "website",
     locale: "fr_FR",
     siteName: "AlicIA-GPT",
@@ -46,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Soutien Numérique Seniors & Débutants | AlicIA-GPT",
     description:
-      "Assistance informatique et dépannage patient pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, Aisne, Oise, Marne et nord 77.",
+      "Assistance informatique et dépannage patient pour seniors et débutants. Retrouvez votre autonomie numérique à Soissons, Aisne.",
   },
 };
 
@@ -131,16 +120,16 @@ const SoutienSeniorsPage = () => {
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-gray-300">
             <li>
-              <strong>À la séance</strong> : 45 € / heure, sans engagement.
+              <strong>À la séance</strong> : 30 € / heure, sans engagement.
             </li>
             <li>
-              <strong>Formule « Tranquillité »</strong> : 3 heures par mois à
-              120 € (soit 40 €/h), avec priorité d'intervention.
+              <strong>Formule « Tranquillité »</strong> : 3 heures par mois à 80
+              € (soit 27 €/h), avec priorité d'intervention.
             </li>
           </ul>
-          <p className="mt-3 text-sm text-gray-400 italic">
+          {/* <p className="mt-3 text-sm text-gray-400 italic">
             Première heure satisfait ou remboursé
-          </p>
+          </p> */}
         </section>
 
         {/* Témoignage Google */}
