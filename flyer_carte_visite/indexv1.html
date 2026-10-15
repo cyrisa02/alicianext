@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carte de Visite AlicIA-GPT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @page {
+        size: 210mm 297mm;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 20px;
+        background-color: #1a1a2e;
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .card-container {
+        width: 85mm;
+        height: 55mm;
+        position: relative;
+        margin: 10px auto;
+        page-break-inside: avoid;
+      }
+      .card {
+        width: 85mm;
+        height: 55mm;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        border: 1.5px solid #6366f1;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #6366f1 0%, #00ffb3 100%);
+      }
+      .cut-line {
+        width: 85mm;
+        height: 0;
+        border-top: 1px dashed #6366f1;
+        margin: 5px auto;
+        opacity: 0.4;
+      }
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+        .card-container {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- RECTO -->
+    <div class="card-container">
+      <div class="card flex flex-col justify-between p-4">
+        <!-- Header avec Logo -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <!-- Logo SVG -->
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 8C18.745 8 8 18.745 8 32C8 45.255 18.745 56 32 56C45.255 56 56 45.255 56 32C56 18.745 45.255 8 32 8Z"
+                fill="#6366F1"
+              />
+              <path
+                d="M32 20C29.791 20 28 21.791 28 24V40C28 42.209 29.791 44 32 44C34.209 44 36 42.209 36 40V24C36 21.791 34.209 20 32 20Z"
+                fill="#00FFB3"
+              />
+              <path
+                d="M22 28C19.791 28 18 29.791 18 32C18 34.209 19.791 36 22 36C24.209 36 26 34.209 26 32C26 29.791 24.209 28 22 28Z"
+                fill="#00FFB3"
+              />
+              <path
+                d="M42 28C39.791 28 38 29.791 38 32C38 34.209 39.791 36 42 36C44.209 36 46 34.209 46 32C46 29.791 44.209 28 42 28Z"
+                fill="#00FFB3"
+              />
+              <path
+                d="M32 20V28M22 32L28 30M42 32L36 30"
+                stroke="#0A0A0A"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div>
+              <h1 class="text-lg font-bold text-white leading-tight">
+                AlicIA-GPT
+              </h1>
+              <p class="text-[10px] text-[#00FFB3] uppercase tracking-wide">
+                L'IA au service de votre entreprise
+              </p>
+            </div>
+          </div>
+          <!-- QR Code placeholder -->
+          <div class="w-8 h-8 bg-white rounded p-0.5">
+            <div
+              class="w-full h-full bg-gray-900 rounded-sm flex items-center justify-center"
+            >
+              <div class="grid grid-cols-3 gap-0.5">
+                <div class="w-1.5 h-1.5 bg-white"></div>
+                <div class="w-1.5 h-1.5 bg-transparent"></div>
+                <div class="w-1.5 h-1.5 bg-white"></div>
+                <div class="w-1.5 h-1.5 bg-transparent"></div>
+                <div class="w-1.5 h-1.5 bg-white"></div>
+                <div class="w-1.5 h-1.5 bg-transparent"></div>
+                <div class="w-1.5 h-1.5 bg-white"></div>
+                <div class="w-1.5 h-1.5 bg-transparent"></div>
+                <div class="w-1.5 h-1.5 bg-white"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nom et fonction -->
+        <div class="flex-1 flex flex-col justify-center">
+          <h2 class="text-base font-bold text-white mb-0.5">Cyril Gourdon</h2>
+          <p class="text-xs text-[#6366F1] font-medium">
+            Consultant IA & Formation
+          </p>
+        </div>
+
+        <!-- Coordonnées -->
+        <div class="space-y-0.5 text-[9px] text-gray-300">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[#00FFB3]">📞</span>
+            <span>06 15 60 33 44</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-[#00FFB3]">✉️</span>
+            <span class="truncate">alicia.gpt.02@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-[#00FFB3]">🌐</span>
+            <span>www.alicia-gpt.fr</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-[#00FFB3]">💼</span>
+            <span>LinkedIn: AlicIA-GPT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cut-line"></div>
+
+    <!-- VERSO -->
+    <div class="card-container">
+      <div class="card flex flex-col p-4">
+        <!-- Titre -->
+        <div class="text-center mb-2">
+          <h3 class="text-sm font-bold text-white">Nos Expertises</h3>
+          <div
+            class="w-12 h-0.5 bg-gradient-to-r from-[#6366F1] to-[#00FFB3] mx-auto mt-1"
+          ></div>
+        </div>
+
+        <!-- 3 Métiers -->
+        <div class="space-y-1.5 flex-1">
+          <div class="flex items-start gap-2">
+            <span class="text-[#00FFB3] text-xs mt-0.5">✓</span>
+            <div>
+              <p class="text-[10px] font-semibold text-white">Formation IA</p>
+              <p class="text-[8px] text-gray-400">
+                Équipes opérationnelles et autonomes
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-[#00FFB3] text-xs mt-0.5">✓</span>
+            <div>
+              <p class="text-[10px] font-semibold text-white">
+                Conseil & Audit
+              </p>
+              <p class="text-[8px] text-gray-400">
+                Feuille de route IA sur-mesure
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-[#00FFB3] text-xs mt-0.5">✓</span>
+            <div>
+              <p class="text-[10px] font-semibold text-white">
+                Intégration de workflows
+              </p>
+              <p class="text-[8px] text-gray-400">
+                Automatisation et agents IA
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Méthode en 4 étapes -->
+        <div class="mt-2 pt-2 border-t border-[#6366F1]/30">
+          <p class="text-[8px] text-center text-gray-400">
+            <span class="text-[#6366F1] font-semibold">Notre méthode :</span>
+            Audit • Stratégie • Intégration • Autonomie
+          </p>
+        </div>
+
+        <!-- QR Code verso -->
+        <div class="absolute bottom-2 right-2">
+          <div class="w-6 h-6 bg-white/10 rounded p-0.5 backdrop-blur-sm">
+            <div
+              class="w-full h-full bg-[#6366F1]/80 rounded-sm flex items-center justify-center"
+            >
+              <span class="text-[6px] text-white font-bold">QR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions d'impression -->
+    <div
+      class="max-w-md mx-auto mt-8 p-4 bg-gray-900/50 border border-gray-700 rounded-lg text-xs text-gray-400"
+    >
+      <h4 class="text-white font-semibold mb-2">Instructions d'impression :</h4>
+      <ul class="list-disc pl-4 space-y-1">
+        <li>Format : 85 × 55 mm (carte de visite standard)</li>
+        <li>Imprimez sur papier épais (300-350 g/m²)</li>
+        <li>Découpez le long du trait pointillé</li>
+        <li>Recto : Informations de contact</li>
+        <li>Verso : Expertises et méthode</li>
+      </ul>
+    </div>
+  </body>
+</html>

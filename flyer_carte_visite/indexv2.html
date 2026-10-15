@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carte de Visite AlicIA-GPT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @page {
+        size: 210mm 297mm;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 20px;
+        background-color: #1a1a2e;
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .card-container {
+        width: 85mm;
+        height: 55mm;
+        position: relative;
+        margin: 10px auto;
+        page-break-inside: avoid;
+      }
+      .card {
+        width: 85mm;
+        height: 55mm;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        border: 1.5px solid #6366f1;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #6366f1 0%, #00ffb3 100%);
+      }
+      .cut-line {
+        width: 85mm;
+        height: 0;
+        border-top: 1px dashed #6366f1;
+        margin: 5px auto;
+        opacity: 0.4;
+      }
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+        .card-container {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- RECTO -->
+    <div class="card-container">
+      <div class="card flex flex-col justify-between p-4">
+        <!-- Header avec Logo Personnalisé -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <!-- ⚠️ REMPLACEZ "votre-logo.png" PAR LE CHEMIN DE VOTRE FICHIER LOGO ⚠️ -->
+            <!-- Exemple : src="/images/logo-alicia.png" ou src="logo.svg" -->
+            <img
+              src="logo.jpeg"
+              alt="Logo AlicIA-GPT"
+              class="w-10 h-10 object-contain bg-white/5 rounded-full p-1"
+            />
+
+            <div>
+              <h1 class="text-lg font-bold text-white leading-tight">
+                AlicIA-GPT
+              </h1>
+              <p class="text-[9px] text-[#00FFB3] uppercase tracking-wider">
+                L'IA au service de votre entreprise
+              </p>
+            </div>
+          </div>
+
+          <!-- QR Code placeholder (Recto) -->
+          <div class="w-9 h-9 bg-white rounded p-0.5 flex-shrink-0">
+            <div
+              class="w-full h-full bg-gray-900 rounded-sm flex items-center justify-center"
+            >
+              <!-- Remplacez ce bloc par votre vrai QR code : <img src="qr-linkedin.png" class="w-full h-full" /> -->
+              <span
+                class="text-[6px] text-gray-500 font-bold text-center leading-none"
+                >QR<br />Site</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Nom et fonction -->
+        <div class="flex-1 flex flex-col justify-center my-1">
+          <h2 class="text-base font-bold text-white mb-0.5">Cyril Gourdon</h2>
+          <p class="text-xs text-[#6366F1] font-semibold">
+            Consultant IA & Formation
+          </p>
+        </div>
+
+        <!-- Coordonnées -->
+        <div class="space-y-1 text-[9px] text-gray-300">
+          <div class="flex items-center gap-2">
+            <span class="text-[#00FFB3] text-[10px]">📞</span>
+            <span class="font-medium">06 15 60 33 44</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[#00FFB3] text-[10px]">✉️</span>
+            <span class="truncate">alicia.gpt.02@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[#00FFB3] text-[10px]">🌐</span>
+            <span class="font-medium text-white">www.alicia-gpt.fr</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[#00FFB3] text-[10px]">💼</span>
+            <span>LinkedIn : AlicIA-GPT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cut-line"></div>
+
+    <!-- VERSO -->
+    <div class="card-container">
+      <div class="card flex flex-col p-4">
+        <!-- Titre -->
+        <div class="text-center mb-2">
+          <h3 class="text-sm font-bold text-white">Nos Expertises</h3>
+          <div
+            class="w-12 h-0.5 bg-gradient-to-r from-[#6366F1] to-[#00FFB3] mx-auto mt-1"
+          ></div>
+        </div>
+
+        <!-- 3 Métiers (Alignés sur le flyer) -->
+        <div class="space-y-2 flex-1">
+          <div class="flex items-start gap-2">
+            <span class="text-[#00FFB3] text-xs mt-0.5">✓</span>
+            <div>
+              <p class="text-[10px] font-bold text-white">Formation IA</p>
+              <p class="text-[8px] text-gray-400 leading-tight">
+                Rendez vos équipes opérationnelles et autonomes.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-[#00FFB3] text-xs mt-0.5">✓</span>
+            <div>
+              <p class="text-[10px] font-bold text-white">Conseil & Audit</p>
+              <p class="text-[8px] text-gray-400 leading-tight">
+                Analyse de vos processus et feuille de route IA sur-mesure.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-[#00FFB3] text-xs mt-0.5">✓</span>
+            <div>
+              <p class="text-[10px] font-bold text-white">
+                Intégration de workflows
+              </p>
+              <p class="text-[8px] text-gray-400 leading-tight">
+                Automatisation, agents IA et support commercial.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Méthode en 4 étapes (Issue du ProcessSection) -->
+        <div class="mt-2 pt-2 border-t border-[#6366F1]/30">
+          <p class="text-[8px] text-center text-gray-400">
+            <span class="text-[#6366F1] font-bold">Notre méthode :</span> Audit
+            • Stratégie • Intégration • Autonomie
+          </p>
+        </div>
+
+        <!-- QR Code verso (Optionnel, pour renvoyer vers le flyer ou le site) -->
+        <div class="absolute bottom-2 right-2">
+          <div
+            class="w-7 h-7 bg-white/10 rounded p-0.5 backdrop-blur-sm border border-white/20"
+          >
+            <!-- Remplacez par votre vrai QR code : <img src="qr-flyer.png" class="w-full h-full rounded-sm" /> -->
+            <div
+              class="w-full h-full bg-[#6366F1]/80 rounded-sm flex items-center justify-center"
+            >
+              <span class="text-[6px] text-white font-bold">QR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions pour l'utilisateur -->
+    <div
+      class="max-w-md mx-auto mt-8 p-4 bg-gray-900/50 border border-gray-700 rounded-lg text-xs text-gray-400"
+    >
+      <h4 class="text-white font-semibold mb-2">
+        🛠️ Comment insérer votre logo :
+      </h4>
+      <ol class="list-decimal pl-4 space-y-1.5">
+        <li>
+          Placez votre fichier logo (ex: <code>logo.png</code> ou
+          <code>logo.svg</code>) dans le même dossier que ce fichier HTML.
+        </li>
+        <li>
+          Dans le code ci-dessus, cherchez la ligne :
+          <code>src="votre-logo.png"</code>
+        </li>
+        <li>
+          Remplacez <code>votre-logo.png</code> par le nom exact de votre
+          fichier.
+        </li>
+        <li>
+          Pour les QR codes, remplacez les blocs
+          <code>&lt;span&gt;QR&lt;/span&gt;</code> par une balise
+          <code>&lt;img src="votre-qr.png" class="w-full h-full" /&gt;</code>.
+        </li>
+        <li>
+          Imprimez en PDF (Format A4, marges "Aucune", cocher "Graphiques
+          d'arrière-plan").
+        </li>
+        <li>
+          Pour personnaliser le QR code, remplacez les div placeholder par de
+          vraies images QR code générées sur un site comme
+          qr-code-generator.com.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
