@@ -1,0 +1,94 @@
+---
+title: "FactureScan IA : une photo, 5 secondes, comptabilité à jour"
+subtitle: "Comment l'IA supprime la ressaisie des factures pour les artisans et les TPE."
+description: "J'ai développé FactureScan IA : on photographie une facture, l'IA extrait les données et les envoie vers Google Sheets ou PostgreSQL. Voici comment ça marche."
+date: "2026-10-20"
+author: "Cyril Gourdon"
+category: "Automatisation IA"
+tags: ["Artisans", "TPE", "Comptabilité", "Python", "Qwen", "Productivité"]
+readingTime: "4 min"
+---
+
+Une photo, 5 secondes, et votre comptabilité est à jour.
+
+Combien de temps perdez-vous chaque semaine à ressaisir vos factures papier dans Excel ou votre logiciel comptable ?
+
+Entre les erreurs de frappe, les tickets de caisse froissés et la TVA qui ne tombe pas juste, c'est une charge mentale inutile pour un patron de TPE ou un artisan.
+
+J'ai développé **FactureScan IA** pour régler ça.
+
+---
+
+## **Le résultat**
+
+Vous prenez la facture en photo. L'outil fait le reste.
+
+Plus de double saisie. Plus de pile de papiers qui attend le week-end.
+
+---
+
+## **Ce que fait l'outil**
+
+Trois choses, pensées pour le terrain.
+
+- **Zéro friction** : vous ouvrez l'app sur mobile, vous photographiez la facture, c'est tout.
+- **Précision** : l'IA extrait automatiquement le fournisseur, la date, le HT, la TVA et le TTC. Un chiffre est faux ? Vous le corrigez en un clic.
+- **Synchronisation automatique** : les données partent instantanément vers votre Google Sheets ou votre base de données sécurisée.
+
+---
+
+## **Comment ça marche**
+
+Le principe est simple :
+
+1. Vous prenez la photo depuis votre téléphone.
+2. L'IA lit le document et en extrait les données structurées.
+3. Vous vérifiez, et vous corrigez si besoin.
+4. Les données sont envoyées vers votre tableau ou votre base.
+
+**La technologie.** Le moteur repose sur Python et sur le modèle open-source Qwen3-8B, utilisé pour l'extraction de données structurées à partir d'images de documents.
+
+---
+
+## **Pour les plus exigeants**
+
+Au-delà de l'export CSV ou Google Sheets, FactureScan IA peut se connecter directement à une base **PostgreSQL** avec authentification sécurisée.
+
+C'est utile si vous voulez :
+
+- suivre vos achats,
+- suivre vos dépenses par projet,
+- intégrer ces données dans votre ERP existant via API.
+
+---
+
+## **Les limites**
+
+Je ne vais pas vous vendre du rêve.
+
+- Une photo floue ou un ticket très abîmé peut donner une lecture erronée. C'est pour ça que la correction en un clic existe.
+- L'outil extrait des données. Il ne remplace ni votre comptable, ni votre jugement sur ce qui est déductible.
+- L'humain valide. L'IA exécute.
+
+---
+
+## **Ce que je retiens**
+
+**L'IA n'est pas là pour remplacer votre expertise métier.** Elle est là pour vous libérer du temps administratif, afin que vous vous concentriez sur ce qui compte vraiment : votre savoir-faire et vos clients.
+
+---
+
+## **Conclusion**
+
+Pas besoin d'être une grande entreprise pour automatiser sa saisie comptable. Il suffit de regarder ce qu'on ressaisit à la main chaque semaine.
+
+Envie de tester ou d'intégrer FactureScan IA dans votre entreprise ?
+
+- Aller sur la fiche de contact de ce site et
+- Réserver un audit de 30 min pour identifier VOS tâches à automatiser
+
+---
+
+Article publié le 20/10/2026
+
+Mots-clés : facture IA artisan, saisie comptable automatique, OCR facture TPE, Google Sheets comptabilité, PostgreSQL PME, Qwen Python

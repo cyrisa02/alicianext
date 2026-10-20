@@ -15,7 +15,7 @@ const Header: React.FC = () => {
     { id: "a-propos", label: "À propos", isPage: false },
     { id: "services", label: "Services", isPage: false },
     { id: "portfolio", label: "Portfolio", isPage: false },
-    { id: "blog", label: "Blog", isPage: true, href: "/blog" },
+    { id: "blog", label: "Réalisations/Blog", isPage: true, href: "/blog" },
     { id: "contact", label: "Contact", isPage: false },
   ];
 

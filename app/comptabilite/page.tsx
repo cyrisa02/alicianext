@@ -1,5 +1,6 @@
 import ContactCTAButton from "../../components/ContactCTAButton";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: {
@@ -59,20 +60,18 @@ export default function ComptabilitePage() {
         </h1>
 
         <div className="mb-8 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
-          <svg
-            className="w-12 h-12 mx-auto text-blue-400 mb-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 14h.01M18 14h.01M15 11h3M12 11h.01M9 11h.01M7 21h10v-2a3 3 0 005.356-2.356l2-2a3 3 0 00-3.536-3.536l-2-2A3 3 0 0012 11V9m7 7h-7"
+          {/* Photo illustrative */}
+          <div className="mb-10 rounded-xl overflow-hidden border border-gray-800 shadow-lg">
+            <Image
+              src="/images/compta.jpg"
+              alt="Automatisation comptable et agents intelligents pour artisans et TPE"
+              width={1200}
+              height={600}
+              className="w-full object-cover"
+              priority
             />
-          </svg>
+          </div>
+
           <p className="text-gray-300 text-lg italic">
             "La comptabilité n'est pas une corvée — c'est votre tableau de bord.
             Automatisez-la, et concentrez-vous sur votre business."
