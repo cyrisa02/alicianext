@@ -5,6 +5,24 @@ import { ChevronLeftIcon, ChevronRightIcon } from "./icons/UiIcons";
 
 const projects = [
   {
+    image: "/images/correcteur.jpg",
+    year: 2026,
+    name: "Correcteur de copies",
+    type: "Automatisation & IA",
+  },
+  {
+    image: "/images/compta.jpg",
+    year: 2026,
+    name: "Scanner des factures",
+    type: "Automatisation & IA",
+  },
+  {
+    image: "/images/devis2.jpg",
+    year: 2026,
+    name: "Générateur de devis - Agent IA",
+    type: "Développement sur-mesure",
+  },
+  {
     image: "/images/reunion.png",
     year: 2025,
     name: "Compte rendu de réunion automatisé",
@@ -45,7 +63,7 @@ const projects = [
 const PortfolioSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [textVisibility, setTextVisibility] = useState<boolean[]>(
-    Array(projects.length).fill(true)
+    Array(projects.length).fill(true),
   );
 
   const prevSlide = useCallback(() => {

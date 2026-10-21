@@ -124,6 +124,170 @@ const SoutienEtudiantsPage = () => {
           </div>
         </section>
 
+        {/* NOUVELLE SECTION : Correcteur IA pour enseignants */}
+        <section className="mb-12 p-8 bg-gradient-to-br from-purple-900/30 to-blue-900/30 border border-purple-700/50 rounded-xl">
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Innovation Pédagogique : Correcteur IA pour Enseignants
+          </h2>
+
+          {/* Image et présentation */}
+          <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="/images/correcteur.jpg"
+              alt="Correcteur IA - Application mobile de correction automatique de copies"
+              className="w-full h-auto object-cover max-h-[500px] hover:scale-102 transition-transform duration-300"
+            />
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/40 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-purple-300 mb-3">
+                La solution que j'ai développée
+              </h3>
+              <p className="text-gray-300 mb-4">
+                <strong>30 copies corrigées en 4 minutes avec l'IA</strong> au
+                lieu de 3 heures. En tant que prof, la correction représente 40%
+                du métier et 80% du temps perdu. J'ai construit un outil qui
+                change la donne.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Le problème qu'on connaît tous
+              </h3>
+              <p className="text-gray-400 mb-3">
+                Vous avez 30 copies de dissertation sur "Le Lac" de Lamartine.
+                Chaque copie fait 4 pages. Vous devez lire attentivement,
+                identifier les erreurs, évaluer l'argumentation, donner une note
+                juste et rédiger un feedback constructif.
+              </p>
+              <p className="text-gray-300 font-semibold">
+                Résultat : 3h minimum. Parfois le week-end.
+              </p>
+            </div>
+
+            <div className="bg-purple-900/20 p-6 rounded-lg border border-purple-700/30">
+              <h3 className="text-lg font-semibold text-purple-300 mb-3">
+                La solution : un scan mobile, puis une correction complète en 30
+                secondes
+              </h3>
+              <p className="text-gray-300 mb-4">
+                L'élève pose sa copie sur la table, vous photographiez page par
+                page, vous entrez le sujet et le barème. L'IA renvoie
+                instantanément :
+              </p>
+              <ul className="space-y-2 text-gray-400">
+                <li>✅ Une note sur 20</li>
+                <li>✅ Une appréciation générale style bulletin</li>
+                <li>✅ Les points forts identifiés</li>
+                <li>✅ Les axes d'amélioration</li>
+                <li>
+                  ✅ Une analyse détaillée des erreurs, avec citations et
+                  suggestions
+                </li>
+                <li>
+                  ✅ Une évaluation de la structure (intro, développement,
+                  conclusion)
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Comment ça marche (sans jargon)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4 text-gray-400">
+                <div className="bg-black/30 p-4 rounded-lg">
+                  <strong className="text-purple-300">
+                    Frontend (Next.js)
+                  </strong>
+                  <p className="text-sm mt-2">
+                    Interface mobile qui capture les photos et les convertit en
+                    Base64
+                  </p>
+                </div>
+                <div className="bg-black/30 p-4 rounded-lg">
+                  <strong className="text-purple-300">
+                    Backend (Python/FastAPI)
+                  </strong>
+                  <p className="text-sm mt-2">
+                    Reçoit les images et construit un prompt pédagogique adapté
+                  </p>
+                </div>
+                <div className="bg-black/30 p-4 rounded-lg">
+                  <strong className="text-purple-300">
+                    IA (Qwen via Groq)
+                  </strong>
+                  <p className="text-sm mt-2">
+                    Modèle de vision qui "lit" l'écriture manuscrite et analyse
+                    le contenu
+                  </p>
+                </div>
+                <div className="bg-black/30 p-4 rounded-lg">
+                  <strong className="text-purple-300">RGPD</strong>
+                  <p className="text-sm mt-2">
+                    Les images sont traitées à la volée et jamais stockées
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-400 mt-4 text-sm italic">
+                Le tout tient dans 200 lignes de Python. Pas de serveur
+                complexe, pas d'infrastructure lourde.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Ce qui rend l'outil vraiment utile
+              </h3>
+              <div className="grid md:grid-cols-2 gap-3 text-gray-400">
+                <p>
+                  ✅ <strong>Multi-matières</strong> : français, philo,
+                  histoire, langues...
+                </p>
+                <p>
+                  ✅ <strong>Mode rafale</strong> : scannez 30 copies d'affilée
+                  sans retaper le sujet
+                </p>
+                <p>
+                  ✅ <strong>Barème flexible</strong> : /20, /10, /40, vous
+                  choisissez
+                </p>
+                <p>
+                  ✅ <strong>Multi-pages</strong> : copies de 2, 3 ou 4 pages
+                  gérées automatiquement
+                </p>
+                <p>
+                  ✅ <strong>Feedback actionnable</strong> : conseils concrets
+                  pour l'élève
+                </p>
+                <p>
+                  ✅ <strong>Fenêtre de discussion</strong> : discutez avec l'IA
+                  de la correction
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-green-900/20 p-6 rounded-lg border border-green-700/30">
+              <h3 className="text-lg font-semibold text-green-300 mb-3">
+                Le résultat
+              </h3>
+              <p className="text-gray-300 mb-3">
+                Je corrige maintenant une classe en{" "}
+                <strong>20 minutes au lieu de 3 heures</strong>. Et les élèves
+                reçoivent un feedback plus détaillé que ce que je pouvais leur
+                écrire à la main.
+              </p>
+              <p className="text-gray-300 italic">
+                "L'IA ne remplace pas le prof. Elle lui rend du temps pour ce
+                qui compte vraiment : accompagner, expliquer, inspirer."
+              </p>
+            </div>
+          </div>
+        </section>
+        {/* FIN NOUVELLE SECTION */}
+
         {/* Offres & formules */}
         <section className="mb-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
           <h2 className="text-xl font-bold text-white mb-3">
