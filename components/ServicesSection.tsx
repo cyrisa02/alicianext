@@ -82,10 +82,10 @@ const services = [
   },
   {
     icon: <UserGroupIcon />,
-    title: "Étudiants",
+    title: "Étudiants et Professeurs",
     description:
       "Outils et applications IA pour l'apprentissage et la recherche.",
-    href: "/soutien-etudiants",
+    href: "/soutien-etudiants-professeurs",
   },
   {
     icon: <LifebuoyIcon />,

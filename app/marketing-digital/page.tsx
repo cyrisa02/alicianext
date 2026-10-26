@@ -82,18 +82,18 @@ const MarketingDigitalPage = () => {
             />
           </svg>
           <p className="text-gray-300 text-lg italic">
-            “Le marketing digital n’est pas un luxe — c’est votre vitrine
-            permanente. Créez du contenu qui vend, même quand vous dormez.”
+            "Le marketing digital n'est pas un luxe — c'est votre vitrine
+            permanente. Créez du contenu qui vend, même quand vous dormez."
           </p>
         </div>
 
         {/* Introduction rassurante */}
         <p className="text-gray-300 text-lg mb-12">
           Vous êtes artisan, commerçant, prestataire ou association locale, et
-          vous avez besoin d’une présence digitale efficace, mais vous ne savez
+          vous avez besoin d'une présence digitale efficace, mais vous ne savez
           pas par où commencer ?<br />
           Vos concurrents sont mieux référencés ? Vos réseaux sociaux sont
-          inactifs ? Vous n’avez pas le temps de créer du contenu régulièrement
+          inactifs ? Vous n'avez pas le temps de créer du contenu régulièrement
           ?<br />
           <strong>
             Nous vous accompagnons pour mettre en place une stratégie digitale
@@ -108,7 +108,7 @@ const MarketingDigitalPage = () => {
           className="mb-16 p-6 bg-gray-900/50 border border-gray-800 rounded-xl"
         >
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-            <span className="mr-3">🔍</span>
+            <span className="mr-3"></span>
             Le Web Scraping : Votre Arme Secrète pour Dominer le Marché
           </h2>
           <p className="text-gray-300 text-lg mb-4">
@@ -120,7 +120,7 @@ const MarketingDigitalPage = () => {
           <p className="text-gray-400 mb-4">
             À Soissons comme ailleurs, les artisans, PME et commerçants qui
             réussissent ne se fient plus uniquement à leur intuition. Ils
-            s’appuient sur <strong>des données réelles</strong> pour :
+            s'appuient sur <strong>des données réelles</strong> pour :
           </p>
           <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-300">
             <li>
@@ -132,7 +132,7 @@ const MarketingDigitalPage = () => {
               réparation vélo électrique à Soissons »)
             </li>
             <li>
-              Identifier les opportunités de marché invisibles à l’œil nu (ex. :
+              Identifier les opportunités de marché invisibles à l'œil nu (ex. :
               un concurrent qui arrête une activité)
             </li>
             <li>
@@ -143,10 +143,10 @@ const MarketingDigitalPage = () => {
 
           <div className="bg-gray-800/60 p-4 rounded-lg border-l-4 border-blue-500 mb-5">
             <p className="text-gray-200 font-medium">
-              🤖 Le web scraping, c’est l’extraction automatisée de données
+              Le web scraping, c'est l'extraction automatisée de données
               publiques sur le web.
               <br />
-              Nous transformons cette masse d’informations en{" "}
+              Nous transformons cette masse d'informations en{" "}
               <span className="text-blue-300">
                 tableaux simples, alertes personnalisées et recommandations
                 concrètes
@@ -164,6 +164,98 @@ const MarketingDigitalPage = () => {
             arguments commerciaux avec des comparatifs actualisés. Résultat :
             +30 % de mandats signés en 3 mois.
           </p>
+        </section>
+
+        {/* --- NOUVELLE SECTION : Exemple concret Immo Signal --- */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-700/30 rounded-2xl p-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-center">
+              🏠 Exemple Concret : Immo Signal
+            </h2>
+            <p className="text-gray-300 text-center mb-8 text-lg">
+              Détection automatique de pépites immobilières pour agents
+              immobiliers
+            </p>
+
+            {/* Image infographique */}
+            <div className="relative mb-8">
+              <img
+                src="/images/immo1.jpg"
+                alt="Immo Signal - Assistant d'alerte immobilière avec IA"
+                className="w-full rounded-xl shadow-2xl border border-gray-700"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 text-gray-300">
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  🎯 Le Défi
+                </h3>
+                <p>
+                  Les agents immobiliers passent des heures à scruter les
+                  annonces sur SeLoger et Leboncoin. Les meilleures opportunités
+                  partent en 48h, souvent avant même qu'ils puissent les
+                  analyser.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  💡 La Solution
+                </h3>
+                <p>
+                  Un système d'alerte intelligent qui écoute les emails
+                  d'alertes, extrait automatiquement les données (prix, surface,
+                  DPE), compare avec la base DVF (ventes réelles notariées) et
+                  génère un argumentaire de négociation IA.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 grid sm:grid-cols-4 gap-4">
+              <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                <div className="text-3xl mb-2">📧</div>
+                <h4 className="text-white font-semibold mb-1">
+                  1. Alertes Email
+                </h4>
+                <p className="text-sm text-gray-400">
+                  Réception légale des alertes SeLoger & Leboncoin
+                </p>
+              </div>
+              <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                <div className="text-3xl mb-2">🧠</div>
+                <h4 className="text-white font-semibold mb-1">2. Analyse IA</h4>
+                <p className="text-sm text-gray-400">
+                  Extraction instantanée des données clés
+                </p>
+              </div>
+              <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                <div className="text-3xl mb-2">⚖️</div>
+                <h4 className="text-white font-semibold mb-1">
+                  3. Comparaison DVF
+                </h4>
+                <p className="text-sm text-gray-400">
+                  Croisement avec les ventes réelles notariées
+                </p>
+              </div>
+              <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                <div className="text-3xl mb-2"></div>
+                <h4 className="text-white font-semibold mb-1">
+                  4. Notification
+                </h4>
+                <p className="text-sm text-gray-400">
+                  Alerte + argumentaire prêt à l'emploi
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 p-4 bg-blue-900/20 border border-blue-700/30 rounded-lg">
+              <p className="text-blue-200 text-center">
+                <strong>Résultat :</strong> Détection de biens sous-évalués de
+                20 à 40% avant la concurrence. 100% légal, conforme RGPD, basé
+                sur des données publiques.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Services proposés */}
@@ -199,7 +291,7 @@ const MarketingDigitalPage = () => {
             <p>
               ✅ <strong>Reporting mensuel clair</strong> : chiffres +
               traduction en actions concrètes (ex. : « Vos stories ont +40 %
-              d’engagement : on en fait plus ! »).
+              d'engagement : on en fait plus ! »).
             </p>
           </div>
         </section>
@@ -212,7 +304,7 @@ const MarketingDigitalPage = () => {
           <ul className="list-disc pl-5 space-y-2 text-gray-300">
             <li>
               <strong>Audit marketing initial</strong> : 150 € (présence
-              digitale + benchmark concurrents + plan d’action).
+              digitale + benchmark concurrents + plan d'action).
             </li>
             <li>
               <strong>Setup contenu automatisé</strong> : 250 € (outils,

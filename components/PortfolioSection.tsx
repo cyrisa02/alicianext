@@ -17,6 +17,12 @@ const projects = [
     type: "Automatisation & IA",
   },
   {
+    image: "/images/immo1.jpg",
+    year: 2026,
+    name: "Veille Agents Immobiliers",
+    type: "Automatisation & IA",
+  },
+  {
     image: "/images/devis2.jpg",
     year: 2026,
     name: "Générateur de devis - Agent IA",

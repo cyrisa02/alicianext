@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/juridique",
     "/sites-seo-local",
     "/soutien-createurs",
-    "/soutien-etudiants",
+    "/soutien-etudiants-professeurs",
     "/soutien-seniors",
     "/mentions-legales",
     "/politique-confidentialite",
