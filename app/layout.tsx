@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
-// ⬇️ Ajoute ces imports (adapte le chemin si tu n'utilises pas l'alias @)
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentManager from "../components/CookieConsentManager";
-// ... retire "import Chatbot from '../components/Chatbot';"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
     "Seine-et-Marne",
     "audit IA entreprise",
   ],
-  authors: [{ name: "Cyril Gourdon" }], // Renforce la confiance (E-E-A-T) pour Google
+  authors: [{ name: "Cyril Gourdon" }],
   openGraph: {
     title: "AlicIA-GPT | Agence & Consultant en Intelligence Artificielle",
     description:
@@ -50,7 +49,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "AlicIA-GPT",
-    // Tu pourras ajouter une image ici plus tard : images: ['/og-image.jpg']
   },
   twitter: {
     card: "summary_large_image",
@@ -67,8 +65,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
-        {/* ⬇️ Tes composants sont maintenant bien définis */}
         <Header />
         <main>{children}</main>
         <Footer />
