@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
 
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.5-flash",
+      model: "gemini-3.6-flash",
       systemInstruction: SYSTEM_INSTRUCTION,
     });
 
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       {
         text: "Je suis désolé, une erreur technique m'empêche de répondre pour le moment.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

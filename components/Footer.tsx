@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <div className="space-y-2 text-sm text-gray-400">
               <p>📍 02200 Soissons</p>
               <p>📞 +33 6 15 60 33 44</p>
-              <p>✉️ alicia.gpt.02@gmail.com</p>
+              <p>✉️ contact@alicia-gpt.com</p>
             </div>
           </div>
 

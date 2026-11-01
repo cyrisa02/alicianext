@@ -1,5 +1,5 @@
 // lib/sendEmail.ts
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,13 +14,13 @@ export async function sendCommentNotification({
   postTitle: string;
   postSlug: string;
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const articleUrl = `${siteUrl}/blog/${postSlug}`;
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'AlicIA-GPT Blog <onboarding@resend.dev>', // À remplacer par ton domaine vérifié plus tard
-      to: ['alicia.gpt.02@gmail.com'], // Ton email de réception
+      from: "AlicIA-GPT Blog <onboarding@resend.dev>", // À remplacer par ton domaine vérifié plus tard
+      to: ["contact@alicia-gpt.com"], // Ton email de réception
       subject: `Nouveau commentaire sur : ${postTitle}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
@@ -38,13 +38,13 @@ export async function sendCommentNotification({
     });
 
     if (error) {
-      console.error('Erreur Resend :', error);
+      console.error("Erreur Resend :", error);
       return { success: false, error };
     }
 
     return { success: true, data };
   } catch (error) {
-    console.error('Erreur envoi email :', error);
+    console.error("Erreur envoi email :", error);
     return { success: false, error };
   }
 }

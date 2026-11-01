@@ -1,10 +1,11 @@
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aliciagpt-six.vercel.app';
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.alicia-gpt.com/";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: '*', allow: '/' },
+    rules: { userAgent: "*", allow: "/" },
     sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

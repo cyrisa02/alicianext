@@ -236,10 +236,10 @@ const SoutienSeniorsPage = () => {
                 Réponse sous 24h
               </p>
               <a
-                href="mailto:alicia.gpt.02@gmail.com"
+                href="mailto:contact@alicia-gpt.com"
                 className="block text-center text-lg font-semibold text-[#00FFB3] hover:text-[#6366F1] transition-colors break-all"
               >
-                alicia.gpt.02@gmail.com
+                contact@alicia-gpt.com
               </a>
               <p className="text-gray-500 text-xs mt-2 text-center">
                 (Nous vous répondons rapidement)
