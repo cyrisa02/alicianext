@@ -69,7 +69,7 @@ const ConditionsGeneralesUtilisationPage = () => {
                 href="https://www.alicia-gpt.com"
                 className="text-blue-400 hover:underline"
               >
-                alicia-gpt.fr
+                alicia-gpt.com
               </a>{" "}
               (ci-après « le Site »).
             </p>

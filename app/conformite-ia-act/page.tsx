@@ -64,10 +64,13 @@ const ConformiteIAActPage = () => {
 
         <div className="space-y-10 text-gray-300">
           <p>
-            Dernière mise à jour : 4 novembre 2025
+            Dernière mise à jour : 2 novembre 2026
             <br />
-            Éditeur : AlicIA-GPT — Agence IA & Consulting, auto-entrepreneur,
-            SIRET 123 456 789 00010, 12 rue de la Paix, 02200 Soissons
+            Éditeur : AlicIA-GPT — Agence IA & Consulting, "L'activité de Cyril
+            GOURDON est régie par les dispositions du Contrat d'Appui au Projet
+            d'Entreprise – loi n° 2003-721 du 1er août 2003- dont ESSOR assure
+            la gestion du 01/11/2026 au 30/04/2027.", SIRET 827 987 595 00028,
+            20 avenue Jean Rostand 60000 BEAUVAIS
           </p>
 
           {/* Introduction */}
@@ -242,7 +245,7 @@ const ConformiteIAActPage = () => {
               </li>
               <li>
                 Signaler un contenu potentiellement non conforme via :{" "}
-                <span className="text-white">contact@alicia-gpt.fr</span>
+                <span className="text-white">contact@alicia-gpt.com</span>
               </li>
             </ul>
           </section>
