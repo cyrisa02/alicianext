@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     } = await request.json();
 
     const { data, error } = await resend.emails.send({
-      from: "AlicIA-GPT Contact <onboarding@resend.dev>",
+      from: "AlicIA-GPT Contact <contact@alicia-gpt.com>",
       to: ["contact@alicia-gpt.com"], // ← Ton email de destination
       subject: `Nouveau message de ${name} - ${company}`,
       html: `
