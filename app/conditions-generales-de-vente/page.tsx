@@ -55,8 +55,8 @@ const ConditionsGeneralesVentePage = () => {
             Éditeur : AlicIA-GPT — Agence IA & Consulting, "L'activité de Cyril
             GOURDON est régie par les dispositions du Contrat d'Appui au Projet
             d'Entreprise – loi n° 2003-721 du 1er août 2003- dont ESSOR assure
-            la gestion du 01/11/2026 au 30/04/2027., SIRET 827 987 595 00028, 20
-            avenue Jean Rostand 60000 BEAUVAIS
+            la gestion du 01/11/2026 au 30/04/2027.", SIRET 827 987 595 00028,
+            20 avenue Jean Rostand 60000 BEAUVAIS
           </p>
 
           {/* 1. Objet */}
