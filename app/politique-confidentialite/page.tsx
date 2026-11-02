@@ -64,10 +64,10 @@ const PolitiqueConfidentialitePage = () => {
               protégeons et partageons vos informations lorsque vous visitez
               notre site{" "}
               <a
-                href="https://www.alicia-gpt.fr"
+                href="https://www.alicia-gpt.com"
                 className="text-blue-400 hover:underline"
               >
-                alicia-gpt.fr
+                alicia-gpt.com
               </a>
               , utilisez notre chatbot, ou remplissez notre formulaire de
               contact.
@@ -92,19 +92,9 @@ const PolitiqueConfidentialitePage = () => {
                 <strong>Données d’identité</strong> : nom, prénom, email,
                 téléphone, entreprise (fournis via le formulaire de contact)
               </li>
+
               <li>
-                <strong>Données de navigation</strong> : adresse IP
-                (anonymisée), pages visitées, durée de visite (via Matomo, outil
-                de statistiques open source)
-              </li>
-              <li>
-                <strong>Messages échangés avec le chatbot</strong> : sauvegardés
-                temporairement (7 jours) pour améliorer la qualité de nos
-                réponses, puis supprimés automatiquement
-              </li>
-              <li>
-                <strong>Cookies de préférence</strong> : pour retenir votre
-                consentement ou vos choix d’affichage
+                <strong>Pas de cookies de préférence</strong>
               </li>
             </ul>
             <p className="mt-3">
@@ -175,10 +165,6 @@ const PolitiqueConfidentialitePage = () => {
                 Données clients (facturation, prestations) : 10 ans conformément
                 au code de commerce
               </li>
-              <li>Logs de navigation anonymisés : 25 mois</li>
-              <li>
-                Messages du chatbot : 7 jours, puis suppression automatique
-              </li>
             </ul>
           </section>
 
@@ -228,7 +214,7 @@ const PolitiqueConfidentialitePage = () => {
             </p>
             <ul className="list-disc pl-5 mt-3 space-y-2">
               <li>Chiffrement HTTPS (SSL/TLS)</li>
-              <li>Hébergement en France (OVHcloud)</li>
+              <li>Hébergement (Vercel)</li>
               <li>
                 Accès restreint aux données (seul le consultant y a accès)
               </li>

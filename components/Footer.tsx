@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                   href="/blog"
                   className="hover:text-white transition-colors"
                 >
-                  Blog
+                  Réalisations/Blog
                 </Link>
               </li>
             </ul>
