@@ -50,10 +50,13 @@ const ConditionsGeneralesVentePage = () => {
 
         <div className="space-y-10 text-gray-300">
           <p>
-            Dernière mise à jour : 4 novembre 2025
+            Dernière mise à jour : 4 novembre 2026
             <br />
-            Éditeur : AlicIA-GPT — Agence IA & Consulting, auto-entrepreneur,
-            SIRET 123 456 789 00010, 12 rue de la Paix, 02200 Soissons
+            Éditeur : AlicIA-GPT — Agence IA & Consulting, "L'activité de Cyril
+            GOURDON est régie par les dispositions du Contrat d'Appui au Projet
+            d'Entreprise – loi n° 2003-721 du 1er août 2003- dont ESSOR assure
+            la gestion du 01/11/2026 au 30/04/2027., SIRET 827 987 595 00028, 20
+            avenue Jean Rostand 60000 BEAUVAIS
           </p>
 
           {/* 1. Objet */}
@@ -113,22 +116,24 @@ const ConditionsGeneralesVentePage = () => {
             </p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>
-                <strong>Prestations ponctuelles</strong> : règlement en totalité
-                à la signature du devis
+                <strong>Acompte à la signature</strong> : 30% du montant total
+                du devis est exigé à la signature, avant le démarrage de la
+                prestation.
               </li>
               <li>
-                <strong>Formules mensuelles</strong> : prélèvement mensuel le
-                1er du mois (ex: « Compta Sereine », « Marketing Serein »)
+                <strong>Solde</strong> : Les 70% restants sont exigibles à la
+                livraison finale de la prestation.
               </li>
               <li>
                 <strong>Moyens de paiement acceptés</strong> : virement
-                bancaire, chèque, virement instantané, carte bancaire (via
-                plateforme sécurisée)
+                bancaire, chèque, virement instantané.
               </li>
             </ul>
             <p className="mt-3">
               Aucun frais supplémentaire ne sera appliqué sans accord préalable
-              écrit.
+              écrit. En cas de retard de paiement, des pénalités de retard
+              pourront être appliquées conformément à l'article L. 441-10 du
+              Code de commerce.
             </p>
           </section>
 
