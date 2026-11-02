@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: [
     "mentions légales",
     "éditeur du site",
-    "hébergeur OVHcloud",
+    "hébergeur Vercel",
     "propriété intellectuelle",
     "droit d'auteur",
     "RGPD",
@@ -59,20 +59,23 @@ const MentionsLegalesPage = () => {
               <strong>Nom de l'entreprise :</strong> AlicIA-GPT — Agence IA &
               Consulting
               <br />
-              <strong>Forme juridique :</strong> Auto-entrepreneur (EI)
+              <strong>Forme juridique :</strong>L'activité de Cyril GOURDON est
+              régie par les dispositions du Contrat d'Appui au Projet
+              d'Entreprise – loi n° 2003-721 du 1er août 2003- dont ESSOR assure
+              la gestion du 01/11/2026 au 30/04/2027.
               <br />
-              <strong>SIRET :</strong> 123 456 789 00010
+              <strong>SIRET :</strong> 827 987 595 00028
               <br />
-              <strong>TVA intracommunautaire :</strong> FR12 123456789
+              <strong>TVA intracommunautaire :</strong>
               <br />
-              <strong>Siège social :</strong> 12 rue de la Paix, 02200 Soissons,
-              France
+              <strong>Siège social :</strong> 20 avenue Jean ROSTAND 60000
+              BEAUVAIS, France
               <br />
-              <strong>Téléphone :</strong> +33 6 12 34 56 78
+              <strong>Téléphone :</strong> +33 6 15 60 33 44
               <br />
               <strong>Email :</strong> contact@alicia-gpt.fr
               <br />
-              <strong>Directeur de la publication :</strong> [Votre Prénom Nom]
+              <strong>Directeur de la publication :</strong> Cyril Gourdon
             </p>
           </section>
           {/* Hébergement */}
@@ -82,21 +85,21 @@ const MentionsLegalesPage = () => {
             </h2>
             <p>
               Ce site est hébergé par :<br />
-              <strong>OVHcloud</strong>
+              <strong>Vercel Inc.</strong>
               <br />
-              SAS au capital de 10 059 500 €<br />
-              RCS Lille Métropole 424 761 419 00045
+              340 S Lemon Ave #4133
               <br />
-              Siège social : 2 rue Kellermann, 59100 Roubaix, France
+              Walnut, CA 91789, États-Unis
+              <br />
               <br />
               Site web :{" "}
               <a
-                href="https://www.ovhcloud.com"
+                href="https://vercel.com"
                 className="text-blue-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://www.ovhcloud.com
+                https://vercel.com
               </a>
             </p>
           </section>
@@ -137,7 +140,6 @@ const MentionsLegalesPage = () => {
               <li>Vous envoyer des informations si vous y avez consenti</li>
               <li>
                 Améliorer l'expérience utilisateur via des outils anonymisés
-                (ex: Matomo)
               </li>
             </ul>
             <br />
@@ -158,8 +160,8 @@ const MentionsLegalesPage = () => {
               5. Cookies
             </h2>
             <p>
-              Ce site utilise des cookies à des fins statistiques anonymisées
-              (via Matomo) et fonctionnelles (préférences utilisateur).
+              Ce site n'utilise pas de cookies à des fins statistiques
+              anonymisées ni fonctionnelles (préférences utilisateur).
             </p>
             <br />
             <p>

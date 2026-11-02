@@ -23,8 +23,24 @@ const Footer: React.FC = () => {
             </p>
             <div className="space-y-2 text-sm text-gray-400">
               <p>📍 02200 Soissons</p>
-              <p>📞 +33 6 15 60 33 44</p>
-              <p>✉️ contact@alicia-gpt.com</p>
+              <p>
+                📞{" "}
+                <a
+                  href="tel:+33615603344"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  +33 6 15 60 33 44
+                </a>
+              </p>
+              <p>
+                📧{" "}
+                <a
+                  href="mailto:contact@alicia-gpt.com"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  contact@alicia-gpt.com
+                </a>
+              </p>
             </div>
           </div>
 
