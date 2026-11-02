@@ -57,6 +57,20 @@ const AdministrationPage = () => {
           Administration Automatisée — Newsletters, Reportings & Devis sans
           Stress
         </h1>
+        {/* Image impactante */}
+        {/* Image impactante */}
+        <div className="mb-8 rounded-xl overflow-hidden shadow-lg bg-gray-900">
+          <img
+            src="/images/devis2.jpg"
+            alt="Un générateur de devis automatisé par l'IA pour les artisans – Support informatique de confiance"
+            className="w-full h-auto object-contain max-h-[600px] md:max-h-[700px] transition-transform duration-500 hover:scale-[1.02]"
+          />
+          <div className="bg-black/70 p-4 text-center">
+            <p className="text-white text-sm italic">
+              "Générateur de devis – Votre aide de confiance"
+            </p>
+          </div>
+        </div>
 
         <div className="mb-8 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
           <svg
@@ -74,7 +88,7 @@ const AdministrationPage = () => {
             />
           </svg>
           <p className="text-gray-300 text-lg italic">
-            "L'administration n'est pas une corvée — c'est votre moteur.
+            "L'administratif n'est pas une corvée — c'est votre moteur.
             Automatisez-la, et gagnez du temps pour ce qui compte vraiment."
           </p>
         </div>
