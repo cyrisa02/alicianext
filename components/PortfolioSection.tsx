@@ -5,15 +5,21 @@ import { ChevronLeftIcon, ChevronRightIcon } from "./icons/UiIcons";
 
 const projects = [
   {
+    image: "/images/compta.jpg",
+    year: 2026,
+    name: "Scanner des factures",
+    type: "Automatisation & IA",
+  },
+  {
     image: "/images/correcteur.jpg",
     year: 2026,
     name: "Correcteur de copies",
     type: "Automatisation & IA",
   },
   {
-    image: "/images/compta.jpg",
+    image: "/images/immosniper.jpg",
     year: 2026,
-    name: "Scanner des factures",
+    name: "Assistant IA opportunités immobilières",
     type: "Automatisation & IA",
   },
   {

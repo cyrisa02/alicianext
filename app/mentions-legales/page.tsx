@@ -66,7 +66,7 @@ const MentionsLegalesPage = () => {
               <br />
               <strong>SIRET :</strong> 827 987 595 00028
               <br />
-              <strong>TVA intracommunautaire :</strong>
+              <strong>TVA intracommunautaire : FR86827987595</strong>
               <br />
               <strong>Siège social :</strong> 20 avenue Jean ROSTAND 60000
               BEAUVAIS, France
