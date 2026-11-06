@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   keywords: [
     "accompagnement créateur d'entreprise",
     "lancement de startup",
+    "agent immobilier",
+    "veille immobilière",
+    "chasseur immobilier",
+    "investisseur immobilier",
     "bac à sable IA",
     "organisation entrepreneur",
     "conseil création d'entreprise",
@@ -56,14 +60,11 @@ export const metadata: Metadata = {
 const SoutienCreateursPage = () => {
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
-      {/* 
-         ️ Header, Footer et Chatbot supprimés d'ici. 
-         Ils sont déjà rendus de manière globale par le layout.tsx racine.
-      */}
+      {/* Header, Footer et Chatbot rendus globalement par le layout.tsx racine */}
       <main className="container mx-auto px-4 py-16">
         {/* Titre principal */}
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Soutien Numérique pour les Créateurs d’Entreprises à Soissons
+          Soutien Numérique pour les Créateurs d'Entreprises à Soissons
         </h1>
 
         {/* Image impactante */}
@@ -75,17 +76,17 @@ const SoutienCreateursPage = () => {
           />
           <div className="bg-black/70 p-4 text-center">
             <p className="text-white text-sm italic">
-              “Support Informatique — Votre allié numérique dès le premier jour”
+              "Support Informatique — Votre allié numérique dès le premier jour"
             </p>
           </div>
         </div>
 
         {/* Introduction rassurante */}
         <p className="text-gray-300 text-lg mb-8">
-          Vous lancez votre entreprise et vous avez besoin d’un environnement
+          Vous lancez votre entreprise et vous avez besoin d'un environnement
           numérique fiable, sécurisé et efficace ?
           <br />
-          Vous n’arrivez pas à configurer votre messagerie pro ou à mettre en
+          Vous n'arrivez pas à configurer votre messagerie pro ou à mettre en
           place votre site vitrine ?
           <br />
           Vos outils ne communiquent pas entre eux ? Vos fichiers sont dispersés
@@ -145,7 +146,7 @@ const SoutienCreateursPage = () => {
             </li>
             <li>
               <strong>Formule « Démarrage Pro »</strong> : 4 heures par mois à
-              200 € (soit 50 €/h), avec priorité d’intervention + 1h offerte au
+              200 € (soit 50 €/h), avec priorité d'intervention + 1h offerte au
               3e mois.
             </li>
             <li>
@@ -173,7 +174,7 @@ const SoutienCreateursPage = () => {
             ))}
           </div>
           <blockquote className="text-gray-200 italic text-lg">
-            « En 2h, j’ai eu la maquette de mon site, ma messagerie et mes
+            « En 2h, j'ai eu la maquette de mon site, ma messagerie et mes
             sauvegardes automatisées. Je me sens enfin sereine pour me lancer. »
           </blockquote>
           <p className="text-gray-400 mt-2">
@@ -206,6 +207,169 @@ const SoutienCreateursPage = () => {
           </p>
         </section>
 
+        {/* ============================================ */}
+        {/* NOUVELLE SECTION : Cas d'usage PropTech      */}
+        {/* ============================================ */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-white mb-2">
+            🏠 Cas d'usage : Solutions PropTech clé en main
+          </h2>
+          <p className="text-gray-400 mb-6">
+            Nous ne faisons pas que du conseil : nous construisons avec vous des
+            outils IA opérationnels qui travaillent 24h/24. Voici deux exemples
+            concrets déployés pour des investisseurs et chasseurs immobiliers.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Carte Immo Sniper */}
+            <div className="bg-gray-900/60 border border-indigo-500/30 rounded-xl p-6 hover:border-indigo-400 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🎯</span>
+                <h3 className="text-xl font-bold text-white">Immo Sniper</h3>
+              </div>
+              <p className="text-gray-300 mb-4">
+                Assistant IA de veille immobilière temps réel. Détectez les
+                opportunités sous-évaluées avant tout le monde grâce à l'analyse
+                géospatiale (PostGIS), à la base DVF et à l'IA (Qwen 3.8-27B via
+                Groq).
+              </p>
+
+              {/* 4 KPI */}
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">Analyses</p>
+                  <p className="text-white font-bold">24h/24</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">
+                    Opportunités
+                  </p>
+                  <p className="text-white font-bold">Écart &lt; -10%</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">
+                    Gain potentiel
+                  </p>
+                  <p className="text-white font-bold">+Value théorique</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">Alerte</p>
+                  <p className="text-white font-bold">Telegram + Email</p>
+                </div>
+              </div>
+
+              <p className="text-sm text-gray-400 mb-4">
+                <strong className="text-gray-300">Stack :</strong> Next.js,
+                TypeScript, PostgreSQL + PostGIS, Docker, Playwright, Leaflet,
+                JWT Auth.
+              </p>
+
+              <a
+                href="/docs/immosniper-mode-emploi.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Télécharger le mode d'emploi (PDF)
+              </a>
+            </div>
+
+            {/* Carte Immo Signal */}
+            <div className="bg-gray-900/60 border border-indigo-500/30 rounded-xl p-6 hover:border-indigo-400 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">📡</span>
+                <h3 className="text-xl font-bold text-white">Immo Signal</h3>
+              </div>
+              <p className="text-gray-300 mb-4">
+                Version allégée et continue de la veille immobilière. Analyse
+                automatique des alertes SeLoger et Leboncoin, qualification IA
+                des annonces, et dashboard centralisé avec argumentaire de
+                négociation.
+              </p>
+
+              {/* 4 KPI */}
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">Collecte</p>
+                  <p className="text-white font-bold">IMAP Gmail</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">Analyse</p>
+                  <p className="text-white font-bold">Base DVF + IA</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">Confiance</p>
+                  <p className="text-white font-bold">Haute / Moy. / Faible</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-gray-400 uppercase">Pitch IA</p>
+                  <p className="text-white font-bold">Négociation auto</p>
+                </div>
+              </div>
+
+              <p className="text-sm text-gray-400 mb-4">
+                <strong className="text-gray-300">Stack :</strong> Next.js,
+                TypeScript, PostgreSQL + PostGIS, Docker, Leaflet, IMAP Gmail,
+                JWT Auth.
+              </p>
+
+              <a
+                href="/docs/immosignal-mode-emploi.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Télécharger le mode d'emploi (PDF)
+              </a>
+            </div>
+          </div>
+
+          {/* Encadré différenciation */}
+          <div className="mt-6 p-5 bg-indigo-950/40 border border-indigo-500/40 rounded-xl">
+            <p className="text-gray-200">
+              <strong className="text-white">
+                💡 Pourquoi c'est différent ?
+              </strong>{" "}
+              Aucun concurrent en consulting IA généraliste ne propose ce type
+              de livrable PropTech clé en main. Nous ne vendons pas du conseil
+              théorique : nous livrons un{" "}
+              <strong className="text-white">
+                produit fini, déployé et opérationnel
+              </strong>{" "}
+              qui détecte les bonnes affaires avant vos concurrents.
+            </p>
+          </div>
+        </section>
+        {/* ============================================ */}
+        {/* FIN SECTION Cas d'usage PropTech             */}
+        {/* ============================================ */}
+
         {/* Proximité géographique */}
         <section className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
           <h2 className="text-xl font-bold text-white mb-3">
@@ -224,8 +388,9 @@ const SoutienCreateursPage = () => {
 
         {/* CTA avec bouton fonctionnel */}
         <div className="mt-10 text-center">
-          <p className="text-gray-400">
-            Besoin d’un diagnostic rapide ou d’un setup clé en main ?
+          <p className="text-gray-400 mb-4">
+            Besoin d'un diagnostic rapide, d'un setup clé en main ou d'un outil
+            IA sur mesure pour votre activité ?
           </p>
           <ContactCTAButton label="Demandez un audit gratuit" />
         </div>
