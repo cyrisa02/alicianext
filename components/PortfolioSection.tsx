@@ -1,8 +1,6 @@
 "use client";
-
 import React, { useState, useCallback, useEffect } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "./icons/UiIcons";
-
 const projects = [
   {
     image: "/images/compta.jpg",
@@ -121,7 +119,7 @@ const PortfolioSection: React.FC = () => {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden relative h-[28rem] rounded-lg">
+          <div className="overflow-hidden relative h-[28rem] rounded-lg bg-gray-900">
             <div
               className="flex transition-transform ease-out duration-500 h-full"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -129,15 +127,15 @@ const PortfolioSection: React.FC = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="w-full flex-shrink-0 h-full relative"
+                  className="w-full flex-shrink-0 h-full relative flex items-center justify-center"
                 >
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   <div
-                    className={`absolute inset-0 bg-black/20 flex flex-col justify-end p-8 transition-opacity duration-500 ${
+                    className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 transition-opacity duration-500 ${
                       textVisibility[index] ? "opacity-100" : "opacity-0"
                     }`}
                   >

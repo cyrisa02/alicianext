@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "Qu'est-ce qu'AlicIA-GPT ?",
     answer:
-      "AlicIA-GPT est une agence de conseil en intelligence artificielle basée à Soissons. Nous accompagnons artisans, commerçants et PME dans l'automatisation de leurs tâches administratives, comptables, RH et marketing grâce à des agents IA sur-mesure.",
+      "AlicIA-GPT est une agence de conseil en intelligence artificielle basée à Soissons. Nous accompagnons artisans, commerçants et PME dans l'automatisation de leurs tâches administratives, comptables, RH et marketing grâce à des agents IA sur-mesure, partout en France.",
   },
   {
     question: "Mes données sont-elles en sécurité avec vos solutions d'IA ?",
