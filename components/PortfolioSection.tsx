@@ -9,6 +9,12 @@ const projects = [
     type: "Automatisation & IA",
   },
   {
+    image: "/images/memobot.jpg",
+    year: 2026,
+    name: "Assistant interne sécurisé",
+    type: "Développement sur-mesure",
+  },
+  {
     image: "/images/correcteur.jpg",
     year: 2026,
     name: "Correcteur de copies",
