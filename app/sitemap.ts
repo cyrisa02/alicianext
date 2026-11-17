@@ -91,6 +91,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
     },
 
+    // 🔧 Outils IA
+    { route: "/outils", priority: 0.8, changeFrequency: "monthly" as const },
+    {
+      route: "/outils/devisflow-ia",
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      route: "/outils/facture-ia",
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      route: "/outils/memobot",
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      route: "/outils/immo-alert-ia",
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+
+    // 📝 Blog
+    { route: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
+
     // ⚖️ Pages légales
     {
       route: "/mentions-legales",

@@ -14,8 +14,8 @@ const Header: React.FC = () => {
   const navLinks = [
     { id: "a-propos", label: "À propos", isPage: false },
     { id: "services", label: "Services", isPage: false },
-    { id: "portfolio", label: "Portfolio", isPage: false },
-    { id: "blog", label: "Réalisations & Blog", isPage: true, href: "/blog" },
+    { id: "outils", label: "Réalisations", isPage: true, href: "/outils" },
+    { id: "blog", label: "Blog", isPage: true, href: "/blog" },
     { id: "contact", label: "Contact", isPage: false },
   ];
 

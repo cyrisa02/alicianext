@@ -79,10 +79,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/#portfolio"
+                  href="/outils"
                   className="hover:text-white transition-colors"
                 >
-                  Portfolio
+                  Réalisations
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
                   href="/blog"
                   className="hover:text-white transition-colors"
                 >
-                  Réalisations & Blog
+                  Blog
                 </Link>
               </li>
             </ul>

@@ -28,6 +28,7 @@ const ProcessSection: React.FC = () => {
       title: "Développement & Intégration",
       description:
         "Nous développons et intégrons les solutions IA directement dans votre environnement de travail.",
+      link: "/outils",
     },
     {
       number: 4,
