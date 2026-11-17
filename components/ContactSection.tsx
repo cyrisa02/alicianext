@@ -7,8 +7,8 @@ const ContactSection: React.FC = () => {
     email: "",
     company: "",
     phone: "",
-    projectType: "", // NOUVEAU
-    companySize: "", // NOUVEAU
+    projectType: "",
+    companySize: "",
     message: "",
     rgpd: false,
   });
@@ -17,7 +17,7 @@ const ContactSection: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value, type } = e.target;
     if (type === "checkbox") {
@@ -35,7 +35,6 @@ const ContactSection: React.FC = () => {
       return;
     }
     setStatus("Envoi en cours...");
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -63,17 +62,29 @@ const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 sm:py-32 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+        {/* Bloc titre centré */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-white">
             Contactez-nous
           </h2>
-          <p className="mt-4 text-lg text-gray-400">
-            Prêt à démarrer votre projet IA ? Remplissez le formulaire
-            ci-dessous ou contactez-nous directement.
+          <p className="mt-2 text-sm text-gray-400">
+            Remplissez ce formulaire pour détailler votre projet.
+          </p>
+          <p className="mt-2 text-sm text-gray-400">
+            Vous avez déjà une idée précise ?{" "}
+            <a
+              href="https://cal.com/cyril-gourdon/diagnostic-ia-gratuit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-indigo-400 underline underline-offset-4 transition-colors hover:text-indigo-300"
+            >
+              Réservez directement un créneau ici →
+            </a>
           </p>
         </div>
 
-        <div className="mt-16 max-w-2xl mx-auto">
+        {/* Formulaire centré avec largeur max */}
+        <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Ligne 1 : Nom et Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -118,7 +129,7 @@ const ContactSection: React.FC = () => {
               />
             </div>
 
-            {/* NOUVEAU : Type de projet */}
+            {/* Type de projet */}
             <div>
               <select
                 name="projectType"
@@ -144,7 +155,7 @@ const ContactSection: React.FC = () => {
               </select>
             </div>
 
-            {/* NOUVEAU : Taille de l'entreprise */}
+            {/* Taille de l'entreprise */}
             <div>
               <select
                 name="companySize"
@@ -163,7 +174,7 @@ const ContactSection: React.FC = () => {
               </select>
             </div>
 
-            {/* MODIFIÉ : Message plus guidé */}
+            {/* Message guidé */}
             <div>
               <textarea
                 name="message"

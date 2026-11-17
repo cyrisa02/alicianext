@@ -5,7 +5,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CookieConsentManager from "../components/CookieConsentManager";
+import CookieConsentManager from "@/components/CookieConsentManager";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +25,6 @@ export const metadata: Metadata = {
     "Soissons",
     "ia",
     "IA",
-    "ia Soissons",
-    "Soissons ia",
-    "Soissons IA",
-    "IA Soissons",
     "chatbot",
     "voicebot",
     "devis automatisé",
@@ -38,8 +34,8 @@ export const metadata: Metadata = {
     "refonte de site web",
     "création de site web",
     "Laon",
-    "Villers Cotterêt",
-    "Château Thierry",
+    "Villers-Cotterêts",
+    "Château-Thierry",
     "Chauny",
     "Meaux",
     "Compiègne",
@@ -55,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AlicIA-GPT | Agence & Consultant en Intelligence Artificielle",
     description:
-      "Expert en IA, automatisation et chatbots. Accompagnement sur-mesure à Soissons, Aisne, Oise, Marne et nord Seine et Marne 77.",
+      "Expert en IA, automatisation et chatbots. Accompagnement sur-mesure à Soissons, Aisne, Oise, Marne et nord Seine-et-Marne 77.",
     type: "website",
     locale: "fr_FR",
     siteName: "AlicIA-GPT",
@@ -64,8 +60,56 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AlicIA-GPT | Agence & Consultant en Intelligence Artificielle",
     description:
-      "Expert en IA, automatisation et chatbots. Accompagnement sur-mesure à Soissons, Aisne, Oise, Marne et nord Seine et Marne 77.",
+      "Expert en IA, automatisation et chatbots. Accompagnement sur-mesure à Soissons, Aisne, Oise, Marne et nord Seine-et-Marne 77.",
   },
+};
+
+// Données structurées globales pour le NER (Knowledge Graph)
+const globalJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alicia-gpt.com/#organization",
+      name: "AlicIA-GPT",
+      url: "https://www.alicia-gpt.com",
+      logo: "https://www.alicia-gpt.com/images/logo.png", // À adapter si tu as un logo
+      founder: {
+        "@type": "Person",
+        "@id": "https://www.alicia-gpt.com/#person",
+        name: "Cyril Gourdon",
+        jobTitle: "Fondateur et Consultant en Intelligence Artificielle",
+        sameAs: [
+          "https://www.linkedin.com/in/cyril-gourdon/",
+          "https://github.com/cyrisa02",
+        ],
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+33-6-15-60-33-44",
+        contactType: "customer service",
+        areaServed: "FR",
+        availableLanguage: "French",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Soissons",
+        postalCode: "02200",
+        addressRegion: "Hauts-de-France",
+        addressCountry: "FR",
+      },
+      sameAs: ["https://www.linkedin.com/in/cyril-gourdon/"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.alicia-gpt.com/#website",
+      url: "https://www.alicia-gpt.com",
+      name: "AlicIA-GPT",
+      publisher: {
+        "@id": "https://www.alicia-gpt.com/#organization",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -75,25 +119,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          strategy="afterInteractive"
+      <body
+        className={`${inter.className} bg-[#0A0A0A] text-gray-300 antialiased`}
+      >
+        {/* Injection du JSON-LD global pour le NER */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
+
+        <Header />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+        <CookieConsentManager />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX"}');
           `}
         </Script>
-      </head>
-      <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsentManager />
       </body>
     </html>
   );

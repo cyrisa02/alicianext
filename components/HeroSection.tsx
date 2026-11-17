@@ -42,10 +42,28 @@ const HeroSection: React.FC = () => {
         {/* Boutons d'appel à l'action (CTA) */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:space-x-4 animate-fade-in-up animation-delay-600">
           <a
-            href="#contact"
-            className="w-full sm:w-auto bg-[#6366F1] text-white font-bold py-4 px-8 rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(99,102,241,0.5)] transform hover:scale-105 text-center"
+            href="https://cal.com/cyril-gourdon/diagnostic-ia-gratuit"
+            // Remplace par ton lien Cal.com réel
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
           >
-            Réserver mon diagnostic IA gratuit (20 min)
+            Réserver mon diagnostic gratuit (20 min)
+            {/* Icône externe subtile pour indiquer la sortie du site */}
+            <svg
+              className="ml-2 -mr-1 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
           </a>
           <a
             href="#services"
