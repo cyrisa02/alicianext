@@ -6,10 +6,10 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-black border-t border-gray-800/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Section principale en 3 colonnes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {/* Section principale en 4 colonnes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Colonne 1 : Marque & Contact */}
-          <div className="text-center md:text-left">
+          <div className="text-center lg:text-left">
             <Link
               href="/"
               className="text-2xl font-bold text-white inline-block mb-4 hover:opacity-80 transition-opacity"
@@ -41,11 +41,14 @@ const Footer: React.FC = () => {
                   contact@alicia-gpt.com
                 </a>
               </p>
+              <p>
+                <strong>SIRET : </strong> 827 987 595 00028
+              </p>
             </div>
           </div>
 
           {/* Colonne 2 : Support & Navigation */}
-          <div className="text-center">
+          <div className="text-center lg:text-left">
             <h3 className="text-white font-semibold mb-4">
               Support & Navigation
             </h3>
@@ -82,20 +85,68 @@ const Footer: React.FC = () => {
                   Portfolio
                 </Link>
               </li>
-              {/* ✅ Ajout du lien vers le Blog */}
               <li>
                 <Link
                   href="/blog"
                   className="hover:text-white transition-colors"
                 >
-                  Réalisations/Blog
+                  Réalisations & Blog
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Colonne 3 : Informations Légales */}
-          <div className="text-center md:text-right">
+          {/* Colonne 3 : Zone d'intervention */}
+          <div className="text-center lg:text-left">
+            <h3 className="text-white font-semibold mb-4">
+              Zone d'intervention
+            </h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li>
+                <Link
+                  href="/agence-ia-aisne"
+                  className="hover:text-white transition-colors"
+                >
+                  Aisne (02) — Soissons
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/consultant-ia-oise"
+                  className="hover:text-white transition-colors"
+                >
+                  Oise (60) — Compiègne
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/agence-ia-reims-marne"
+                  className="hover:text-white transition-colors"
+                >
+                  Marne (51) — Reims
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/consultant-ia-seine-et-marne"
+                  className="hover:text-white transition-colors"
+                >
+                  Seine-et-Marne (77) — Meaux
+                </Link>
+              </li>
+              <li className="pt-2 mt-2 border-t border-gray-800">
+                <Link
+                  href="/ia-locale-souveraine-pme"
+                  className="text-[#00FFB3] hover:text-white transition-colors font-medium"
+                >
+                  🛡️ IA locale & souveraine
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Colonne 4 : Informations Légales */}
+          <div className="text-center lg:text-left">
             <h3 className="text-white font-semibold mb-4">
               Informations Légales
             </h3>
@@ -167,7 +218,6 @@ const Footer: React.FC = () => {
               <GithubIcon className="h-6 w-6" />
             </a>
           </div>
-
           {/* Copyright et Zone géographique */}
           <div className="text-center md:text-right">
             <p className="text-gray-500 text-sm mb-1">

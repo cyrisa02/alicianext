@@ -1,6 +1,33 @@
 import React from "react";
 import Image from "next/image";
 
+const partners = [
+  {
+    name: "Google Workspace",
+    src: "/images/google.png",
+    url: "https://workspace.google.com",
+    hoverColor: "hover:border-[#4285F4]/50",
+  },
+  {
+    name: "Mistral AI",
+    src: "/images/mistral.png",
+    url: "https://mistral.ai",
+    hoverColor: "hover:border-[#FF7000]/50",
+  },
+  {
+    name: "Ollama",
+    src: "/images/ollama.png",
+    url: "https://ollama.com",
+    hoverColor: "hover:border-white/40",
+  },
+  {
+    name: "n8n",
+    src: "/images/n8n.png",
+    url: "https://n8n.io",
+    hoverColor: "hover:border-[#EA4B71]/50",
+  },
+];
+
 const AboutSection: React.FC = () => {
   return (
     <section id="a-propos" className="py-20 sm:py-32 bg-[#0A0A0A] text-white">
@@ -96,6 +123,32 @@ const AboutSection: React.FC = () => {
                       Fondateur d'<span className="text-white">AlicIA-GPT</span>
                     </p>
                     <span className="w-1.5 h-1.5 rounded-full bg-[#6366F1]"></span>
+                  </div>
+                </div>
+                {/* Stack technologique */}
+                <div className="mt-6 w-full max-w-xs">
+                  <p className="text-center text-xs uppercase tracking-widest text-gray-500 mb-3">
+                    Stack & Partenaires
+                  </p>
+                  <div className="grid grid-cols-4 gap-4">
+                    {partners.map((partner) => (
+                      <a
+                        key={partner.name}
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`group flex items-center justify-center bg-white/[0.03] border border-white/10 rounded-xl p-4 ${partner.hoverColor} hover:bg-white/[0.06] transition-all duration-300`}
+                        title={partner.name}
+                      >
+                        <Image
+                          src={partner.src}
+                          alt={`Logo ${partner.name}`}
+                          width={40}
+                          height={40}
+                          className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
