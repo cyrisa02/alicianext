@@ -5,56 +5,88 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-[#0A0A0A] overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#0A0A0A] overflow-hidden pt-20 pb-16"
     >
+      {/* Grille de fond et effets visuels */}
       <div className="absolute inset-0 bg-grid-gray-800/20 [mask-image:linear-gradient(to_bottom,white_5%,transparent_80%)]"></div>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#6366F1]/20 rounded-full filter blur-3xl animate-blob"></div>
         <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-[#00FFB3]/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-32 h-32 bg-pink-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-32 h-32 bg-pink-500/10 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up">
-          Transformez Votre Entreprise avec l'
+        {/* Badge de réassurance différenciant (IA Locale & RGPD) */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900/80 border border-gray-800 text-sm font-medium text-gray-300 mb-6 animate-fade-in-up">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#00FFB3] animate-pulse"></span>
+          <span>
+            IA Locale & Souveraine • 100% Conforme RGPD (Aisne, Marne, Oise, 77)
+          </span>
+        </div>
+
+        {/* Titre Principal H1 axé sur la promesse de gain de temps et de croissance */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up animation-delay-200">
+          Gagnez 5 à 10h par semaine sur votre administratif grâce à l'
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6366F1] to-[#00FFB3]">
-            IA Générative
+            Intelligence Artificielle
           </span>
         </h1>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-8 animate-fade-in-up animation-delay-300">
-          Votre agence experte à Soissons pour des solutions IA sur-mesure.
-          Audit, formation, et développement pour booster votre productivité.
+
+        {/* Sous-titre explicite orienté TPE, PME et Artisans */}
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-10 animate-fade-in-up animation-delay-400 leading-relaxed">
+          Agence de conseil, formation et intégration d'outils IA sur-mesure à
+          Soissons. Automatisez vos devis, sécurisez vos données et attirez plus
+          de clients locaux sans complexité technique.
         </p>
-        <div className="flex justify-center items-center space-x-4 animate-fade-in-up animation-delay-600">
+
+        {/* Boutons d'appel à l'action (CTA) */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:space-x-4 animate-fade-in-up animation-delay-600">
           <a
             href="#contact"
-            className="bg-[#6366F1] text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-[0_0_20px_rgba(99,102,241,0.5)] transform hover:scale-105"
+            className="w-full sm:w-auto bg-[#6366F1] text-white font-bold py-4 px-8 rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(99,102,241,0.5)] transform hover:scale-105 text-center"
           >
-            Demander un devis gratuit
+            Réserver mon diagnostic IA gratuit (20 min)
           </a>
           <a
             href="#services"
-            className="border-2 border-gray-700 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 hover:border-gray-600 transition-all duration-300 transform hover:scale-105"
+            className="w-full sm:w-auto border-2 border-gray-700 text-white font-bold py-3.5 px-8 rounded-full hover:bg-gray-800 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 text-center"
           >
-            Découvrir nos services
+            Découvrir nos solutions
           </a>
+        </div>
+
+        {/* Éléments de réassurance rapide sous les CTA */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-xs text-gray-500 animate-fade-in-up animation-delay-800">
+          <span className="flex items-center gap-1.5">
+            ✓ Accompagnement de proximité (02, 51, 60, 77)
+          </span>
+          <span className="flex items-center gap-1.5">
+            ✓ Éligible aux financements formation (OPCO / FAFCEA)
+          </span>
+          <span className="flex items-center gap-1.5">
+            ✓ Zéro compétence technique requise
+          </span>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <svg
-          className="w-6 h-6 text-gray-500"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
+      {/* Flèche de scroll */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden sm:block">
+        <a href="#a-propos" aria-label="Faire défiler vers le bas">
+          <svg
+            className="w-6 h-6 text-gray-500 hover:text-gray-300 transition-colors"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
       </div>
 
+      {/* Styles d'animation et de grille */}
       <style jsx>{`
         @keyframes blob {
           0% {
@@ -95,15 +127,22 @@ const HeroSection: React.FC = () => {
           animation-fill-mode: both;
           opacity: 0;
         }
-        .animation-delay-300 {
-          animation-delay: 0.3s;
+        .animation-delay-200 {
+          animation-delay: 0.2s;
+        }
+        .animation-delay-400 {
+          animation-delay: 0.4s;
         }
         .animation-delay-600 {
           animation-delay: 0.6s;
         }
+        .animation-delay-800 {
+          animation-delay: 0.8s;
+        }
 
         .bg-grid-gray-800\\/20 {
-          background-image: linear-gradient(
+          background-image:
+            linear-gradient(
               to right,
               rgba(156, 163, 175, 0.1) 1px,
               transparent 1px
