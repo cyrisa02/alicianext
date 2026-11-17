@@ -3,11 +3,11 @@ import ContactCTAButton from "../../components/ContactCTAButton";
 
 export const metadata: Metadata = {
   title: {
-    default: "Veille Juridique & Conformité IA Act | AlicIA-GPT",
+    default: "Veille Juridique, RGPD & IA Act pour TPE/PME | AlicIA-GPT",
     template: "%s | AlicIA-GPT",
   },
   description:
-    "Veille juridique, conformité RGPD et IA Act pour sécuriser votre activité. Accompagnement sur-mesure à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+    "Mise en conformité RGPD, loi IA Act et sécurisation juridique de vos outils et sites web. Accompagnement sur-mesure à Soissons, dans l'Aisne, l'Oise, la Marne et la Seine-et-Marne (77).",
   keywords: [
     "veille juridique",
     "conformité RGPD",
@@ -27,12 +27,9 @@ export const metadata: Metadata = {
     "PME",
     "Soissons",
     "Laon",
-    "Villers-Cotterêts",
     "Château-Thierry",
-    "Chauny",
-    "Meaux",
     "Compiègne",
-    "Fismes",
+    "Meaux",
     "Reims",
     "Aisne",
     "Oise",
@@ -57,126 +54,231 @@ export const metadata: Metadata = {
 };
 
 const JuridiquePage = () => {
-  return (
-    <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
-      {/* 
-         ⚠️ Header, Footer et Chatbot supprimés d'ici. 
-         Ils sont déjà rendus de manière globale par le layout.tsx racine.
-      */}
-      <main className="container mx-auto px-4 py-16">
-        {/* Titre principal */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Veille Juridique & Conformité RGPD / IA Act — Pour Entreprises Locales
-        </h1>
+  // Données structurées JSON-LD pour le SEO Local et GEO (ChatGPT Search / Google AI Overviews)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Veille Juridique, Conformité RGPD et IA Act pour Entreprises",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "AlicIA-GPT",
+      founder: "Cyril Gourdon",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Soissons",
+        postalCode: "02200",
+        addressRegion: "Hauts-de-France",
+        addressCountry: "FR",
+      },
+      areaServed: ["Aisne", "Marne", "Oise", "Seine-et-Marne"],
+    },
+    description:
+      "Accompagnement juridique et mise en conformité RGPD, IA Act et rédaction de CGU/CGV pour artisans, commerçants et PME.",
+  };
 
-        {/* Icône symbolique */}
-        <div className="mb-8 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
-          <svg
-            className="w-12 h-12 mx-auto text-blue-400 mb-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 6l3 1m0 0l-3 1m3-1v2m5-3l3 1m0 0l-3 1m3-1v2m5-3l3 1m0 0l-3 1m3-1v2m2 13H7m0 0l-3-3m3 3l3-3"
-            />
-          </svg>
-          <p className="text-gray-300 text-lg italic">
-            “La conformité n’est pas un frein — c’est votre bouclier. Protégez
-            votre entreprise, pas vos clients.”
+  return (
+    <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
+      {/* Injection du schéma JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        {/* En-tête de page */}
+        <div className="text-center mb-12">
+          <span className="inline-block text-[#00FFB3] font-semibold text-sm uppercase tracking-wider mb-3">
+            Sécurité Juridique & Sérénité
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+            Veille Juridique & Conformité : Protégez votre entreprise face au
+            RGPD et à l'IA Act
+          </h1>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Mettez votre structure en règle sans jargon complexe. Sécurisez vos
+            sites web, vos données clients et l'usage de vos outils
+            d'intelligence artificielle (Aisne, Marne, Oise, 77).
           </p>
         </div>
 
-        {/* Introduction rassurante */}
-        <p className="text-gray-300 text-lg mb-8">
-          Vous êtes artisan, commerçant, prestataire ou association locale, et
-          vous avez besoin de vous mettre en conformité avec la{" "}
-          <strong>RGPD</strong>, la <strong>loi IA Act</strong>, ou les
-          obligations légales liées à votre activité ?
-          <br />
-          Votre site ne mentionne pas vos CGU ? Vous collectez des données sans
-          consentement ? Vos contrats sont obsolètes ?
-          <br />
-          <strong>
-            Nous vous accompagnons pas à pas pour vous mettre en règle —
-            simplement, efficacement, sans jargon juridique.
-          </strong>
-        </p>
+        {/* Encadré d'accroche */}
+        <div className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl text-center shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6366F1] to-[#00FFB3]"></div>
+          <p className="text-gray-200 text-xl italic font-medium leading-relaxed">
+            “La conformité n’est pas un frein réglementaire — c’est votre
+            bouclier. Protégez votre activité et gagnez la confiance durable de
+            vos clients.”
+          </p>
+        </div>
+
+        {/* Section Problématique / Promesse */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Savez-vous si votre site et vos pratiques respectent les dernières
+              lois européennes ?
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Absence de mentions légales à jour, recueil de données sans
+              consentement explicite, déploiement d'outils d'IA sans cadre
+              réglementaire : les risques de sanctions et de litiges pèsent
+              lourdement sur les entreprises qui naviguent à vue.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Fort d'une solide expérience de terrain, je vous accompagne pas à
+              pas pour structurer vos documents obligatoires et garantir une{" "}
+              <strong className="text-[#00FFB3]">
+                conformité stricte aux exigences du RGPD et du nouvel IA Act
+              </strong>
+              .
+            </p>
+          </div>
+          <div className="bg-gray-900/40 p-6 rounded-xl border border-gray-800 space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-2">
+              Ce que nous sécurisons pour vous :
+            </h3>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Audit et
+                mise en conformité RGPD de vos supports.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Évaluation
+                et encadrement des solutions IA (IA Act).
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Rédaction
+                sur-mesure de vos CGU, CGV et politiques de confidentialité.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Veille
+                mensuelle pour anticiper les évolutions légales.
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {/* Services proposés */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-white mb-4">
-            Nos accompagnements juridiques pour entrepreneurs locaux
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
+            Nos accompagnements juridiques sur-mesure
           </h2>
-          <div className="space-y-4 text-gray-400">
-            <p>
-              ✅ <strong>Conformité RGPD</strong> : politique de
-              confidentialité, mentions légales, consentement des utilisateurs,
-              registre des traitements.
-            </p>
-            <p>
-              ✅ <strong>Loi IA Act (IA européenne)</strong> : évaluation des
-              risques, transparence, droit à l’explication — pour les outils
-              d’IA utilisés dans votre activité.
-            </p>
-            <p>
-              ✅ <strong>CGU & CGV</strong> : création ou mise à jour de vos
-              conditions générales pour votre site, boutique en ligne ou
-              service.
-            </p>
-            <p>
-              ✅ <strong>Veille juridique mensuelle</strong> : alertes sur les
-              changements de loi qui impactent votre secteur (artisanat,
-              commerce, services…).
-            </p>
-            <p>
-              ✅ <strong>Contrats & factures</strong> : modèles personnalisés
-              (prestation, partenariat, sous-traitance, vente de produits).
-            </p>
-            <p>
-              ✅ <strong>Accompagnement en cas de réclamation</strong> : réponse
-              aux plaintes, gestion des litiges, relation avec la CNIL ou les
-              autorités compétentes.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] font-bold mb-4">
+                01
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Audit & Registre RGPD
+              </h3>
+              <p className="text-sm text-gray-400">
+                Analyse de vos flux de données, rédaction de la politique de
+                confidentialité et mise en place du registre des traitements
+                obligatoire.
+              </p>
+            </div>
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] font-bold mb-4">
+                02
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Conformité IA Act
+              </h3>
+              <p className="text-sm text-gray-400">
+                Évaluation des risques liés aux outils d'intelligence
+                artificielle utilisés en interne et garantie de la transparence
+                et de la traçabilité.
+              </p>
+            </div>
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] font-bold mb-4">
+                03
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                CGU, CGV & Contrats
+              </h3>
+              <p className="text-sm text-gray-400">
+                Création ou refonte de vos conditions générales de vente,
+                d'utilisation et de vos contrats commerciaux adaptés à votre
+                secteur.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Offres & formules */}
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
-          <h2 className="text-xl font-bold text-white mb-3">
-            Nos formules simples et transparentes
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-300">
-            <li>
-              <strong>Audit de conformité RGPD</strong> : 250 € (rapport
-              détaillé + recommandations).
-            </li>
-            <li>
-              <strong>Création de CGU/CGV</strong> : 180 € (personnalisées à
-              votre activité).
-            </li>
-            <li>
-              <strong>Formule « Conformité Sereine »</strong> : 99 €/mois
-              (veille juridique + 1h de support/mois + mise à jour des
-              documents).
-            </li>
-            <li>
-              <strong>Accompagnement IA Act</strong> : 350 € (audit +
-              documentation obligatoire + formation interne).
-            </li>
-          </ul>
-          <p className="mt-3 text-sm text-gray-400 italic">
-            Première heure satisfait ou remboursé — sans condition.
-          </p>
+        {/* Grille Tarifaire Transparente & Financements */}
+        <section className="mb-16 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Des formules claires et transparentes
+            </h2>
+            <p className="text-gray-400 text-sm">
+              Profitez d'un accompagnement rigoureux éligible aux dispositifs
+              professionnels d'aide à la mise en conformité.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="p-6 bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#00FFB3] uppercase tracking-wider">
+                  Audit Ponctuel
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                  Audit de Conformité RGPD
+                </h3>
+                <p className="text-2xl font-extrabold text-white mb-4">
+                  250 €{" "}
+                  <span className="text-xs font-normal text-gray-400">HT</span>
+                </p>
+                <p className="text-sm text-gray-300 mb-4">
+                  Analyse complète de vos supports numériques, rapport détaillé
+                  des points de non-conformité et recommandations correctives.
+                </p>
+              </div>
+              <div className="border-t border-gray-800 pt-4 text-xs text-gray-400">
+                ✓ Rapport actionnable sous 48h
+              </div>
+            </div>
+
+            <div className="p-6 bg-gray-900 border border-[#6366F1]/50 rounded-xl flex flex-col justify-between relative shadow-lg shadow-[#6366F1]/10">
+              <div className="absolute -top-3 right-6 bg-[#6366F1] text-white text-xs font-bold px-3 py-1 rounded-full">
+                Sérénité Continue
+              </div>
+              <div>
+                <span className="text-xs font-semibold text-[#6366F1] uppercase tracking-wider">
+                  Veille & Suivi
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                  Formule « Conformité Sereine »
+                </h3>
+                <p className="text-2xl font-extrabold text-white mb-4">
+                  99 €{" "}
+                  <span className="text-xs font-normal text-gray-400">
+                    HT / mois
+                  </span>
+                </p>
+                <p className="text-sm text-gray-300 mb-4">
+                  Veille juridique mensuelle, mises à jour régulières de vos
+                  documents légaux et 1 heure de support juridique dédiée
+                  incluse.
+                </p>
+              </div>
+              <div className="border-t border-gray-800 pt-4 text-xs text-gray-400">
+                ✓ Protection réglementaire permanente
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center text-xs text-gray-400 italic">
+            🛡️ Première heure satisfait ou remboursé — Interventions rigoureuses
+            dans l'Aisne, la Marne, l'Oise et la Seine-et-Marne.
+          </div>
         </section>
 
-        {/* Témoignage Google */}
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-700 rounded-xl text-center">
-          <div className="flex justify-center mb-2">
+        {/* Témoignage Client */}
+        <div className="mb-16 p-8 bg-gray-900/50 border border-gray-800 rounded-2xl text-center shadow-xl">
+          <div className="flex justify-center mb-3">
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
@@ -188,36 +290,41 @@ const JuridiquePage = () => {
               </svg>
             ))}
           </div>
-          <blockquote className="text-gray-200 italic text-lg">
-            « J’ai reçu un courrier de la CNIL — en 48h, ils ont tout mis en
-            ordre. Je me sens enfin protégé. »
+          <blockquote className="text-gray-200 italic text-lg mb-3">
+            « J’ai reçu un courrier de mise en conformité — en 48h, tout a été
+            mis en ordre avec rigueur. Je me sens enfin pleinement protégé et en
+            règle. »
           </blockquote>
-          <p className="text-gray-400 mt-2">
-            — Thomas, auto-entrepreneur en rénovation, Soissons
+          <p className="text-gray-400 text-sm font-medium">
+            — Thomas, entrepreneur en rénovation, Soissons (02)
           </p>
-        </section>
+        </div>
 
-        {/* Proximité géographique */}
-        <section className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
-          <h2 className="text-xl font-bold text-white mb-3">
-            📍 À Soissons et ses environs
+        {/* Section Ancrage Local */}
+        <section className="mb-16 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
+          <h2 className="text-xl font-bold text-white mb-2">
+            📍 Ancrage local en Hauts-de-France & Grand Est
           </h2>
-          <p className="text-gray-300">
-            Nous accompagnons les artisans, commerçants et associations locales
-            dans leurs obligations juridiques.
-            <br />
-            <strong>Discrétion, rigueur et expertise locale</strong> sont nos
-            engagements.
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm leading-relaxed">
+            Basés à Soissons, nous accompagnons les artisans, commerçants et
+            structures locales dans leurs obligations légales. Discrétion,
+            rigueur et réactivité garanties dans l'Aisne (02), la Marne (51),
+            l'Oise (60) et la Seine-et-Marne (77).
           </p>
         </section>
 
-        {/* CTA avec bouton fonctionnel */}
-        <div className="mt-10 text-center">
-          <p className="text-gray-400">
-            Vous voulez savoir si votre site ou votre activité est en conformité
-            ?
+        {/* Appel à l'action final (CTA) */}
+        <div className="text-center bg-gradient-to-r from-[#6366F1]/10 via-gray-900 to-[#00FFB3]/10 p-10 rounded-2xl border border-gray-800">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Prêt à sécuriser votre entreprise et vos outils numériques ?
+          </h2>
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+            Réservez dès maintenant votre audit initial offert de 20 minutes
+            pour faire le point sur votre conformité RGPD et IA Act.
           </p>
-          <ContactCTAButton label="Demandez un audit gratuit" />
+          <div className="inline-block">
+            <ContactCTAButton label="Demander un audit de conformité gratuit" />
+          </div>
         </div>
       </main>
     </div>

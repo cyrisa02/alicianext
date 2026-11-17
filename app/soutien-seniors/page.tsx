@@ -40,101 +40,232 @@ export const metadata: Metadata = {
 };
 
 const SoutienSeniorsPage = () => {
-  return (
-    <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
-      <main className="container mx-auto px-4 py-16">
-        {/* Titre principal */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Soutien Numérique pour les Seniors et Débutants sur Soissons
-        </h1>
+  // Données structurées JSON-LD pour le SEO Local et GEO (ChatGPT Search / Google AI Overviews)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Assistance et Soutien Numérique pour Seniors et Débutants",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "AlicIA-GPT",
+      founder: "Cyril Gourdon",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Soissons",
+        postalCode: "02200",
+        addressRegion: "Hauts-de-France",
+        addressCountry: "FR",
+      },
+      areaServed: ["Aisne"],
+    },
+    description:
+      "Assistance informatique, dépannage à domicile et formation patiente sans jargon pour seniors et débutants à Soissons et ses environs.",
+  };
 
-        {/* Image impactante */}
-        <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+  return (
+    <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
+      {/* Injection du schéma JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        {/* En-tête de page */}
+        <div className="text-center mb-12">
+          <span className="inline-block text-[#00FFB3] font-semibold text-sm uppercase tracking-wider mb-3">
+            Accompagnement Patient & Bienveillant
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+            Soutien Numérique pour les Seniors et Débutants à Soissons
+          </h1>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Retrouvez votre autonomie informatique et utilisez vos appareils en
+            toute sérénité grâce à un accompagnement sur-mesure, sans aucun
+            jargon technique.
+          </p>
+        </div>
+
+        {/* Visuel d'illustration */}
+        <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-gray-950 relative">
           <img
             src="/images/senior.png"
-            alt="Un technicien accompagne une senior avec un sourire devant un ordinateur — Support informatique de confiance"
-            className="w-full h-auto object-cover max-h-[400px] md:max-h-[500px] hover:scale-102 transition-transform duration-300"
+            alt="Assistance informatique bienveillante pour seniors et débutants à Soissons - AlicIA-GPT"
+            className="w-full h-auto object-cover max-h-[400px]"
           />
-          <div className="bg-black/70 p-4 text-center">
-            <p className="text-white text-sm italic">
-              "Support Informatique — Votre aide de confiance"
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
+          <div className="absolute bottom-4 left-6 right-6">
+            <span className="inline-block bg-[#6366F1] text-white text-xs font-bold px-3 py-1 rounded-full mb-2">
+              Aide de Confiance
+            </span>
+            <p className="text-white text-sm sm:text-base font-medium italic">
+              “L'informatique doit simplifier la vie, pas la compliquer. Nous
+              prenons le temps qu'il faut, à votre rythme.”
             </p>
           </div>
         </div>
 
-        {/* Introduction rassurante */}
-        <p className="text-gray-300 text-lg mb-8">
-          Vous débutez dans l'informatique et vous aimeriez utiliser votre
-          ordinateur, tablette ou smartphone en toute sérénité ?
-          <br />
-          Vous n'arrivez pas à connecter votre imprimante ou votre scanner à
-          votre ordinateur ?
-          <br />
-          Vous avez des problèmes de connexion internet ?
-          <br />
-          Votre ordinateur tourne au ralenti ?
-          <br />
-          <strong>
-            Nous sommes là pour vous accompagner, pas à pas, sans jargon, avec
-            patience et bienveillance.
-          </strong>
-        </p>
+        {/* Section Problématique / Promesse */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Vous débutez avec l'informatique ou rencontrez des difficultés au
+              quotidien ?
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Ordinateur qui ralentit, imprimante capricieuse, crainte des
+              arnaques en ligne ou simple besoin de comprendre comment
+              communiquer facilement avec vos proches : il n'est jamais trop
+              tard pour apprendre.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Nous vous offrons un{" "}
+              <strong className="text-[#00FFB3]">
+                soutien de proximité, patient et chaleureux
+              </strong>
+              , directement à votre domicile ou en visioconférence à Soissons et
+              ses environs.
+            </p>
+          </div>
+          <div className="bg-gray-900/40 p-6 rounded-xl border border-gray-800 space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-2">
+              Ce sur quoi nous vous aidons :
+            </h3>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Prise en
+                main de l'ordinateur, de la tablette et du smartphone.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Gestion des
+                e-mails, des photos et des démarches en ligne sécurisées.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Installation
+                et connexion de vos équipements (imprimante, box).
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Sécurisation
+                contre les virus et les arnaques sur internet.
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {/* Services proposés */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-white mb-4">
-            Nos accompagnements sur mesure
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
+            Nos accompagnements sur-mesure pas à pas
           </h2>
-          <div className="space-y-4 text-gray-400">
-            <p>
-              ✅ <strong>Initiation à l'ordinateur</strong> : allumer, utiliser
-              la souris, taper au clavier, gérer vos fichiers.
-            </p>
-            <p>
-              ✅ <strong>Navigation internet</strong> : rechercher, reconnaître
-              les sites fiables, éviter les arnaques en ligne.
-            </p>
-            <p>
-              ✅ <strong>Courrier électronique</strong> : créer une adresse,
-              envoyer/recevoir des messages, joindre des photos.
-            </p>
-            <p>
-              ✅ <strong>Smartphone & tablette</strong> : appels, messages,
-              photos, applications utiles (Santé, banque, transports…).
-            </p>
-            <p>
-              ✅ <strong>Sécurité numérique</strong> : antivirus, mots de passe
-              robustes, mises à jour, protection contre les escroqueries.
-            </p>
-            <p>
-              ✅ <strong>Dépannage express</strong> : virus, logiciels bloqués,
-              connexion internet, imprimante, etc.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] font-bold mb-4">
+                01
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Bases & Navigation
+              </h3>
+              <p className="text-sm text-gray-400">
+                Apprenez à utiliser la souris, taper au clavier, organiser vos
+                documents et naviguer sur Internet en toute sécurité.
+              </p>
+            </div>
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] font-bold mb-4">
+                02
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Tablette & Smartphone
+              </h3>
+              <p className="text-sm text-gray-400">
+                Maîtrisez vos applications utiles (appels visio, santé, banque,
+                photos) pour rester connectés avec vos proches.
+              </p>
+            </div>
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] font-bold mb-4">
+                03
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Dépannage & Sécurité
+              </h3>
+              <p className="text-sm text-gray-400">
+                Nettoyage des virus, centralisation de vos mots de passe et
+                résolution rapide de vos pannes informatiques.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Offres & formules */}
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
-          <h2 className="text-xl font-bold text-white mb-3">
-            Nos formules simples et transparentes
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-300">
-            <li>
-              <strong>À la séance</strong> : 30 € / heure, sans engagement.
-            </li>
-            <li>
-              <strong>Formule « Tranquillité »</strong> : 3 heures par mois à 80
-              € (soit 27 €/h), avec priorité d'intervention.
-            </li>
-          </ul>
-          {/* <p className="mt-3 text-sm text-gray-400 italic">
-            Première heure satisfait ou remboursé
-          </p> */}
+        {/* Grille Tarifaire Transparente */}
+        <section className="mb-16 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Des formules simples et transparentes
+            </h2>
+            <p className="text-gray-400 text-sm">
+              Pas de mauvaise surprise : des tarifs clairs adaptés aux
+              particuliers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
+            <div className="p-6 bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#00FFB3] uppercase tracking-wider">
+                  Libre
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                  À la Séance
+                </h3>
+                <p className="text-2xl font-extrabold text-white mb-4">
+                  30 €{" "}
+                  <span className="text-xs font-normal text-gray-400">
+                    HT / heure
+                  </span>
+                </p>
+                <p className="text-sm text-gray-300 mb-4">
+                  Aide à domicile ou en visio selon vos besoins, sans aucun
+                  engagement de durée.
+                </p>
+              </div>
+              <div className="border-t border-gray-800 pt-4 text-xs text-gray-400">
+                ✓ Paiement au temps passé
+              </div>
+            </div>
+
+            <div className="p-6 bg-gray-900 border border-[#6366F1]/50 rounded-xl flex flex-col justify-between relative shadow-lg shadow-[#6366F1]/10">
+              <div className="absolute -top-3 right-6 bg-[#6366F1] text-white text-xs font-bold px-3 py-1 rounded-full">
+                Recommandé
+              </div>
+              <div>
+                <span className="text-xs font-semibold text-[#6366F1] uppercase tracking-wider">
+                  Sérénité
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                  Formule « Tranquillité »
+                </h3>
+                <p className="text-2xl font-extrabold text-white mb-4">
+                  80 €{" "}
+                  <span className="text-xs font-normal text-gray-400">
+                    HT / 3 heures par mois
+                  </span>
+                </p>
+                <p className="text-sm text-gray-300 mb-4">
+                  Accompagnement régulier (soit 27€/h) avec priorité
+                  d'intervention en cas de besoin urgent.
+                </p>
+              </div>
+              <div className="border-t border-gray-800 pt-4 text-xs text-gray-400">
+                ✓ Assistance prioritaire toute l'année
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* Témoignage Google */}
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-700 rounded-xl text-center">
-          <div className="flex justify-center mb-2">
+        {/* Témoignage Client */}
+        <div className="mb-16 p-8 bg-gray-900/50 border border-gray-800 rounded-2xl text-center shadow-xl">
+          <div className="flex justify-center mb-3">
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
@@ -146,43 +277,30 @@ const SoutienSeniorsPage = () => {
               </svg>
             ))}
           </div>
-          <blockquote className="text-gray-200 italic text-lg">
+          <blockquote className="text-gray-200 italic text-lg mb-3">
             « Le conseiller m'a super bien aidé, maintenant j'ai tous mes mots
-            de passe centralisés et mes favoris accessibles. »
+            de passe centralisés et mes favoris accessibles sans stress. »
           </blockquote>
-          <p className="text-gray-400 mt-2">— Jean-Louis, Soissons</p>
-        </section>
-
-        {/* Proximité géographique */}
-        <section className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
-          <h2 className="text-xl font-bold text-white mb-3">
-            📍 À Soissons et ses environs
-          </h2>
-          <p className="text-gray-300">
-            Nous intervenons à votre domicile ou en visioconférence, selon vos
-            préférences.
-            <br />
-            <strong>Confiance, discrétion et respect</strong> sont au cœur de
-            notre accompagnement.
+          <p className="text-gray-400 text-sm font-medium">
+            — Jean-Louis, Soissons (02)
           </p>
-        </section>
+        </div>
 
-        {/* NOUVELLE SECTION : Coordonnées de contact pour seniors */}
-        <section className="mt-12 p-8 bg-gradient-to-br from-[#6366F1]/10 to-[#00FFB3]/10 border-2 border-[#6366F1]/30 rounded-xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
+        {/* Bloc Contact Direct */}
+        <section className="mb-16 p-8 bg-gradient-to-br from-[#6366F1]/10 to-[#00FFB3]/10 border-2 border-[#6366F1]/30 rounded-2xl shadow-xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-center">
             📞 Comment nous contacter ?
           </h2>
-          <p className="text-gray-300 text-lg mb-6 text-center max-w-2xl mx-auto">
-            N'hésitez pas à nous appeler ou à nous envoyer un email. Nous vous
-            répondrons avec patience et bienveillance.
+          <p className="text-gray-300 text-base mb-8 text-center max-w-xl mx-auto">
+            N'hésitez pas à nous appeler ou à nous envoyer un message. Nous vous
+            répondrons avec le sourire et toute la patience nécessaire.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {/* Téléphone */}
-            <div className="bg-gray-900/80 p-6 rounded-xl border border-gray-700 hover:border-[#6366F1] transition-colors">
-              <div className="flex items-center justify-center mb-4">
+            <div className="bg-gray-900/90 p-6 rounded-xl border border-gray-700 text-center">
+              <div className="flex justify-center mb-3">
                 <svg
-                  className="w-10 h-10 text-[#6366F1]"
+                  className="w-8 h-8 text-[#6366F1]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -195,28 +313,25 @@ const SoutienSeniorsPage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2 text-center">
-                Par téléphone
-              </h3>
-              <p className="text-gray-400 text-sm mb-3 text-center">
+              <h3 className="text-white font-semibold mb-1">Par téléphone</h3>
+              <p className="text-xs text-gray-400 mb-3">
                 Du lundi au vendredi, 8h - 18h
               </p>
               <a
                 href="tel:+33615603344"
-                className="block text-center text-2xl font-bold text-[#00FFB3] hover:text-[#6366F1] transition-colors"
+                className="text-xl font-bold text-[#00FFB3] hover:underline"
               >
                 06 15 60 33 44
               </a>
-              <p className="text-gray-500 text-xs mt-2 text-center">
+              <p className="text-[11px] text-gray-500 mt-1">
                 (Appel non surtaxé)
               </p>
             </div>
 
-            {/* Email */}
-            <div className="bg-gray-900/80 p-6 rounded-xl border border-gray-700 hover:border-[#00FFB3] transition-colors">
-              <div className="flex items-center justify-center mb-4">
+            <div className="bg-gray-900/90 p-6 rounded-xl border border-gray-700 text-center">
+              <div className="flex justify-center mb-3">
                 <svg
-                  className="w-10 h-10 text-[#00FFB3]"
+                  className="w-8 h-8 text-[#00FFB3]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -229,41 +344,55 @@ const SoutienSeniorsPage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2 text-center">
-                Par email
-              </h3>
-              <p className="text-gray-400 text-sm mb-3 text-center">
-                Réponse sous 24h
+              <h3 className="text-white font-semibold mb-1">Par email</h3>
+              <p className="text-xs text-gray-400 mb-3">
+                Réponse rapide garantie
               </p>
               <a
                 href="mailto:contact@alicia-gpt.com"
-                className="block text-center text-lg font-semibold text-[#00FFB3] hover:text-[#6366F1] transition-colors break-all"
+                className="text-base font-semibold text-[#00FFB3] hover:underline break-all"
               >
                 contact@alicia-gpt.com
               </a>
-              <p className="text-gray-500 text-xs mt-2 text-center">
-                (Nous vous répondons rapidement)
+              <p className="text-[11px] text-gray-500 mt-1">
+                (Nous vous lisons avec attention)
               </p>
             </div>
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-300 text-sm">
-              💡 <strong>Conseil :</strong> Si vous n'êtes pas à l'aise avec
-              l'email,
-              <br className="hidden sm:block" />
-              l'appel téléphonique est le moyen le plus simple pour nous joindre
-              !
+            <p className="text-xs text-gray-400 italic">
+              💡 <strong>Astuce :</strong> Si vous préférez un contact direct et
+              chaleureux, un simple coup de fil est le moyen le plus rapide pour
+              nous joindre.
             </p>
           </div>
         </section>
 
-        {/* CTA avec bouton fonctionnel */}
-        <div className="mt-10 text-center">
-          <p className="text-gray-400">
-            Une question ? Besoin d'un diagnostic rapide ?
+        {/* Section Ancrage Local */}
+        <section className="mb-16 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
+          <h2 className="text-xl font-bold text-white mb-2">
+            📍 Intervention à Soissons et ses environs
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm leading-relaxed">
+            Nous intervenons directement à votre domicile ou en visioconférence
+            selon vos préférences. Confiance, discrétion et respect absolu sont
+            au cœur de notre accompagnement.
           </p>
-          <ContactCTAButton label="Demandez un audit gratuit" />
+        </section>
+
+        {/* Appel à l'action final (CTA) */}
+        <div className="text-center bg-gradient-to-r from-[#6366F1]/10 via-gray-900 to-[#00FFB3]/10 p-10 rounded-2xl border border-gray-800">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Besoin d'aide avec votre ordinateur ou votre tablette ?
+          </h2>
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+            Discutons-en tranquillement lors d'un premier échange offert de 20
+            minutes.
+          </p>
+          <div className="inline-block">
+            <ContactCTAButton label="Demander un accompagnement gratuit" />
+          </div>
         </div>
       </main>
     </div>

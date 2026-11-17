@@ -1,389 +1,404 @@
-// src/pages/SoutienEtudiantsPage.tsx
 import type { Metadata } from "next";
 import ContactCTAButton from "../../components/ContactCTAButton";
 
 export const metadata: Metadata = {
   title: {
-    default: "Outils IA pour Étudiants | AlicIA-GPT",
+    default: "Outils IA pour Étudiants & Enseignants | AlicIA-GPT",
     template: "%s | AlicIA-GPT",
   },
   description:
-    "Outils et applications IA pour l'apprentissage et la recherche des étudiants. Boostez votre productivité académique à Soissons, dans l'Aisne, l'Oise, la Marne et le nord de la Seine-et-Marne (77).",
+    "Outils IA pour l'apprentissage académique et solutions de correction automatique pour enseignants (30 copies en 4 min). Accompagnement à Soissons, dans l'Aisne, l'Oise, la Marne et la Seine-et-Marne (77).",
   keywords: [
     "outils IA étudiants",
-    "applications IA apprentissage",
-    "IA recherche universitaire",
+    "correcteur IA enseignants",
+    "correction automatique copies",
+    "productivité académique",
     "aide aux devoirs IA",
     "résumé de cours IA",
-    "chatbot étudiant",
-    "productivité académique",
+    "NoteBookLM étudiants",
     "formation IA étudiants",
-    "artificielle intelligence université",
+    "artisans",
+    "TPE",
+    "PME",
     "Soissons",
     "Laon",
-    "Villers-Cotterêts",
     "Château-Thierry",
-    "Chauny",
-    "Meaux",
     "Compiègne",
-    "Fismes",
+    "Meaux",
     "Reims",
     "Aisne",
     "Oise",
     "Marne",
     "Seine-et-Marne",
-    "consultant IA étudiants",
+    "consultant IA éducation",
   ],
   authors: [{ name: "Cyril Gourdon" }],
   openGraph: {
-    title: "Outils IA pour Étudiants | AlicIA-GPT",
+    title: "Outils IA pour Étudiants & Enseignants | AlicIA-GPT",
     description:
-      "Outils et applications IA pour l'apprentissage et la recherche. Boostez votre productivité académique à Soissons, Aisne, Oise, Marne et nord 77.",
+      "Outils et applications IA pour l'apprentissage et la recherche, ainsi que des solutions de correction pour enseignants à Soissons, Aisne, Oise, Marne et nord 77.",
     type: "website",
     locale: "fr_FR",
     siteName: "AlicIA-GPT",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Outils IA pour Étudiants | AlicIA-GPT",
+    title: "Outils IA pour Étudiants & Enseignants | AlicIA-GPT",
     description:
-      "Outils et applications IA pour l'apprentissage et la recherche. Boostez votre productivité académique à Soissons, Aisne, Oise, Marne et nord 77.",
+      "Outils et applications IA pour l'apprentissage et la recherche, ainsi que des solutions de correction pour enseignants à Soissons, Aisne, Oise, Marne et nord 77.",
   },
 };
 
 const SoutienEtudiantsPage = () => {
-  return (
-    <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
-      <main className="container mx-auto px-4 py-16">
-        {/* Titre principal */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Soutien Numérique pour Étudiants — Outils IA, Productivité & Réussite
-        </h1>
+  // Données structurées JSON-LD pour le SEO Local et GEO (ChatGPT Search / Google AI Overviews)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Soutien Numérique Étudiants et Solutions IA pour Enseignants",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "AlicIA-GPT",
+      founder: "Cyril Gourdon",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Soissons",
+        postalCode: "02200",
+        addressRegion: "Hauts-de-France",
+        addressCountry: "FR",
+      },
+      areaServed: ["Aisne", "Marne", "Oise", "Seine-et-Marne"],
+    },
+    description:
+      "Accompagnement numérique pour étudiants et outil innovant de correction automatique de copies par IA (30 copies en 4 minutes) pour enseignants.",
+  };
 
-        {/* Image impactante (même photo que pour les seniors — peut être changée plus tard) */}
-        <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+  return (
+    <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
+      {/* Injection du schéma JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        {/* En-tête de page */}
+        <div className="text-center mb-12">
+          <span className="inline-block text-[#00FFB3] font-semibold text-sm uppercase tracking-wider mb-3">
+            Éducation & Innovation Pédagogique
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+            Soutien Numérique Étudiants & Correcteur IA pour Enseignants
+          </h1>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Maîtrisez les outils d'intelligence artificielle pour booster votre
+            réussite académique ou diviser par dix votre temps de correction
+            (Aisne, Marne, Oise, 77).
+          </p>
+        </div>
+
+        {/* Visuel d'illustration Étudiants */}
+        <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-gray-950 relative">
           <img
             src="/images/Einsteinjunior.png"
-            alt="Un technicien accompagne un étudiant avec un sourire devant un ordinateur — Support informatique de confiance"
-            className="w-full h-auto object-cover max-h-[400px] md:max-h-[800px] hover:scale-102 transition-transform duration-300"
+            alt="Soutien numérique et outils IA pour étudiants et enseignants - AlicIA-GPT"
+            className="w-full h-auto object-cover max-h-[400px]"
           />
-          <div className="bg-black/70 p-4 text-center">
-            <p className="text-white text-sm italic">
-              “Support Informatique — Votre allié numérique pour réussir”
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
+          <div className="absolute bottom-4 left-6 right-6">
+            <span className="inline-block bg-[#6366F1] text-white text-xs font-bold px-3 py-1 rounded-full mb-2">
+              Productivité Académique
+            </span>
+            <p className="text-white text-sm sm:text-base font-medium italic">
+              “L’intelligence artificielle ne remplace pas l'effort ou la
+              pédagogie — elle structure, épure et libère du temps pour
+              l'essentiel.”
             </p>
           </div>
         </div>
 
-        {/* Introduction motivante */}
-        <p className="text-gray-300 text-lg mb-8">
-          Vous êtes étudiant(e) et vous voulez maîtriser les outils numériques
-          pour gagner du temps, améliorer vos rendus et booster votre
-          productivité ?
-          <br />
-          Vous avez besoin d’aide pour configurer votre PC, utiliser les
-          logiciels de recherche, ou intégrer l’IA dans vos projets ?
-          <br />
-          Vous êtes perdu(e) face aux nouvelles technologies imposées par votre
-          formation ?
-          <br />
-          <strong>
-            Nous vous accompagnons pas à pas — sans stress, avec efficacité et
-            des conseils concrets.
-          </strong>
-        </p>
-
-        {/* Services proposés */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-white mb-4">
-            Nos accompagnements sur mesure
-          </h2>
-          <div className="space-y-4 text-gray-400">
-            <p>
-              ✅ <strong>Outils IA pour étudiants</strong> : ChatGPT, Gemini,
-              Claude, Perplexity — comment les utiliser intelligemment et
-              éthiquement.
+        {/* Section Problématique / Promesse Étudiants */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Étudiants : Apprenez à exploiter l'IA de manière efficace et
+              éthique
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Face à la masse de cours, de bibliographies et de mémoires à
+              rédiger, savoir structurer ses recherches avec des outils comme
+              ChatGPT, Claude ou NoteBookLM fait toute la différence pour
+              réussir ses examens sans s'épuiser.
             </p>
-            <p>
-              ✅ <strong>Productivité & organisation</strong> : Notion, Trello,
-              NoteBookLM, Obsidian — créer vos espaces de travail personnalisés.
-            </p>
-            <p>
-              ✅ <strong>Rédaction & relecture assistée</strong> : Manus,
-              Skywork — optimiser vos mémoires, rapports et présentations.
-            </p>
-            {/*<p>✅ <strong>Logiciels académiques</strong> : LaTeX, SPSS, R, Python, Excel avancé — prise en main et mise en pratique.</p>*/}
-            <p>
-              ✅ <strong>Sécurité & gestion des données</strong> : sauvegardes,
-              cloud sécurisé, gestion des mots de passe, protection contre le
-              phishing.
-            </p>
-            <p>
-              ✅ <strong>Dépannage express</strong> : problème de connexion,
-              logiciel bloqué, installation de drivers, configuration réseau.
+            <p className="text-gray-300 leading-relaxed">
+              Nous vous accompagnons pas à pas pour configurer vos espaces de
+              travail, automatiser vos fiches de révision et sécuriser vos
+              données personnelles.
             </p>
           </div>
-        </section>
+          <div className="bg-gray-900/40 p-6 rounded-xl border border-gray-800 space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-2">
+              Ce que nous maîtrisons ensemble :
+            </h3>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Usage
+                éthique et puissant des LLMs (ChatGPT, Claude, Perplexity).
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Création
+                d'espaces de révision intelligents (NoteBookLM, Notion,
+                Obsidian).
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Assistance à
+                la structuration de mémoires et rapports universitaires.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#00FFB3] font-bold">✓</span> Sauvegarde
+                sécurisée et bonnes pratiques numériques.
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        {/* NOUVELLE SECTION : Correcteur IA pour enseignants */}
-        <section className="mb-12 p-8 bg-gradient-to-br from-purple-900/30 to-blue-900/30 border border-purple-700/50 rounded-xl">
-          <h2 className="text-2xl font-bold text-white mb-6">
-            Innovation Pédagogique : Correcteur IA pour Enseignants
-          </h2>
+        {/* ============================================ */}
+        {/* NOUVELLE SECTION : Correcteur IA Enseignants */}
+        {/* ============================================ */}
+        <section className="mb-16 p-8 bg-gradient-to-br from-purple-950/40 to-blue-950/40 border border-purple-500/30 rounded-2xl shadow-2xl">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="inline-block bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">
+              Innovation Pédagogique
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Enseignants : 30 copies corrigées en 4 minutes avec l'IA
+            </h2>
+            <p className="text-gray-300 text-sm">
+              La correction représente 40% du métier et 80% du temps perdu.
+              Découvrez l'outil conçu pour redonner du temps aux professeurs.
+            </p>
+          </div>
 
-          {/* Image et présentation */}
-          <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+          {/* Visuel du correcteur */}
+          <div className="mb-8 rounded-xl overflow-hidden border border-gray-700 shadow-xl">
             <img
               src="/images/correcteur.jpg"
-              alt="Correcteur IA - Application mobile de correction automatique de copies"
-              className="w-full h-auto object-cover max-h-[500px] hover:scale-102 transition-transform duration-300"
+              alt="Correcteur IA - Application de correction automatique de copies manuscrites"
+              className="w-full h-auto object-cover max-h-[450px]"
             />
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-black/40 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-purple-300 mb-3">
-                La solution que j'ai développée
+          <div className="grid md:grid-cols-2 gap-8 mb-8 text-gray-300">
+            <div className="bg-gray-900/60 p-6 rounded-xl border border-gray-800">
+              <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-red-400">⚠️</span> Le problème quotidien
               </h3>
-              <p className="text-gray-300 mb-4">
-                <strong>30 copies corrigées en 4 minutes avec l'IA</strong> au
-                lieu de 3 heures. En tant que prof, la correction représente 40%
-                du métier et 80% du temps perdu. J'ai construit un outil qui
-                change la donne.
+              <p className="text-sm leading-relaxed">
+                Vous avez 30 copies de dissertation à évaluer. Chaque copie fait
+                plusieurs pages. Vous devez lire attentivement, identifier les
+                erreurs, évaluer l'argumentation, attribuer une note juste et
+                rédiger un feedback constructif. Résultat : 3 heures minimum,
+                souvent reportées au week-end.
               </p>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Le problème qu'on connaît tous
+            <div className="bg-gray-900/60 p-6 rounded-xl border border-gray-800">
+              <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-[#00FFB3]">💡</span> La solution apportée
               </h3>
-              <p className="text-gray-400 mb-3">
-                Vous avez 30 copies de dissertation sur "Le Lac" de Lamartine.
-                Chaque copie fait 4 pages. Vous devez lire attentivement,
-                identifier les erreurs, évaluer l'argumentation, donner une note
-                juste et rédiger un feedback constructif.
-              </p>
-              <p className="text-gray-300 font-semibold">
-                Résultat : 3h minimum. Parfois le week-end.
+              <p className="text-sm leading-relaxed">
+                L'élève pose sa copie sur la table, vous la photographiez page
+                par page, vous indiquez le sujet et le barème. L'IA analyse
+                instantanément l'écriture manuscrite et génère une évaluation
+                complète et structurée.
               </p>
             </div>
+          </div>
 
-            <div className="bg-purple-900/20 p-6 rounded-lg border border-purple-700/30">
-              <h3 className="text-lg font-semibold text-purple-300 mb-3">
-                La solution : un scan mobile, puis une correction complète en 30
-                secondes
-              </h3>
-              <p className="text-gray-300 mb-4">
-                L'élève pose sa copie sur la table, vous photographiez page par
-                page, vous entrez le sujet et le barème. L'IA renvoie
-                instantanément :
-              </p>
-              <ul className="space-y-2 text-gray-400">
-                <li>✅ Une note sur 20</li>
-                <li>✅ Une appréciation générale style bulletin</li>
-                <li>✅ Les points forts identifiés</li>
-                <li>✅ Les axes d'amélioration</li>
-                <li>
-                  ✅ Une analyse détaillée des erreurs, avec citations et
-                  suggestions
-                </li>
-                <li>
-                  ✅ Une évaluation de la structure (intro, développement,
-                  conclusion)
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Comment ça marche (sans jargon)
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4 text-gray-400">
-                <div className="bg-black/30 p-4 rounded-lg">
-                  <strong className="text-purple-300">
-                    Frontend (Next.js)
-                  </strong>
-                  <p className="text-sm mt-2">
-                    Interface mobile qui capture les photos et les convertit en
-                    Base64
-                  </p>
-                </div>
-                <div className="bg-black/30 p-4 rounded-lg">
-                  <strong className="text-purple-300">
-                    Backend (Python/FastAPI)
-                  </strong>
-                  <p className="text-sm mt-2">
-                    Reçoit les images et construit un prompt pédagogique adapté
-                  </p>
-                </div>
-                <div className="bg-black/30 p-4 rounded-lg">
-                  <strong className="text-purple-300">
-                    IA (Qwen via Groq)
-                  </strong>
-                  <p className="text-sm mt-2">
-                    Modèle de vision qui "lit" l'écriture manuscrite et analyse
-                    le contenu
-                  </p>
-                </div>
-                <div className="bg-black/30 p-4 rounded-lg">
-                  <strong className="text-purple-300">RGPD</strong>
-                  <p className="text-sm mt-2">
-                    Les images sont traitées à la volée et jamais stockées
-                  </p>
-                </div>
+          <div className="bg-black/50 p-6 rounded-xl border border-gray-800 mb-8">
+            <h4 className="text-white font-semibold mb-4">
+              Ce que génère l'outil en 30 secondes par copie :
+            </h4>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-gray-300">
+              <div className="flex items-center gap-2">
+                ✅ Note précise sur le barème
               </div>
-              <p className="text-gray-400 mt-4 text-sm italic">
-                Le tout tient dans 200 lignes de Python. Pas de serveur
-                complexe, pas d'infrastructure lourde.
-              </p>
+              <div className="flex items-center gap-2">
+                ✅ Appréciation générale type bulletin
+              </div>
+              <div className="flex items-center gap-2">
+                ✅ Identification des points forts
+              </div>
+              <div className="flex items-center gap-2">
+                ✅ Axes d'amélioration ciblés
+              </div>
+              <div className="flex items-center gap-2">
+                ✅ Analyse des erreurs et citations
+              </div>
+              <div className="flex items-center gap-2">
+                ✅ Évaluation de la structure (intro/développement)
+              </div>
             </div>
+          </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Ce qui rend l'outil vraiment utile
-              </h3>
-              <div className="grid md:grid-cols-2 gap-3 text-gray-400">
-                <p>
-                  ✅ <strong>Multi-matières</strong> : français, philo,
-                  histoire, langues...
+          <div className="p-4 bg-purple-900/20 border border-purple-700/30 rounded-xl text-center">
+            <p className="text-sm text-purple-200 font-medium italic">
+              “L'IA ne remplace pas le professeur. Elle lui redonne du temps
+              pour ce qui compte vraiment : accompagner, expliquer et inspirer
+              ses élèves.”
+            </p>
+          </div>
+        </section>
+        {/* ============================================ */}
+        {/* FIN SECTION Enseignants                      */}
+        {/* ============================================ */}
+
+        {/* Grille Tarifaire Transparente */}
+        <section className="mb-16 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Des formules simples et accessibles
+            </h2>
+            <p className="text-gray-400 text-sm">
+              Tarifs adaptés aux étudiants et ateliers de proximité pour
+              progresser sans se ruiner.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
+            <div className="p-6 bg-gray-900 border border-gray-800 rounded-xl flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#00FFB3] uppercase tracking-wider">
+                  Libre
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                  À la Séance
+                </h3>
+                <p className="text-2xl font-extrabold text-white mb-4">
+                  30 €{" "}
+                  <span className="text-xs font-normal text-gray-400">
+                    HT / heure
+                  </span>
                 </p>
-                <p>
-                  ✅ <strong>Mode rafale</strong> : scannez 30 copies d'affilée
-                  sans retaper le sujet
+                <p className="text-sm text-gray-300 mb-4">
+                  Aide ciblée sur un projet, configuration de logiciels ou prise
+                  en main d'outils de révision sans engagement.
                 </p>
-                <p>
-                  ✅ <strong>Barème flexible</strong> : /20, /10, /40, vous
-                  choisissez
-                </p>
-                <p>
-                  ✅ <strong>Multi-pages</strong> : copies de 2, 3 ou 4 pages
-                  gérées automatiquement
-                </p>
-                <p>
-                  ✅ <strong>Feedback actionnable</strong> : conseils concrets
-                  pour l'élève
-                </p>
-                <p>
-                  ✅ <strong>Fenêtre de discussion</strong> : discutez avec l'IA
-                  de la correction
-                </p>
+              </div>
+              <div className="border-t border-gray-800 pt-4 text-xs text-gray-400">
+                ✓ Paiement au besoin
               </div>
             </div>
 
-            <div className="bg-green-900/20 p-6 rounded-lg border border-green-700/30">
-              <h3 className="text-lg font-semibold text-green-300 mb-3">
-                Le résultat
-              </h3>
-              <p className="text-gray-300 mb-3">
-                Je corrige maintenant une classe en{" "}
-                <strong>20 minutes au lieu de 3 heures</strong>. Et les élèves
-                reçoivent un feedback plus détaillé que ce que je pouvais leur
-                écrire à la main.
-              </p>
-              <p className="text-gray-300 italic">
-                "L'IA ne remplace pas le prof. Elle lui rend du temps pour ce
-                qui compte vraiment : accompagner, expliquer, inspirer."
-              </p>
+            <div className="p-6 bg-gray-900 border border-[#6366F1]/50 rounded-xl flex flex-col justify-between relative shadow-lg shadow-[#6366F1]/10">
+              <div className="absolute -top-3 right-6 bg-[#6366F1] text-white text-xs font-bold px-3 py-1 rounded-full">
+                Populaire
+              </div>
+              <div>
+                <span className="text-xs font-semibold text-[#6366F1] uppercase tracking-wider">
+                  Suivi Mensuel
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 mb-2">
+                  Formule « Réussite »
+                </h3>
+                <p className="text-2xl font-extrabold text-white mb-4">
+                  80 €{" "}
+                  <span className="text-xs font-normal text-gray-400">
+                    HT / 3 heures par mois
+                  </span>
+                </p>
+                <p className="text-sm text-gray-300 mb-4">
+                  Accompagnement régulier (soit 26,60€/h) pour structurer vos
+                  travaux et progresser sereinement tout au long du semestre.
+                </p>
+              </div>
+              <div className="border-t border-gray-800 pt-4 text-xs text-gray-400">
+                ✓ Régularité et soutien constant
+              </div>
             </div>
           </div>
         </section>
-        {/* FIN NOUVELLE SECTION */}
 
-        {/* Offres & formules */}
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
-          <h2 className="text-xl font-bold text-white mb-3">
-            Nos formules simples et transparentes
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-300">
-            <li>
-              <strong>À la séance</strong> : 30 € / heure, sans engagement.
-            </li>
-            <li>
-              <strong>Formule « Réussite »</strong> : 3 heures par mois à 80 €
-              (soit 27 €/h).
-            </li>
-            <li>
-              <strong>Ateliers collectifs</strong> : initiation gratuite à l’IA
-              et à la productivité numérique — réservés aux étudiants de
-              Soissons et environs.
-            </li>
-          </ul>
-          {/* <p className="mt-3 text-sm text-gray-400 italic">
-            Première heure satisfait ou remboursé
-          </p> */}
-        </section>
-
-        {/* Témoignage Google (à adapter si possible) */}
-
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-700 rounded-xl text-center">
-          <div className="flex justify-center mb-2">
-            {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-5 h-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.736c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z" />
-              </svg>
-            ))}
+        {/* Témoignages Étudiants */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl flex flex-col justify-between">
+            <div>
+              <div className="flex mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.736c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className="text-gray-200 italic text-base mb-4">
+                “J'avais un livre de psycho de 30 chapitres. On m'a montré
+                comment utiliser NoteBookLM pour faire mes fiches de révision.
+                Tous les matins, je reçois un quiz par mail. Un gain de temps
+                incroyable !”
+              </blockquote>
+            </div>
+            <p className="text-gray-400 text-sm font-medium">
+              — Alice, étudiante en Psychologie à Soissons (faculté de
+              Reims)[cite: 16]
+            </p>
           </div>
-          <blockquote className="text-gray-200 italic text-lg">
-            « J'avais un livre de psycho de 30 chapitres. Ils m'ont montrée
-            comment utiliser NoteBookLM pour faire mes fiches de révision avec
-            un super prompt. Tous les matins, je reçois un mail avec un quizz
-            sur un des chapitres. J'ai aussi un coach en anglais. Le plus: un
-            petit message personnalisé quotidien pour me booster! »
-          </blockquote>
-          <p className="text-gray-400 mt-2">
-            — Alice, étudiante en Psychologie de Soissons à la faculté de Reims
-          </p>
-        </section>
 
-        <section className="mb-12 p-6 bg-gray-900/50 border border-gray-700 rounded-xl text-center">
-          <div className="flex justify-center mb-2">
-            {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-5 h-5 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.736c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z" />
-              </svg>
-            ))}
+          <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl flex flex-col justify-between">
+            <div>
+              <div className="flex mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.736c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className="text-gray-200 italic text-base mb-4">
+                “Grâce à leur aide, j’ai pu structurer mon mémoire avec Notion
+                et utiliser les bons outils pour rédiger mes synthèses. Un vrai
+                soulagement pour valider mon année.”
+              </blockquote>
+            </div>
+            <p className="text-gray-400 text-sm font-medium">
+              — Camille, étudiante en Droit à Laon (faculté de Reims)[cite: 16]
+            </p>
           </div>
-          <blockquote className="text-gray-200 italic text-lg">
-            « Grâce à leur aide, j’ai pu structurer mon mémoire avec Notion et
-            utiliser Claude et Manus pour rédiger mes synthèses. J'adore aussi
-            NotebookLM pour mes notes de cours. — gain de temps énorme ! »
-          </blockquote>
-          <p className="text-gray-400 mt-2">
-            — Camille, étudiante en Droit de Laon à la faculté de Reims
-          </p>
-        </section>
+        </div>
 
-        {/* Proximité géographique */}
-        <section className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
-          <h2 className="text-xl font-bold text-white mb-3">
-            📍 À Soissons et ses environs
+        {/* Section Ancrage Local */}
+        <section className="mb-16 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
+          <h2 className="text-xl font-bold text-white mb-2">
+            📍 Accompagnement de proximité en Hauts-de-France & Grand Est
           </h2>
-          <p className="text-gray-300">
-            Nous intervenons à votre domicile ou en visioconférence.
-            <br />
-            <strong>
-              Flexibilité, efficacité et respect de votre rythme
-            </strong>{" "}
-            sont nos engagements.
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm leading-relaxed">
+            Basés à Soissons, nous intervenons à domicile ou en visioconférence
+            pour soutenir les étudiants et enseignants. Flexibilité, efficacité
+            et respect de votre rythme dans l'Aisne (02), la Marne (51), l'Oise
+            (60) et la Seine-et-Marne (77).
           </p>
         </section>
 
-        {/* CTA avec bouton fonctionnel */}
-        <div className="mt-10 text-center">
-          <p className="text-gray-400">
-            Besoin d’un coup de pouce pour un projet ? Un outil à maîtriser ?
+        {/* Appel à l'action final (CTA) */}
+        <div className="text-center bg-gradient-to-r from-[#6366F1]/10 via-gray-900 to-[#00FFB3]/10 p-10 rounded-2xl border border-gray-800">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Besoin d'un coup de pouce pour vos études ou d'un outil de
+            correction pour vos classes ?
+          </h2>
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+            Discutons de vos besoins lors d'un premier échange offert de 20
+            minutes.
           </p>
-          {/* <p className="text-gray-300 mt-2">Notre chatbot est là pour vous guider en quelques clics.</p>*/}
-          <ContactCTAButton label="Demandez un audit gratuit" />
+          <div className="inline-block">
+            <ContactCTAButton label="Demander un audit ou une démo gratuite" />
+          </div>
         </div>
       </main>
     </div>
