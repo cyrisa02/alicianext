@@ -103,7 +103,24 @@ const SitesSeoLocalPage = () => {
             l'Aisne, la Marne, l'Oise et la Seine-et-Marne.
           </p>
         </div>
-
+        {/* Visuel d'illustration */}
+        <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-gray-950 relative">
+          <img
+            src="/images/seo-ga4.jpg"
+            alt="Créateur d'entreprise accompagné sur ses outils numériques, son site web et son référencement Google - AlicIA-GPT Soissons"
+            className="w-full h-auto object-cover max-h-[400px] md:max-h-[450px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
+          <div className="absolute bottom-4 left-6 right-6">
+            <span className="inline-block bg-[#6366F1] text-white text-xs font-bold px-3 py-1 rounded-full mb-2">
+              Lancement serein, fondations solides
+            </span>
+            <p className="text-white text-sm sm:text-base font-medium italic">
+              "Ne perdez pas 3 mois à chercher vos outils. Lancez-vous avec un
+              socle numérique prêt à l'emploi, dès le jour 1."
+            </p>
+          </div>
+        </div>
         {/* Encadré d'accroche */}
         <div className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl text-center shadow-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6366F1] to-[#00FFB3]"></div>

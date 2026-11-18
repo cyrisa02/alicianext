@@ -19,6 +19,13 @@ const projects = [
     slug: "memobot-assistant-ia-base-connaissances-pme",
   },
   {
+    image: "/images/seo-ga4.jpg",
+    year: 2026,
+    name: "Optimisation SEO Local",
+    type: "Marketing digital",
+    slug: "site-web-clients-seo-analytics-cro",
+  },
+  {
     image: "/images/correcteur.jpg",
     year: 2026,
     name: "Correcteur de copies",
