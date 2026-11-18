@@ -6,6 +6,18 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentManager from "@/components/CookieConsentManager";
+import ClarityAnalytics from "@/components/ClarityAnalytics";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="fr">
+      <body>
+        {children}
+        <ClarityAnalytics />
+      </body>
+    </html>
+  );
+}
 
 const inter = Inter({ subsets: ["latin"] });
 
