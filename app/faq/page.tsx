@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "Qu'est-ce qu'AlicIA-GPT ?",
+    question: "C'est quoi un consultant en intelligence artificielle ?",
     answer:
       "AlicIA-GPT est une agence de conseil en intelligence artificielle basée à Soissons. Nous accompagnons artisans, commerçants et PME dans l'automatisation de leurs tâches administratives, comptables, RH et marketing grâce à des agents IA sur-mesure, partout en France.",
   },
@@ -78,7 +80,32 @@ const faqs = [
   {
     question: "Le chatbot du site utilise-t-il mes données personnelles ?",
     answer:
-      "Le chatbot ne s'active qu'après votre consentement via notre bannière de cookies. Les messages échangés sont traités par l'API Google Gemini uniquement pour générer une réponse, et ne sont pas revendus à des tiers.",
+      "Le chatbot ne s'active qu'après votre consentement via notre bannière de cookies. Les messages échangés sont traités par une API Groq uniquement pour générer une réponse non mémorisée, et ne sont pas revendus à des tiers.",
+  },
+  {
+    question: "Intervenez-vous à Reims / Laon / Château-Thierry ?",
+    answer:
+      "Oui, sans problème, nous pouvons vous accompagner dans vos projets, soit à distance soit sur place si nécessaire.",
+  },
+  {
+    question: "Proposez-vous des formations IA dans l'Aisne ?",
+    answer:
+      "Oui, c'est possible de dispenser des formations IA dans l'Aisne, Reims et sa proche zone, et dans l'Oise comme à Compiègne, Noyant.",
+  },
+  {
+    question: "Et si je ne suis pas à l'aise avec l'informatique ?",
+    answer:
+      "Ce n'est pas un problème pour moi, je me mets à votre niveau pour vous expliquer simplement le fonctionnement et ses intérêts.",
+  },
+  {
+    question: "Combien de temps gagne-t-on vraiment avec l'automatisation ?",
+    answer:
+      "Ca dépend de votre projet, bien paramétrée, une IA peut vous faire gagner beaucoup de temps, c'est vrai dans mon business.",
+  },
+  {
+    question: "Est-ce que ça remplace mon comptable ou mon assistant ?",
+    answer:
+      "Non, absolument pas. Nos agents IA sont conçus pour assister vos collaborateurs, pas les remplacer. L'IA prend en charge les tâches répétitives (saisie de factures, tri de mails, pré-remplissage de devis, relances), tandis que votre comptable conserve son rôle essentiel de validation, de conseil stratégique et de dépôt de la liasse fiscale. Résultat : votre assistant gagne 5 à 10 heures par semaine sur de l'administratif pur, et votre comptable se concentre sur ce qui apporte réellement de la valeur à votre entreprise.",
   },
   {
     question: "Faut-il des compétences techniques pour utiliser vos outils ?",
@@ -91,6 +118,26 @@ export default function FAQPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: "fr-FR",
+    about: [
+      {
+        "@type": "Thing",
+        name: "Intelligence artificielle",
+      },
+      {
+        "@type": "Thing",
+        name: "Automatisation des processus",
+      },
+      {
+        "@type": "Thing",
+        name: "RGPD",
+      },
+    ],
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Artisans, TPE, PME",
+      geographicArea: "Soissons, Aisne, Oise, Marne, Seine-et-Marne",
+    },
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentManager from "@/components/CookieConsentManager";
 import ClarityAnalytics from "@/components/ClarityAnalytics";
+import { company } from "@/data/company";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,14 +24,12 @@ export const metadata: Metadata = {
     "création de chatbot",
     "formation IA générative",
     "Soissons",
-    "ia",
     "IA",
     "chatbot",
     "voicebot",
     "devis automatisé",
     "agents IA",
     "accompagnement IA",
-    "intégration",
     "refonte de site web",
     "création de site web",
     "Laon",
@@ -69,45 +67,35 @@ const globalJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://www.alicia-gpt.com/#organization",
-      name: "AlicIA-GPT",
-      url: "https://www.alicia-gpt.com",
-      logo: "https://www.alicia-gpt.com/images/logo.png",
-      founder: {
-        "@type": "Person",
-        "@id": "https://www.alicia-gpt.com/#person",
-        name: "Cyril Gourdon",
-        jobTitle: "Fondateur et Consultant en Intelligence Artificielle",
-        sameAs: [
-          "https://www.linkedin.com/in/cyril-gourdon/",
-          "https://github.com/cyrisa02",
-        ],
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+33-6-15-60-33-44",
-        contactType: "customer service",
-        areaServed: "FR",
-        availableLanguage: "French",
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Soissons",
-        postalCode: "02200",
-        addressRegion: "Hauts-de-France",
-        addressCountry: "FR",
-      },
-      sameAs: ["https://www.linkedin.com/in/cyril-gourdon/"],
+      "@type": "ProfessionalService",
+      "@id": `${company.url}/#organization`,
+      name: company.name,
+      legalName: company.legalName,
+      description: company.description,
+      url: company.url,
+      logo: `${company.url}${company.logo}`,
+      image: company.images.map((img) => `${company.url}${img}`),
+      vatID: company.vatID,
+      taxID: company.taxID,
+      email: company.email,
+      telephone: company.telephone,
+      priceRange: company.priceRange,
+      currenciesAccepted: company.currenciesAccepted,
+      paymentAccepted: company.paymentAccepted,
+      address: company.address,
+      geo: company.geo,
+      openingHoursSpecification: company.openingHours,
+      areaServed: company.areaServed,
+      founder: company.founder,
+      sameAs: company.sameAs,
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.alicia-gpt.com/#website",
-      url: "https://www.alicia-gpt.com",
-      name: "AlicIA-GPT",
-      publisher: {
-        "@id": "https://www.alicia-gpt.com/#organization",
-      },
+      "@id": `${company.url}/#website`,
+      url: company.url,
+      name: company.name,
+      inLanguage: "fr-FR",
+      publisher: { "@id": `${company.url}/#organization` },
     },
   ],
 };
@@ -118,15 +106,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>
-        {/* JSON-LD global pour le NER / Knowledge Graph */}
-        <Script
-          id="global-jsonld"
+    <html lang="fr" className={inter.className}>
+      <body className="min-h-screen bg-[#0A0A0A] text-gray-300 antialiased">
+        {/* JSON-LD global : entité + site (Knowledge Graph / NER) */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
-
         <Header />
         <main>{children}</main>
         <Footer />
