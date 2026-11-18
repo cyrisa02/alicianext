@@ -1,6 +1,13 @@
 "use client";
 import React, { useState } from "react";
 
+// Déclaration du type gtag pour TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -42,6 +49,17 @@ const ContactSection: React.FC = () => {
         body: JSON.stringify(formData),
       });
       if (!response.ok) throw new Error("Erreur serveur");
+
+      // ✅ Tracking GA4 : événement de conversion
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "generate_lead", {
+          form_name: "contact_main",
+          project_type: formData.projectType,
+          company_size: formData.companySize,
+          page_location: window.location.href,
+        });
+      }
+
       setStatus("Merci ! Votre message a été envoyé avec succès.");
       setFormData({
         name: "",
@@ -179,11 +197,11 @@ const ContactSection: React.FC = () => {
               <textarea
                 name="message"
                 placeholder={`Décrivez votre projet en quelques lignes :
-- Vos process actuels (comment faites-vous aujourd'hui ?)
-- Les outils que vous utilisez (logiciels, Excel, etc.)
-- Vos objectifs (gain de temps, réduction des coûts, etc.)
-- Vos soucis informatiques
-- Toute autre information utile *`}
+Vos process actuels (comment faites-vous aujourd'hui ?)
+Les outils que vous utilisez (logiciels, Excel, etc.)
+Vos objectifs (gain de temps, réduction des coûts, etc.)
+Vos soucis informatiques
+Toute autre information utile *`}
                 required
                 rows={6}
                 value={formData.message}
@@ -228,7 +246,6 @@ const ContactSection: React.FC = () => {
               </button>
             </div>
           </form>
-
           {status && (
             <p
               className={`mt-4 text-center text-sm ${
