@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { ChatbotIcon, CloseIcon, SendIcon } from "./icons/UiIcons";
-import { sendMessageToChat } from "../services/geminiService";
+import { sendMessageToChat } from "../services/groqService";
 
 interface Message {
   role: "user" | "model";
