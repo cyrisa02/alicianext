@@ -68,3 +68,9 @@ export const company = {
   paymentAccepted: "Virement, Carte bancaire, Chèque",
   sameAs: ["https://www.linkedin.com/in/cyril-gourdon/"],
 } as const;
+
+export const ENTITY_IDS = {
+  organization: `${company.url}/#organization`,
+  website: `${company.url}/#website`,
+  faqPage: `${company.url}/faq/#faq`,
+} as const;

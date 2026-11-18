@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import CookieConsentManager from "@/components/CookieConsentManager";
 import ClarityAnalytics from "@/components/ClarityAnalytics";
 import { company } from "@/data/company";
+import { buildGlobalSchema } from "@/lib/schema";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,42 +64,7 @@ export const metadata: Metadata = {
   },
 };
 
-const globalJsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      "@id": `${company.url}/#organization`,
-      name: company.name,
-      legalName: company.legalName,
-      description: company.description,
-      url: company.url,
-      logo: `${company.url}${company.logo}`,
-      image: company.images.map((img) => `${company.url}${img}`),
-      vatID: company.vatID,
-      taxID: company.taxID,
-      email: company.email,
-      telephone: company.telephone,
-      priceRange: company.priceRange,
-      currenciesAccepted: company.currenciesAccepted,
-      paymentAccepted: company.paymentAccepted,
-      address: company.address,
-      geo: company.geo,
-      openingHoursSpecification: company.openingHours,
-      areaServed: company.areaServed,
-      founder: company.founder,
-      sameAs: company.sameAs,
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${company.url}/#website`,
-      url: company.url,
-      name: company.name,
-      inLanguage: "fr-FR",
-      publisher: { "@id": `${company.url}/#organization` },
-    },
-  ],
-};
+const globalJsonLd = buildGlobalSchema();
 
 export default function RootLayout({
   children,
