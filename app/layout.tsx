@@ -8,17 +8,6 @@ import Footer from "@/components/Footer";
 import CookieConsentManager from "@/components/CookieConsentManager";
 import ClarityAnalytics from "@/components/ClarityAnalytics";
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="fr">
-      <body>
-        {children}
-        <ClarityAnalytics />
-      </body>
-    </html>
-  );
-}
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -76,7 +65,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Données structurées globales pour le NER (Knowledge Graph)
 const globalJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -85,7 +73,7 @@ const globalJsonLd = {
       "@id": "https://www.alicia-gpt.com/#organization",
       name: "AlicIA-GPT",
       url: "https://www.alicia-gpt.com",
-      logo: "https://www.alicia-gpt.com/images/logo.png", // À adapter si tu as un logo
+      logo: "https://www.alicia-gpt.com/images/logo.png",
       founder: {
         "@type": "Person",
         "@id": "https://www.alicia-gpt.com/#person",
@@ -131,28 +119,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body
-        className={`${inter.className} bg-[#0A0A0A] text-gray-300 antialiased`}
-      >
-        {/* Injection du JSON-LD global pour le NER */}
-        <script
+      <body className={inter.className}>
+        {/* JSON-LD global pour le NER / Knowledge Graph */}
+        <Script
+          id="global-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
 
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
         <CookieConsentManager />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX"}');
-          `}
-        </Script>
+        <ClarityAnalytics />
       </body>
     </html>
   );
