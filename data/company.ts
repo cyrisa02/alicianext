@@ -4,7 +4,7 @@ export const company = {
   description:
     "Agence de conseil en intelligence artificielle rayonnant depuis Soissons. Nous accompagnons artisans, TPE et PME dans l'automatisation de leurs tâches administratives, comptables, RH et marketing grâce à des agents IA sur-mesure, déployés localement pour une conformité totale au RGPD.",
   url: "https://www.alicia-gpt.com",
-  logo: "/logo.jpeg",
+  logo: "/images/logo.jpeg",
   images: [
     "/images/consultant-ia-soissons.png",
     "/images/atelier-formation-ia.png",
@@ -22,7 +22,7 @@ export const company = {
       "https://github.com/cyrisa02",
     ],
   },
-  email: "contact@alicia-gpt.fr",
+  email: "contact@alicia-gpt.com",
   telephone: "+33615603344",
   // Siège légal = Beauvais (obligation mentions légales + cohérence GBP)
   address: {

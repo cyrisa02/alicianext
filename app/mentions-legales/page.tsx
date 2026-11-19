@@ -73,7 +73,7 @@ const MentionsLegalesPage = () => {
               <br />
               <strong>Téléphone :</strong> +33 6 15 60 33 44
               <br />
-              <strong>Email :</strong> contact@alicia-gpt.fr
+              <strong>Email :</strong> contact@alicia-gpt.com
               <br />
               <strong>Directeur de la publication :</strong> Cyril Gourdon
             </p>
