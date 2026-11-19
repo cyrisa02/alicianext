@@ -52,6 +52,13 @@ const appData = {
     "Outil d'extraction automatique de factures par IA : à partir d'une simple photo, FactureScan IA extrait fournisseur, date, HT, TVA et TTC, puis synchronise vers Google Sheets ou PostgreSQL. Solution souveraine, conforme RGPD et IA Act.",
   applicationCategory: "FinanceApplication",
   url: "https://www.alicia-gpt.com/outils/facture-ia",
+  offers: {
+    price: "19",
+    priceCurrency: "EUR",
+    description: "19 € HT/mois, sans engagement. 14 jours d'essai gratuit.",
+    availability: "https://schema.org/InStock",
+    eligibleRegion: "FR",
+  },
 };
 
 export default function FactureScanIAPage() {

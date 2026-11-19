@@ -52,6 +52,13 @@ const appData = {
     "Outil de veille immobilière IA : surveille SeLoger, Leboncoin et autres portails, compare chaque bien aux ventes réelles du secteur (DVF) et envoie uniquement les opportunités pertinentes. Pour investisseurs, agents et particuliers.",
   applicationCategory: "RealEstateApplication",
   url: "https://www.alicia-gpt.com/outils/immo-alert-ia",
+  offers: {
+    price: "39",
+    priceCurrency: "EUR",
+    description: "39 € HT/mois, sans engagement. 14 jours d'essai gratuit.",
+    availability: "https://schema.org/InStock",
+    eligibleRegion: "FR",
+  },
 };
 
 export default function ImmoAlertIAPage() {

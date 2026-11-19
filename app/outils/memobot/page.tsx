@@ -51,6 +51,13 @@ const appData = {
     "Assistant IA interne qui ingère vos documents (procédures, fiches techniques, CGV, historique) et répond aux questions de vos équipes et clients avec des réponses sourcées, sans hallucination. Architecture RAG, hébergement local, conforme RGPD et IA Act.",
   applicationCategory: "BusinessApplication",
   url: "https://www.alicia-gpt.com/outils/memobot",
+  offers: {
+    price: "49",
+    priceCurrency: "EUR",
+    description: "49 € HT/mois, sans engagement. 14 jours d'essai gratuit.",
+    availability: "https://schema.org/InStock",
+    eligibleRegion: "FR",
+  },
 };
 
 export default function MemoBotPage() {

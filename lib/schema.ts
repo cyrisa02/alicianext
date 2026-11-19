@@ -117,6 +117,9 @@ export function buildSoftwareApplicationSchema(data: {
     price: string;
     priceCurrency: string;
     description?: string;
+    availability?: string;
+    eligibleRegion?: string;
+    priceValidUntil?: string;
   };
 }) {
   const base = {
@@ -128,7 +131,6 @@ export function buildSoftwareApplicationSchema(data: {
     applicationCategory: data.applicationCategory,
     operatingSystem: "Web",
     provider: { "@id": ENTITY_IDS.organization },
-    areaServed: company.areaServed,
   };
 
   if (data.offers) {
@@ -139,6 +141,18 @@ export function buildSoftwareApplicationSchema(data: {
         price: data.offers.price,
         priceCurrency: data.offers.priceCurrency,
         description: data.offers.description ?? data.description,
+        availability: data.offers.availability ?? "https://schema.org/InStock",
+        eligibleRegion: data.offers.eligibleRegion ?? "FR",
+        seller: { "@id": ENTITY_IDS.organization },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: data.offers.price,
+          priceCurrency: data.offers.priceCurrency,
+          valueAddedTaxIncluded: false, // HT
+        },
+        ...(data.offers.priceValidUntil && {
+          priceValidUntil: data.offers.priceValidUntil,
+        }),
       },
     };
   }

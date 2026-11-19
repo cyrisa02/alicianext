@@ -50,6 +50,13 @@ const appData = {
     "Générateur de devis IA pour artisans : à partir d'une photo et d'une courte description, DevisFlow IA produit un devis complet (diagnostic, solutions, prix, délais, garanties) en moins de 10 secondes. Solution souveraine, conforme RGPD et IA Act.",
   applicationCategory: "BusinessApplication",
   url: "https://www.alicia-gpt.com/outils/devisflow-ia",
+  offers: {
+    price: "29",
+    priceCurrency: "EUR",
+    description: "29 € HT/mois, sans engagement. 14 jours d'essai gratuit.",
+    availability: "https://schema.org/InStock",
+    eligibleRegion: "FR",
+  },
 };
 
 export default function DevisFlowIAPage() {
