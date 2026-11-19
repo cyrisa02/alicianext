@@ -102,3 +102,46 @@ export function buildBreadcrumbSchema(items: { name: string; url: string }[]) {
     })),
   };
 }
+
+/**
+ * Schéma SoftwareApplication — pour les outils SaaS (/outils/*).
+ * @param data { name, description, applicationCategory, url, offers? }
+ * applicationCategory : "BusinessApplication" | "FinanceApplication" | etc.
+ */
+export function buildSoftwareApplicationSchema(data: {
+  name: string;
+  description: string;
+  applicationCategory: string;
+  url: string;
+  offers?: {
+    price: string;
+    priceCurrency: string;
+    description?: string;
+  };
+}) {
+  const base = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    applicationCategory: data.applicationCategory,
+    operatingSystem: "Web",
+    provider: { "@id": ENTITY_IDS.organization },
+    areaServed: company.areaServed,
+  };
+
+  if (data.offers) {
+    return {
+      ...base,
+      offers: {
+        "@type": "Offer",
+        price: data.offers.price,
+        priceCurrency: data.offers.priceCurrency,
+        description: data.offers.description ?? data.description,
+      },
+    };
+  }
+
+  return base;
+}

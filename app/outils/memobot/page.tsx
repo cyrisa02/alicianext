@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTAButton from "../../../components/ContactCTAButton";
+import { JsonLd } from "@/components/JsonLd";
+import { buildSoftwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -43,50 +45,18 @@ export const metadata: Metadata = {
   },
 };
 
-const MemoBotPage = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "MemoBot",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web (tous navigateurs)",
-    description:
-      "Assistant IA interne qui ingère vos documents (procédures, fiches techniques, CGV, historique) et répond aux questions de vos équipes et clients avec des réponses sourcées, sans hallucination.",
-    url: "https://alicia-gpt.com/outils/memobot",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-    },
-    provider: {
-      "@type": "Organization",
-      name: "AlicIA-GPT",
-      founder: "Cyril Gourdon",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Soissons",
-        postalCode: "02200",
-        addressRegion: "Hauts-de-France",
-        addressCountry: "FR",
-      },
-    },
-    featureList: [
-      "Ingestion de documents internes (PDF, DOCX, TXT, Markdown)",
-      "Réponses sourcées avec citation du document d'origine",
-      "Zéro hallucination : l'IA ne répond que sur ce qu'elle connaît",
-      "Architecture RAG (Retrieval-Augmented Generation)",
-      "Hébergement local, conforme RGPD et IA Act",
-      "Interface web et API d'intégration",
-    ],
-  };
+const appData = {
+  name: "MemoBot",
+  description:
+    "Assistant IA interne qui ingère vos documents (procédures, fiches techniques, CGV, historique) et répond aux questions de vos équipes et clients avec des réponses sourcées, sans hallucination. Architecture RAG, hébergement local, conforme RGPD et IA Act.",
+  applicationCategory: "BusinessApplication",
+  url: "https://www.alicia-gpt.com/outils/memobot",
+};
 
+export default function MemoBotPage() {
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
+      <JsonLd data={buildSoftwareApplicationSchema(appData)} />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Fil d'Ariane */}
         <nav className="mb-8 text-sm">
@@ -109,7 +79,6 @@ const MemoBotPage = () => {
             <li className="text-gray-300">MemoBot</li>
           </ol>
         </nav>
-
         {/* En-tête */}
         <div className="text-center mb-12">
           <span className="inline-block text-[#F59E0B] font-semibold text-sm uppercase tracking-wider mb-3">
@@ -128,7 +97,6 @@ const MemoBotPage = () => {
             Publié le 13 novembre 2026 • Par Cyril Gourdon
           </p>
         </div>
-
         {/* Image hero */}
         <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative">
           <img
@@ -143,7 +111,6 @@ const MemoBotPage = () => {
             </span>
           </div>
         </div>
-
         {/* Accroche narrative */}
         <div className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#F59E0B] to-[#00FFB3]"></div>
@@ -165,7 +132,6 @@ const MemoBotPage = () => {
             J'ai créé MemoBot pour que vos documents répondent à votre place.
           </p>
         </div>
-
         {/* Section Le résultat */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Le résultat ?</h2>
@@ -183,7 +149,6 @@ const MemoBotPage = () => {
             </em>
           </p>
         </section>
-
         {/* Section Ce que fait MemoBot */}
         <section className="mb-12 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -234,7 +199,6 @@ const MemoBotPage = () => {
             </div>
           </div>
         </section>
-
         {/* Section Cas d'usage */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -274,7 +238,6 @@ const MemoBotPage = () => {
             ))}
           </div>
         </section>
-
         {/* Section Technologie */}
         <section className="mb-12 p-8 bg-gradient-to-b from-[#F59E0B]/5 to-gray-900/40 border border-[#F59E0B]/30 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">
@@ -301,7 +264,6 @@ const MemoBotPage = () => {
             ))}
           </ul>
         </section>
-
         {/* Section Les limites */}
         <section className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">Les limites</h2>
@@ -332,7 +294,6 @@ const MemoBotPage = () => {
             </div>
           </div>
         </section>
-
         {/* CTA final */}
         <div className="text-center bg-gradient-to-r from-[#F59E0B]/10 via-gray-900 to-[#00FFB3]/10 p-10 rounded-2xl border border-gray-800">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
@@ -359,6 +320,4 @@ const MemoBotPage = () => {
       </main>
     </div>
   );
-};
-
-export default MemoBotPage;
+}

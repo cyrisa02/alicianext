@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTAButton from "../../../components/ContactCTAButton";
+import { JsonLd } from "@/components/JsonLd";
+import { buildSoftwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -44,51 +46,18 @@ export const metadata: Metadata = {
   },
 };
 
-const FactureScanIAPage = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "FactureScan IA",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web (tous navigateurs) + Mobile",
-    description:
-      "Outil d'extraction automatique de factures par IA : à partir d'une simple photo, FactureScan IA extrait fournisseur, date, HT, TVA et TTC, puis synchronise vers Google Sheets ou PostgreSQL.",
-    url: "https://alicia-gpt.com/outils/facture-ia",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-    },
-    provider: {
-      "@type": "Organization",
-      name: "AlicIA-GPT",
-      founder: "Cyril Gourdon",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Soissons",
-        postalCode: "02200",
-        addressRegion: "Hauts-de-France",
-        addressCountry: "FR",
-      },
-    },
-    featureList: [
-      "Extraction automatique fournisseur, date, HT, TVA, TTC",
-      "Synchronisation Google Sheets en temps réel",
-      "Connexion PostgreSQL sécurisée (option avancée)",
-      "Moteur Python + Qwen3-8B open-source",
-      "Correction en un clic",
-      "Conforme RGPD et IA Act",
-    ],
-  };
+const appData = {
+  name: "FactureScan IA",
+  description:
+    "Outil d'extraction automatique de factures par IA : à partir d'une simple photo, FactureScan IA extrait fournisseur, date, HT, TVA et TTC, puis synchronise vers Google Sheets ou PostgreSQL. Solution souveraine, conforme RGPD et IA Act.",
+  applicationCategory: "FinanceApplication",
+  url: "https://www.alicia-gpt.com/outils/facture-ia",
+};
 
+export default function FactureScanIAPage() {
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
-      {/* Injection du schéma JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
+      <JsonLd data={buildSoftwareApplicationSchema(appData)} />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Fil d'Ariane */}
         <nav className="mb-8 text-sm">
@@ -111,7 +80,6 @@ const FactureScanIAPage = () => {
             <li className="text-gray-300">FactureScan IA</li>
           </ol>
         </nav>
-
         {/* En-tête de page */}
         <div className="text-center mb-12">
           <span className="inline-block text-[#00FFB3] font-semibold text-sm uppercase tracking-wider mb-3">
@@ -129,7 +97,6 @@ const FactureScanIAPage = () => {
             Publié le 20 octobre 2026 • Par Cyril Gourdon
           </p>
         </div>
-
         {/* Image hero */}
         <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative">
           <img
@@ -144,7 +111,6 @@ const FactureScanIAPage = () => {
             </span>
           </div>
         </div>
-
         {/* Accroche narrative */}
         <div className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#00FFB3] to-[#6366F1]"></div>
@@ -161,7 +127,6 @@ const FactureScanIAPage = () => {
             J'ai développé FactureScan IA pour régler ça.
           </p>
         </div>
-
         {/* Section Le résultat */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Le résultat</h2>
@@ -173,7 +138,6 @@ const FactureScanIAPage = () => {
             week-end.
           </p>
         </section>
-
         {/* Section Ce que fait l'outil */}
         <section className="mb-12 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -228,7 +192,6 @@ const FactureScanIAPage = () => {
             </div>
           </div>
         </section>
-
         {/* Section Comment ça marche */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -262,7 +225,6 @@ const FactureScanIAPage = () => {
             l'extraction de données structurées à partir d'images de documents.
           </p>
         </section>
-
         {/* Section Pour les plus exigeants */}
         <section className="mb-12 p-8 bg-gradient-to-b from-[#6366F1]/5 to-gray-900/40 border border-[#6366F1]/30 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -290,7 +252,6 @@ const FactureScanIAPage = () => {
             ))}
           </ul>
         </section>
-
         {/* Section Les limites (honnêteté) */}
         <section className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">Les limites</h2>
@@ -326,7 +287,6 @@ const FactureScanIAPage = () => {
             </div>
           </div>
         </section>
-
         {/* Section Ce que je retiens */}
         <section className="mb-12 p-8 bg-gradient-to-b from-[#00FFB3]/5 to-gray-900/40 border border-[#00FFB3]/30 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">
@@ -342,7 +302,6 @@ const FactureScanIAPage = () => {
             .
           </p>
         </section>
-
         {/* Conclusion */}
         <section className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">Conclusion</h2>
@@ -352,7 +311,6 @@ const FactureScanIAPage = () => {
             semaine.
           </p>
         </section>
-
         {/* Lien vers page comptabilité */}
         <section className="mb-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl text-center">
           <h2 className="text-xl font-bold text-white mb-3">
@@ -384,7 +342,6 @@ const FactureScanIAPage = () => {
             </svg>
           </Link>
         </section>
-
         {/* Appel à l'action final */}
         <div className="text-center bg-gradient-to-r from-[#00FFB3]/10 via-gray-900 to-[#6366F1]/10 p-10 rounded-2xl border border-gray-800">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
@@ -408,7 +365,6 @@ const FactureScanIAPage = () => {
             </div>
           </div>
         </div>
-
         {/* Meta article */}
         <div className="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
           <p className="mb-2">
@@ -422,6 +378,4 @@ const FactureScanIAPage = () => {
       </main>
     </div>
   );
-};
-
-export default FactureScanIAPage;
+}

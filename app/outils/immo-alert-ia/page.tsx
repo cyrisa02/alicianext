@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTAButton from "../../../components/ContactCTAButton";
+import { JsonLd } from "@/components/JsonLd";
+import { buildSoftwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -44,50 +46,18 @@ export const metadata: Metadata = {
   },
 };
 
-const ImmoAlertIAPage = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "ImmoAlert IA",
-    applicationCategory: "RealEstateApplication",
-    operatingSystem: "Web (tous navigateurs)",
-    description:
-      "Outil de veille immobilière IA : surveille SeLoger, Leboncoin et autres portails, compare chaque bien aux ventes réelles du secteur (DVF) et envoie uniquement les opportunités pertinentes.",
-    url: "https://alicia-gpt.com/outils/immo-alert-ia",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-    },
-    provider: {
-      "@type": "Organization",
-      name: "AlicIA-GPT",
-      founder: "Cyril Gourdon",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Soissons",
-        postalCode: "02200",
-        addressRegion: "Hauts-de-France",
-        addressCountry: "FR",
-      },
-    },
-    featureList: [
-      "Surveillance multi-portails (SeLoger, Leboncoin, Bien'ici…)",
-      "Comparaison automatique aux ventes réelles (base DVF)",
-      "Score d'opportunité calculé par IA",
-      "Alertes personnalisées par email / notification",
-      "Multi-profils : investisseurs, agents, particuliers",
-      "Conforme RGPD",
-    ],
-  };
+const appData = {
+  name: "ImmoAlert IA",
+  description:
+    "Outil de veille immobilière IA : surveille SeLoger, Leboncoin et autres portails, compare chaque bien aux ventes réelles du secteur (DVF) et envoie uniquement les opportunités pertinentes. Pour investisseurs, agents et particuliers.",
+  applicationCategory: "RealEstateApplication",
+  url: "https://www.alicia-gpt.com/outils/immo-alert-ia",
+};
 
+export default function ImmoAlertIAPage() {
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
+      <JsonLd data={buildSoftwareApplicationSchema(appData)} />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Fil d'Ariane */}
         <nav className="mb-8 text-sm">
@@ -110,7 +80,6 @@ const ImmoAlertIAPage = () => {
             <li className="text-gray-300">ImmoAlert IA</li>
           </ol>
         </nav>
-
         {/* En-tête */}
         <div className="text-center mb-12">
           <span className="inline-block text-[#EC4899] font-semibold text-sm uppercase tracking-wider mb-3">
@@ -129,7 +98,6 @@ const ImmoAlertIAPage = () => {
             Publié le 3 novembre 2026 • Par Cyril Gourdon
           </p>
         </div>
-
         {/* Image hero */}
         <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative">
           <img
@@ -144,7 +112,6 @@ const ImmoAlertIAPage = () => {
             </span>
           </div>
         </div>
-
         {/* Accroche narrative */}
         <div className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#EC4899] to-[#00FFB3]"></div>
@@ -163,7 +130,6 @@ const ImmoAlertIAPage = () => {
             J'ai construit ImmoAlert IA pour inverser la donne.
           </p>
         </div>
-
         {/* Section Le résultat */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Le résultat ?</h2>
@@ -179,7 +145,6 @@ const ImmoAlertIAPage = () => {
             score d'opportunité sur 100.
           </p>
         </section>
-
         {/* Section Ce que fait l'outil */}
         <section className="mb-12 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -232,7 +197,6 @@ const ImmoAlertIAPage = () => {
             </div>
           </div>
         </section>
-
         {/* Section Pour qui */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Pour qui ?</h2>
@@ -261,7 +225,6 @@ const ImmoAlertIAPage = () => {
             ))}
           </div>
         </section>
-
         {/* Section Technologie */}
         <section className="mb-12 p-8 bg-gradient-to-b from-[#EC4899]/5 to-gray-900/40 border border-[#EC4899]/30 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">
@@ -301,7 +264,6 @@ const ImmoAlertIAPage = () => {
             ))}
           </div>
         </section>
-
         {/* Section Les limites */}
         <section className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">Les limites</h2>
@@ -332,7 +294,6 @@ const ImmoAlertIAPage = () => {
             </div>
           </div>
         </section>
-
         {/* CTA final */}
         <div className="text-center bg-gradient-to-r from-[#EC4899]/10 via-gray-900 to-[#00FFB3]/10 p-10 rounded-2xl border border-gray-800">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
@@ -359,6 +320,4 @@ const ImmoAlertIAPage = () => {
       </main>
     </div>
   );
-};
-
-export default ImmoAlertIAPage;
+}

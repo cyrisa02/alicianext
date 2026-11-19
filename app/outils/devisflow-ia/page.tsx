@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTAButton from "../../../components/ContactCTAButton";
+import { JsonLd } from "@/components/JsonLd";
+import { buildSoftwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -42,51 +44,18 @@ export const metadata: Metadata = {
   },
 };
 
-const DevisFlowIAPage = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "DevisFlow IA",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web (tous navigateurs)",
-    description:
-      "Générateur de devis IA pour artisans : à partir d'une photo et d'une courte description, DevisFlow IA produit un devis complet (diagnostic, solutions, prix, délais, garanties) en moins de 10 secondes.",
-    url: "https://alicia-gpt.com/outils/devisflow-ia",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-    },
-    provider: {
-      "@type": "Organization",
-      name: "AlicIA-GPT",
-      founder: "Cyril Gourdon",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Soissons",
-        postalCode: "02200",
-        addressRegion: "Hauts-de-France",
-        addressCountry: "FR",
-      },
-    },
-    featureList: [
-      "Analyse d'image par IA spécialisée",
-      "Rédaction automatique de devis commercial",
-      "Orchestration Python multi-IA",
-      "SaaS accessible sans installation",
-      "Conforme RGPD et IA Act",
-      "Multi-métiers : plomberie, électricité, maçonnerie, peinture",
-    ],
-  };
+const appData = {
+  name: "DevisFlow IA",
+  description:
+    "Générateur de devis IA pour artisans : à partir d'une photo et d'une courte description, DevisFlow IA produit un devis complet (diagnostic, solutions, prix, délais, garanties) en moins de 10 secondes. Solution souveraine, conforme RGPD et IA Act.",
+  applicationCategory: "BusinessApplication",
+  url: "https://www.alicia-gpt.com/outils/devisflow-ia",
+};
 
+export default function DevisFlowIAPage() {
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen pt-24 pb-16">
-      {/* Injection du schéma JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
+      <JsonLd data={buildSoftwareApplicationSchema(appData)} />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Fil d'Ariane */}
         <nav className="mb-8 text-sm">
@@ -109,7 +78,6 @@ const DevisFlowIAPage = () => {
             <li className="text-gray-300">DevisFlow IA</li>
           </ol>
         </nav>
-
         {/* En-tête de page */}
         <div className="text-center mb-12">
           <span className="inline-block text-[#6366F1] font-semibold text-sm uppercase tracking-wider mb-3">
@@ -128,7 +96,6 @@ const DevisFlowIAPage = () => {
             Publié le 15 octobre 2026 • Par Cyril Gourdon
           </p>
         </div>
-
         {/* Image hero */}
         <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative">
           <img
@@ -143,7 +110,6 @@ const DevisFlowIAPage = () => {
             </span>
           </div>
         </div>
-
         {/* Accroche narrative */}
         <div className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6366F1] to-[#00FFB3]"></div>
@@ -159,7 +125,6 @@ const DevisFlowIAPage = () => {
             J'ai créé DevisFlow IA pour régler ce problème.
           </p>
         </div>
-
         {/* Section Le résultat */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Le résultat ?</h2>
@@ -192,7 +157,6 @@ const DevisFlowIAPage = () => {
             conclure.
           </p>
         </section>
-
         {/* Section Ce que fait l'outil */}
         <section className="mb-12 p-8 bg-gradient-to-b from-gray-900/80 to-gray-900/40 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -256,7 +220,6 @@ const DevisFlowIAPage = () => {
             travaillent pour vous, 24h/24.
           </p>
         </section>
-
         {/* Section Comment ça marche pour vous */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -285,7 +248,6 @@ const DevisFlowIAPage = () => {
             ))}
           </div>
         </section>
-
         {/* Section Bénéfices */}
         <section className="mb-12 p-8 bg-gradient-to-b from-[#00FFB3]/5 to-gray-900/40 border border-[#00FFB3]/30 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-6">
@@ -326,7 +288,6 @@ const DevisFlowIAPage = () => {
             ))}
           </div>
         </section>
-
         {/* Conclusion */}
         <section className="mb-12 p-8 bg-gray-900/60 border border-gray-800 rounded-2xl">
           <h2 className="text-2xl font-bold text-white mb-4">Conclusion</h2>
@@ -344,7 +305,6 @@ const DevisFlowIAPage = () => {
             Dites-le-moi en commentaire, ça m'intéresse.
           </p>
         </section>
-
         {/* Appel à l'action final */}
         <div className="text-center bg-gradient-to-r from-[#6366F1]/10 via-gray-900 to-[#00FFB3]/10 p-10 rounded-2xl border border-gray-800">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
@@ -372,6 +332,4 @@ const DevisFlowIAPage = () => {
       </main>
     </div>
   );
-};
-
-export default DevisFlowIAPage;
+}
