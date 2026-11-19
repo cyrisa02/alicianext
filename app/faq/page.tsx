@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -114,10 +113,26 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.alicia-gpt.com/faq/#faq",
+  url: "https://www.alicia-gpt.com/faq",
+  isPartOf: { "@id": "https://www.alicia-gpt.com/#website" },
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function FAQPage() {
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
-      <JsonLd data={buildFaqSchema(faqs)} />
+      <JsonLd data={faqSchema} />
       <main className="container mx-auto px-4 py-16 max-w-3xl">
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
           Questions Fréquentes
