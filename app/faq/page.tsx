@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "Combien de temps gagne-t-on vraiment avec l'automatisation ?",
     answer:
-      "Ca dépend de votre projet, bien paramétrée, une IA peut vous faire gagner beaucoup de temps, c'est vrai dans mon business.",
+      "Ça dépend de votre projet, bien paramétrée, une IA peut vous faire gagner beaucoup de temps, c'est vrai dans mon business.",
   },
   {
     question: "Est-ce que ça remplace mon comptable ou mon assistant ?",
@@ -115,45 +115,9 @@ const faqs = [
 ];
 
 export default function FAQPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    inLanguage: "fr-FR",
-    about: [
-      {
-        "@type": "Thing",
-        name: "Intelligence artificielle",
-      },
-      {
-        "@type": "Thing",
-        name: "Automatisation des processus",
-      },
-      {
-        "@type": "Thing",
-        name: "RGPD",
-      },
-    ],
-    audience: {
-      "@type": "BusinessAudience",
-      audienceType: "Artisans, TPE, PME",
-      geographicArea: "Soissons, Aisne, Oise, Marne, Seine-et-Marne",
-    },
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <div className="bg-[#0A0A0A] text-gray-300 antialiased min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={buildFaqSchema(faqs)} />
       <main className="container mx-auto px-4 py-16 max-w-3xl">
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
           Questions Fréquentes
