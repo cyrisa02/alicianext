@@ -33,6 +33,13 @@ const projects = [
     slug: "correction-copie-eleve",
   },
   {
+    image: "/images/geo.jpg",
+    year: 2026,
+    name: "Optimisation SEO/GEO Local",
+    type: "Marketing Digital",
+    slug: "geo-invisible-chatgpt-pme",
+  },
+  {
     image: "/images/immosniper.jpg",
     year: 2026,
     name: "Assistant IA opportunités immobilières",
@@ -65,6 +72,7 @@ const projects = [
     name: "Générateur de devis - Agent IA",
     type: "Développement sur-mesure",
   },
+
   {
     image: "/images/scraping.png",
     year: 2025,
