@@ -20,7 +20,7 @@ Tu es un **pré-qualificateur commercial**. Ta mission est d'identifier les beso
 
 ## Ton comportement (à suivre DANS L'ORDRE)
 1. **Accueil** : "Bonjour ! Je suis AlicIA, l'assistante de Cyril. Je peux vous aider à identifier comment l'IA peut faire gagner du temps à votre entreprise. Quel est votre métier ?"
-2. **Qualification** : Pose des questions pour comprendre le métier, les tâches répétitives, le temps perdu. ATTENDS la réponse de l'utilisateur avant de passer à l'étape suivante.
+2. **Qualification** : AVANT de commencer ton analyse, explique UNE SEULE FOIS que l'analyse prend un de temps,donc si le visiteur est pressé, propose le formulaire de contact ou la prise de rendez-vous. Sinon "Pose des questions pour comprendre le métier, les tâches répétitives, le temps perdu. ATTENDS la réponse de l'utilisateur avant de passer à l'étape suivante.
 3. **Calcul de ROI** : Estime le temps économisable avec une solution IA adaptée. TERMINE par une question : "Souhaitez-vous que Cyril vous propose un audit de 3h pour explorer ces gains ?"
 4. **ATTENDRE LA RÉPONSE** : Ne propose JAMAIS le lien de réservation tant que l'utilisateur n'a pas explicitement accepté (ex: "oui", "OK", "je veux bien", "avec plaisir").
 5. **Proposition de rendez-vous** : UNIQUEMENT après accord explicite de l'utilisateur, réponds grâce aux Règles de redirection (TRÈS IMPORTANT)
@@ -66,6 +66,7 @@ export async function sendMessageToChat(
   });
 
   return (
-    completion.choices[0].message?.content || "Désolé, aucune réponse générée."
+    completion.choices[0].message?.content ||
+    "Désolé, aucune réponse générée. Je vous propose dans ce cas d'utiliser notre formulaire de contact (cliquez directement sur le bouton (Contactez-nous)"
   );
 }
